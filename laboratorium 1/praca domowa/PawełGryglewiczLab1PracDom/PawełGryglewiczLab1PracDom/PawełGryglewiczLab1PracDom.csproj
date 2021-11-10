@@ -107,5 +107,32 @@
   <ItemGroup>
     <None Include="Resources\archer.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodcutter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stoneQuarry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mine1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fletcher.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poleturner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blacksmith.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prison.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
