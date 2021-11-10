@@ -24,12 +24,29 @@ namespace PawełGryglewiczLab1PracDom
         /// Zmienna przechowująca ilość żelaza
         /// </summary>
         int ironAmount;
+        /// <summary>
+        /// Zmienna przechowująca ilość łuków
+        /// </summary>
+        int bowsAmmount;
+        /// <summary>
+        /// Zmienna przechowująca ilość pik
+        /// </summary>
+        int pikesAmmount;
+        /// <summary>
+        /// Zmienna przechowująca ilość mieczy
+        /// </summary>
+        int swordsAmmount;
         public FormMainWindow()
         {
             InitializeComponent();
         }
 
         private void FormMainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

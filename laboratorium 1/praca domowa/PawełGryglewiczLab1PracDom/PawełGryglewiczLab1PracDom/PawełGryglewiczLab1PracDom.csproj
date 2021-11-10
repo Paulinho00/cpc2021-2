@@ -89,5 +89,23 @@
   <ItemGroup>
     <None Include="Resources\iron.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swordsman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pikeman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
