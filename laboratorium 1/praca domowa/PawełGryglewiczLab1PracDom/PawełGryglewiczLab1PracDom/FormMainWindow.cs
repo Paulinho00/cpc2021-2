@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PawełGryglewiczLab1PracDom
 {
-    public partial class MainWindow : Form
+    public partial class FormMainWindow : Form
     {
-        public MainWindow()
+        public FormMainWindow()
         {
             InitializeComponent();
         }

@@ -1,0 +1,10 @@
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\bin\Debug\PawełGryglewiczLab1PracDom.exe.config
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\bin\Debug\PawełGryglewiczLab1PracDom.exe
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\bin\Debug\PawełGryglewiczLab1PracDom.pdb
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\obj\Debug\PawełGryglewiczLab1PracDom.csproj.AssemblyReference.cache
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\obj\Debug\PawełGryglewiczLab1PracDom.FormMainWindow.resources
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\obj\Debug\PawełGryglewiczLab1PracDom.Properties.Resources.resources
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\obj\Debug\PawełGryglewiczLab1PracDom.csproj.GenerateResource.cache
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\obj\Debug\PawełGryglewiczLab1PracDom.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\obj\Debug\PawełGryglewiczLab1PracDom.exe
+C:\Users\Robert\source\repos\pawel_gryglewicz_cpc2021-2\laboratorium 1\praca domowa\PawełGryglewiczLab1PracDom\PawełGryglewiczLab1PracDom\obj\Debug\PawełGryglewiczLab1PracDom.pdb

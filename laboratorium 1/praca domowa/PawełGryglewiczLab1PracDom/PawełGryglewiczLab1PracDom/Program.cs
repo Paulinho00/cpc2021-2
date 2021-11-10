@@ -16,7 +16,7 @@ namespace PawełGryglewiczLab1PracDom
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new FormMainWindow());
         }
     }
 }
