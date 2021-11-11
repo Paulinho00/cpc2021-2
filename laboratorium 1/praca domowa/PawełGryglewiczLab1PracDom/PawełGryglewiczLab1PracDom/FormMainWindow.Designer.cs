@@ -94,10 +94,11 @@ namespace PawełGryglewiczLab1PracDom
             this.labelMine = new System.Windows.Forms.Label();
             this.labelStoneQuarry = new System.Windows.Forms.Label();
             this.labelWoodcutter = new System.Windows.Forms.Label();
+            this.labelGold = new System.Windows.Forms.Label();
             this.labelGoldAmount = new System.Windows.Forms.Label();
-            this.labelNumberOfGold = new System.Windows.Forms.Label();
             this.timerCounter = new System.Windows.Forms.Timer(this.components);
             this.buttonPause = new System.Windows.Forms.Button();
+            this.buttonOpenRecruitmentWindow = new System.Windows.Forms.Button();
             this.groupBoxResources.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneImage)).BeginInit();
@@ -794,24 +795,24 @@ namespace PawełGryglewiczLab1PracDom
             this.labelWoodcutter.TabIndex = 0;
             this.labelWoodcutter.Text = "Drwal";
             // 
+            // labelGold
+            // 
+            this.labelGold.AutoSize = true;
+            this.labelGold.Location = new System.Drawing.Point(273, 21);
+            this.labelGold.Name = "labelGold";
+            this.labelGold.Size = new System.Drawing.Size(111, 13);
+            this.labelGold.TabIndex = 0;
+            this.labelGold.Text = "Ilość złota w skarbcu:";
+            // 
             // labelGoldAmount
             // 
             this.labelGoldAmount.AutoSize = true;
-            this.labelGoldAmount.Location = new System.Drawing.Point(273, 21);
+            this.labelGoldAmount.ForeColor = System.Drawing.Color.Goldenrod;
+            this.labelGoldAmount.Location = new System.Drawing.Point(380, 21);
             this.labelGoldAmount.Name = "labelGoldAmount";
-            this.labelGoldAmount.Size = new System.Drawing.Size(111, 13);
-            this.labelGoldAmount.TabIndex = 0;
-            this.labelGoldAmount.Text = "Ilość złota w skarbcu:";
-            // 
-            // labelNumberOfGold
-            // 
-            this.labelNumberOfGold.AutoSize = true;
-            this.labelNumberOfGold.ForeColor = System.Drawing.Color.Goldenrod;
-            this.labelNumberOfGold.Location = new System.Drawing.Point(380, 21);
-            this.labelNumberOfGold.Name = "labelNumberOfGold";
-            this.labelNumberOfGold.Size = new System.Drawing.Size(13, 13);
-            this.labelNumberOfGold.TabIndex = 33;
-            this.labelNumberOfGold.Text = "0";
+            this.labelGoldAmount.Size = new System.Drawing.Size(13, 13);
+            this.labelGoldAmount.TabIndex = 33;
+            this.labelGoldAmount.Text = "0";
             // 
             // timerCounter
             // 
@@ -829,14 +830,25 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonPause.UseVisualStyleBackColor = true;
             this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
             // 
+            // buttonOpenRecruitmentWindow
+            // 
+            this.buttonOpenRecruitmentWindow.Location = new System.Drawing.Point(84, 399);
+            this.buttonOpenRecruitmentWindow.Name = "buttonOpenRecruitmentWindow";
+            this.buttonOpenRecruitmentWindow.Size = new System.Drawing.Size(75, 23);
+            this.buttonOpenRecruitmentWindow.TabIndex = 35;
+            this.buttonOpenRecruitmentWindow.Text = "Rekrutacja";
+            this.buttonOpenRecruitmentWindow.UseVisualStyleBackColor = true;
+            this.buttonOpenRecruitmentWindow.Click += new System.EventHandler(this.buttonOpenRecruitmentWindow_Click);
+            // 
             // FormMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonOpenRecruitmentWindow);
             this.Controls.Add(this.buttonPause);
-            this.Controls.Add(this.labelNumberOfGold);
             this.Controls.Add(this.labelGoldAmount);
+            this.Controls.Add(this.labelGold);
             this.Controls.Add(this.groupBoxBuildings);
             this.Controls.Add(this.groupBoxArmy);
             this.Controls.Add(this.groupBoxWeapons);
@@ -879,7 +891,7 @@ namespace PawełGryglewiczLab1PracDom
         private System.Windows.Forms.GroupBox groupBoxWeapons;
         private System.Windows.Forms.GroupBox groupBoxArmy;
         private System.Windows.Forms.GroupBox groupBoxBuildings;
-        private System.Windows.Forms.Label labelGoldAmount;
+        private System.Windows.Forms.Label labelGold;
         private System.Windows.Forms.Label labelIronAmount;
         private System.Windows.Forms.Label labelStoneAmount;
         private System.Windows.Forms.Label labelWoodAmount;
@@ -939,9 +951,10 @@ namespace PawełGryglewiczLab1PracDom
         private System.Windows.Forms.PictureBox pictureBoxPrison;
         private System.Windows.Forms.Button buttonUpgradePrison;
         private System.Windows.Forms.Label labelPrisonLevel;
-        private System.Windows.Forms.Label labelNumberOfGold;
+        private System.Windows.Forms.Label labelGoldAmount;
         private System.Windows.Forms.Timer timerCounter;
         private System.Windows.Forms.Button buttonPause;
+        private System.Windows.Forms.Button buttonOpenRecruitmentWindow;
     }
 }
 

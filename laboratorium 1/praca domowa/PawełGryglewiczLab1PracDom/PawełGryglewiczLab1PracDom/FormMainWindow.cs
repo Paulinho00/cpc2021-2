@@ -20,6 +20,7 @@ namespace PawełGryglewiczLab1PracDom
         /// Zmienna przechowująca informację czy gra jest zatrzymana
         /// </summary>
         private Boolean isStoped = false;
+
         public FormMainWindow()
         {
             InitializeComponent();
@@ -402,5 +403,46 @@ namespace PawełGryglewiczLab1PracDom
                 buttonPause.Text = "Odpauzuj";
             }
         }
+
+        /// <summary>
+        /// Otwarcie okna rekrutacji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonOpenRecruitmentWindow_Click(object sender, EventArgs e)
+        {
+            //Zmienna przechowująca referencję do obiektu okna rekrutacji
+            FormRecruitmentWindow formRecruitmentWindow = new FormRecruitmentWindow(player, timerCounter, this);
+            //Wyświetlenie okna rekrutacji
+            formRecruitmentWindow.Show();
+        }
+
+        /// <summary>
+        /// Aktualizacja wszystkich wartości liczbowych surowców, broni, wojska w oknie
+        /// </summary>
+        public void ValuesUpdate()
+        {
+            //Wyświetlenie aktualnej posiadnej ilości złota
+            labelGoldAmount.Text = player.GoldAmount.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby drewna
+            labelWoodAmount.Text = player.WoodAmount.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby kamienia
+            labelStoneAmount.Text = player.StoneAmount.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby żelaza
+            labelIronAmount.Text = player.IronAmount.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby łuków
+            labelBowsAmount.Text = player.BowsAmount.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby pik
+            labelPikemen.Text = player.PikesAmount.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby mieczy
+            labelSwordsAmount.Text = player.SwordsAmount.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby łuczników
+            labelArchersNumber.Text = player.Archers.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby pikinierów
+            labelPikemenNumber.Text = player.Pikemen.ToString();
+            //Wyświetlenie aktualnej posiadanej przez gracza liczby mieczników
+            labelSwordsmenNumber.Text = player.Swordsmen.ToString();
+        }
+
     }
 }

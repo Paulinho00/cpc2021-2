@@ -9,12 +9,12 @@ namespace PawełGryglewiczLab1PracDom
     /// <summary>
     /// Klasa przechowująca stan konta i postepy gracza
     /// </summary> 
-    class Player
+    public class Player
     {
         /// <summary>
         /// Zmienna przechowująca ilośc złota
         /// </summary>
-        int goldAmount = 0;
+        int goldAmount = 10000;
         /// <summary>
         /// Zmienna przechowująca ilość drewna
         /// </summary>
@@ -30,7 +30,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Zmienna przechowująca ilość łuków
         /// </summary>
-        int bowsAmount = 0;
+        int bowsAmount = 60;
         /// <summary>
         /// Zmienna przechowująca ilość pik
         /// </summary>
@@ -71,10 +71,21 @@ namespace PawełGryglewiczLab1PracDom
         /// Zmienna przechowująca poziom rozbudowania więzienia
         /// </summary>
         int prisonLevel = 0;
+        /// <summary>
+        /// Zmienna przechowująca liczbę posiadanych łuczników
+        /// </summary>
+        int archers = 0;
+        /// <summary>
+        /// Zmienna przechowująca liczbę posiadanych pikinierów
+        /// </summary>
+        int pikemen = 0;
+        /// <summary>
+        /// Zmienna przechowująca liczbę posiadanych mieczników
+        /// </summary>
+        int swordsmen = 0;
 
         #region gettery i settery do pól klasy
         public int GoldAmount { get => goldAmount; set => goldAmount = value; }
-        public int GoldAmount1 { get => goldAmount; set => goldAmount = value; }
         public int WoodAmount { get => woodAmount; set => woodAmount = value; }
         public int StoneAmount { get => stoneAmount; set => stoneAmount = value; }
         public int IronAmount { get => ironAmount; set => ironAmount = value; }
@@ -89,6 +100,9 @@ namespace PawełGryglewiczLab1PracDom
         public int BlacksmithLevel { get => blacksmithLevel; set => blacksmithLevel = value; }
         public int WallLevel { get => wallLevel; set => wallLevel = value; }
         public int PrisonLevel { get => prisonLevel; set => prisonLevel = value; }
+        public int Archers { get => archers; set => archers = value; }
+        public int Pikemen { get => pikemen; set => pikemen = value; }
+        public int Swordsmen { get => swordsmen; set => swordsmen = value; }
         #endregion
 
         /// <summary>
@@ -509,6 +523,31 @@ namespace PawełGryglewiczLab1PracDom
                 //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
                 return ErrorMessageCreator(250, 750, 300);
             }
+        }
+        
+        /// <summary>
+        /// Odjęcie z konta gracza kosztów rekrutacji i dodanie odpowiedniej liczby wojska
+        /// </summary>
+        /// <param name="archers">liczba zrekrutowanych łuczników</param>
+        /// <param name="pikemen">liczba zrekrutowanych pikinierów</param>
+        /// <param name="swordsmen">liczba zrekrutowanych mieczników</param>
+        public void Recruitment(int archers, int pikemen, int swordsmen)
+        {
+            //Odjęcie złota z konta gracza, wydanego podczas rekrutacji
+            goldAmount = goldAmount - (archers * 30) - (pikemen * 50) - (swordsmen * 100);
+            //Odjęcie łuków z konta gracza, wykorzystanych podczas rekrutacji łuczników
+            bowsAmount -= archers;
+            //Odjęcie pik z konta gracza, wykorzystanych podczas rekrutacji pikinierów
+            pikesAmount -= pikemen;
+            //Odjęcie mieczy z konta gracza, wykorzystanych podczas rekrutacji mieczników
+            swordsAmount -= swordsmen;
+            //Dodanie zrekrutowanych łuczników do konta gracza
+            this.archers += archers;
+            //Dodanie zrekrutowanych pikinierów do konta gracza
+            this.pikemen += pikemen;
+            //Dodanie zrekrutowanych mieczników do konta gracza
+            this.swordsmen += swordsmen;
+
         }
     }
 }

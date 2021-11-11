@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormRecruitmentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecruitmentWindow.Designer.cs">
+      <DependentUpon>FormRecruitmentWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="FormMainWindow.cs">
       <SubType>Form</SubType>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormRecruitmentWindow.resx">
+      <DependentUpon>FormRecruitmentWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMainWindow.resx">
       <DependentUpon>FormMainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prison.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
