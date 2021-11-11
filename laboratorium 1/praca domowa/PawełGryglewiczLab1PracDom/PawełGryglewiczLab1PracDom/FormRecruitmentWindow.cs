@@ -38,6 +38,7 @@ namespace PawełGryglewiczLab1PracDom
             this.formMainWindow = formMainWindow;
             //Zatrzymanie Timera
             timerFromMainWindow.Stop();
+            //Wywołanie metody aktualizujacej dane w oknie
             ValuesUpdate();
         }
 

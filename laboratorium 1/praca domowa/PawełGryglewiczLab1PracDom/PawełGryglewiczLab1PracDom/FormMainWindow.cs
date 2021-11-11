@@ -444,5 +444,17 @@ namespace PawełGryglewiczLab1PracDom
             labelSwordsmenNumber.Text = player.Swordsmen.ToString();
         }
 
+        /// <summary>
+        /// Otwarcie okna handlu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonOpenTradeWindow_Click(object sender, EventArgs e)
+        {
+            //Zmienna przechowująca referencję do obiektu okna handlu
+            FormTradeWindow formTradeWindow = new FormTradeWindow(player, timerCounter);
+            //Wyświetlenie okna handlu
+            formTradeWindow.Show();
+        }
     }
 }

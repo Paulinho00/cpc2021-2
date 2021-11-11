@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormTradeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTradeWindow.Designer.cs">
+      <DependentUpon>FormTradeWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRecruitmentWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormTradeWindow.resx">
+      <DependentUpon>FormTradeWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRecruitmentWindow.resx">
       <DependentUpon>FormRecruitmentWindow.cs</DependentUpon>
     </EmbeddedResource>
