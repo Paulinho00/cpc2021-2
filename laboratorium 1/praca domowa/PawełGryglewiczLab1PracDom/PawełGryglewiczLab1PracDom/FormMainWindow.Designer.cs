@@ -472,7 +472,7 @@ namespace PawełGryglewiczLab1PracDom
             this.groupBoxBuildings.Controls.Add(this.labelMine);
             this.groupBoxBuildings.Controls.Add(this.labelStoneQuarry);
             this.groupBoxBuildings.Controls.Add(this.labelWoodcutter);
-            this.groupBoxBuildings.Location = new System.Drawing.Point(276, 50);
+            this.groupBoxBuildings.Location = new System.Drawing.Point(261, 47);
             this.groupBoxBuildings.Name = "groupBoxBuildings";
             this.groupBoxBuildings.Size = new System.Drawing.Size(512, 343);
             this.groupBoxBuildings.TabIndex = 1;
@@ -666,6 +666,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeWoodcutter.TabIndex = 13;
             this.buttonUpgradeWoodcutter.Text = "Ulepsz";
             this.buttonUpgradeWoodcutter.UseVisualStyleBackColor = true;
+            this.buttonUpgradeWoodcutter.Click += new System.EventHandler(this.buttonUpgradeWoodcutter_Click);
             // 
             // labelMineLevel
             // 

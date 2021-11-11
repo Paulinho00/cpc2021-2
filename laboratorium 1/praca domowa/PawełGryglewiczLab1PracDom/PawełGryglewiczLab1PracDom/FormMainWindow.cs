@@ -157,10 +157,42 @@ namespace PawełGryglewiczLab1PracDom
             switch (fletcherLevel)
             {
                 case 0: bowsAmount += 0; break;
-                case 1: bowsAmount += 1; break;
-                case 2: bowsAmount += 2; break;
-                case 3: bowsAmount += 3; break;
+                case 1:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę drewna do utworzenia łuków
+                        if(woodAmount >= 5)
+                        {
+                            //Odjęcie ilości drewna z magazynu, potrzebnej do wytworzenia łuków
+                            woodAmount -= 5;
+                            //Dodanie odpowiedniej ilości łuków
+                            bowsAmount += 1;
+                        }
+                    } break;
+                case 2:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę drewna do utworzenia łuków
+                        if (woodAmount >= 10)
+                        {
+                            //Odjęcie ilości drewna z magazynu, potrzebnej do wytworzenia łuków
+                            woodAmount -= 10;
+                            //Dodanie odpowiedniej ilości łuków
+                            bowsAmount += 2;
+                        }
+                    } break;
+                case 3:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę drewna do utworzenia łuków
+                        if (woodAmount >= 15)
+                        {
+                            //Odjęcie ilości drewna z magazynu, potrzebnej do wytworzenia łuków
+                            woodAmount -= 15;
+                            //Dodanie odpowiedniej ilości łuków
+                            bowsAmount += 3;
+                        }
+                    } break;
             }
+            //Wyświetlenie nowej ilości drewna w oknie
+            labelWoodAmount.Text = woodAmount.ToString();
             //Wyświetlenie nowej ilości broni w oknie
             labelBowsAmount.Text = bowsAmount.ToString();
         }
@@ -174,10 +206,42 @@ namespace PawełGryglewiczLab1PracDom
             switch (poleturnerLevel)
             {
                 case 0: pikesAmount += 0; break;
-                case 1: pikesAmount += 1; break;
-                case 2: pikesAmount += 2; break;
-                case 3: pikesAmount += 3; break;
+                case 1:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę drewna do utworzenia pik
+                        if (woodAmount >= 5)
+                        {
+                            //Odjęcie ilości drewna z magazynu, potrzebnej do wytworzenia pik
+                             woodAmount -= 5;
+                            //Dodanie odpowiedniej ilości pik
+                            pikesAmount += 1;
+                        }
+                    } break;
+                case 2:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę drewna do utworzenia pik
+                        if (woodAmount >= 10)
+                        {
+                            //Odjęcie ilości drewna z magazynu, potrzebnej do wytworzenia pik
+                            woodAmount -= 10;
+                            //Dodanie odpowiedniej ilości pik
+                            pikesAmount += 2;
+                        }
+                    } break;
+                case 3:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę drewna do utworzenia pik
+                        if (woodAmount >= 15)
+                        {
+                            //Odjęcie ilości drewna z magazynu, potrzebnej do wytworzenia pik
+                            woodAmount -= 15;
+                            //Dodanie odpowiedniej ilości pik
+                            pikesAmount += 3;
+                        }
+                    } break;
             }
+            //Wyświetlenie nowej ilości drewna w oknie
+            labelWoodAmount.Text = woodAmount.ToString();
             //Wyświetlenie nowej ilości broni w oknie
             labelPikesAmount.Text = pikesAmount.ToString();
 
@@ -192,13 +256,101 @@ namespace PawełGryglewiczLab1PracDom
             switch (blacksmithLevel)
             {
                 case 0: swordsAmount += 0; break;
-                case 1: pikesAmount += 1;  break;
-                case 2: pikesAmount += 2; break;
-                case 3: pikesAmount += 3; break;
+                case 1:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę żelaza do utworzenia mieczy
+                        if (ironAmount >= 2)
+                        {
+                            //Odjęcie ilości żelaza z magazynu, potrzebnej do wytworzenia mieczy
+                            ironAmount -= 2;
+                            //Dodanie odpowiedniej ilości mieczy
+                            swordsAmount += 1;
+                        }
+                    } break;
+                case 2:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę żelaza do utworzenia mieczy
+                        if (ironAmount >= 3)
+                        {
+                            //Odjęcie ilości żelaza z magazynu, potrzebnej do wytworzenia mieczy
+                            ironAmount -= 3;
+                            //Dodanie odpowiedniej ilości mieczy
+                            swordsAmount += 2;
+                        }
+                    } break;
+                case 3:
+                    {
+                        //Sprawdzenie czy gracz posiada wystarczającą liczbę żelaza do utworzenia mieczy
+                        if (ironAmount >= 4)
+                        {
+                            //Odjęcie ilości żelaza z magazynu, potrzebnej do wytworzenia mieczy
+                            ironAmount -= 4;
+                            //Dodanie odpowiedniej ilości mieczy
+                            swordsAmount += 3;
+                        }
+                    } break;
             }
-            //Wyświetlenie nowej ilości broni w oknie
-            labelPikesAmount.Text = pikesAmount.ToString();
 
+            //Wyświetleniej nowej ilości żelaza w magazynie
+            labelIronAmount.Text = ironAmount.ToString();
+            //Wyświetlenie nowej ilości broni w oknie
+            labelSwordsAmount.Text = swordsAmount.ToString();
+
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu drwala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradeWoodcutter_Click(object sender, EventArgs e)
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilośc surowców
+            if (woodAmount >= 300 && stoneAmount >= 100 && ironAmount >= 10)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 300;
+                stoneAmount -= 100;
+                ironAmount -= 10;
+                //Zwiększenie poziomu drwala
+                woodcutterLevel += 1;
+                //Wyświetlenie nowego poziomu w oknie
+                labelWoodcutterLevel.Text = "Poziom: " + woodcutterLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show("Ulepszyłeś drwala");
+            }
+            else
+            {
+                //Utworzenie zmiennej przechowującej komunikat o błędzie przy ulepszaniu
+                String message = "Za mało: ";
+                //Sprawdzenie czy brakuje drewna
+                if(woodAmount < 300)
+                {
+                    //Dodanie informacji o braku drewna
+                    message = message + "drewna(brakuje:" + (300 - woodAmount) + ")";
+                }
+                //Sprawdzenie czy brakuje kamienia
+                if(stoneAmount < 100)
+                {
+                    //Dodanie informacji o braku kamienia
+                    message = message + " kamienia(brakuje:" + (100 - stoneAmount) + ")";
+                }
+                //Sprawdzenie czy brakuje żelaza
+                if(ironAmount < 10)
+                {
+                    //Dodanie informacji o braku żelaza
+                    message = message + " żelaza(brakuje:" + (10 - ironAmount) + ")";
+                }
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if(woodcutterLevel == 3)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradeWoodcutter.Visible = false;
+            }
         }
     }
 }
