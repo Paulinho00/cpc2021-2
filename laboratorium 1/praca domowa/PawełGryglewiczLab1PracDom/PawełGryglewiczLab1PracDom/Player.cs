@@ -99,7 +99,7 @@ namespace PawełGryglewiczLab1PracDom
             //Dodanie odpowiedniej ilości surowca w zależności od poziomu ulepszenia
             switch (woodcutterLevel)
             {
-                case 1: woodAmount += 30; break;
+                case 1: woodAmount += 35; break;
                 case 2: woodAmount += 40; break;
                 case 3: woodAmount += 50; break;
             }
@@ -127,8 +127,8 @@ namespace PawełGryglewiczLab1PracDom
             //Dodanie odpowiedniej ilości surowca w zależności od poziomu ulepszenia
             switch (mineLevel)
             {
-                case 1: ironAmount += 3; break;
-                case 2: ironAmount += 5; break;
+                case 1: ironAmount += 4; break;
+                case 2: ironAmount += 6; break;
                 case 3: ironAmount += 8; break;
             }
         }
@@ -277,9 +277,46 @@ namespace PawełGryglewiczLab1PracDom
             }
         }
 
+        /// <summary>
+        /// Generowanie komunikatu błędu w zależności od podanego kosztu ulepszenia
+        /// </summary>
+        /// <param name="wood">koszt ulepszenia w drewnie</param>
+        /// <param name="stone">koszt ulepszenia w kamieniu</param>
+        /// <param name="iron">koszt ulepszenia w żelazie</param>
+        /// <returns></returns>
+        string ErrorMessageCreator(int wood, int stone, int iron)
+        {
+            //Utworzenie zmiennej przechowującej komunikat o błędzie przy ulepszaniu
+            String message = "Za mało: ";
+            //Sprawdzenie czy brakuje drewna
+            if (woodAmount < wood)
+            {
+                //Dodanie informacji o braku drewna
+                message = message + "drewna(brakuje:" + (wood - woodAmount) + ")";
+            }
+            //Sprawdzenie czy brakuje kamienia
+            if (stoneAmount < stone)
+            {
+                //Dodanie informacji o braku kamienia
+                message = message + " kamienia(brakuje:" + (stone - stoneAmount) + ")";
+            }
+            //Sprawdzenie czy brakuje żelaza
+            if (ironAmount < iron)
+            {
+                //Dodanie informacji o braku żelaza
+                message = message + " żelaza(brakuje:" + (iron - ironAmount) + ")";
+            }
+            //Zwrócenie komunikatu o błędzie
+            return message;
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu drwala i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
         public String WoodcutterUpgrade()
         {
-            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilośc surowców
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
             if (woodAmount >= 300 && stoneAmount >= 100 && ironAmount >= 10)
             {
                 //Odjęcie surowców z konta gracza
@@ -287,34 +324,190 @@ namespace PawełGryglewiczLab1PracDom
                 stoneAmount -= 100;
                 ironAmount -= 10;
                 //Zwiększenie poziomu drwala
-                woodcutterLevel += 1;
+                woodcutterLevel++;
                 //Zwrócenie komunikatu o udanym ulepszeniu
                 return "Ulepszyłeś drwala";
 
             }
             else
             {
-                //Utworzenie zmiennej przechowującej komunikat o błędzie przy ulepszaniu
-                String message = "Za mało: ";
-                //Sprawdzenie czy brakuje drewna
-                if (woodAmount < 300)
-                {
-                    //Dodanie informacji o braku drewna
-                    message = message + "drewna(brakuje:" + (300 - woodAmount) + ")";
-                }
-                //Sprawdzenie czy brakuje kamienia
-                if (stoneAmount < 100)
-                {
-                    //Dodanie informacji o braku kamienia
-                    message = message + " kamienia(brakuje:" + (100 - stoneAmount) + ")";
-                }
-                //Sprawdzenie czy brakuje żelaza
-                if (ironAmount < 10)
-                {
-                    //Dodanie informacji o braku żelaza
-                    message = message + " żelaza(brakuje:" + (10 - ironAmount) + ")";
-                }
-                return message;
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(300, 100, 10);
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu kamieniołomu i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
+        public String StoneQuarryUpgrade()
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
+            if (woodAmount >= 500 && stoneAmount >= 50 && ironAmount >= 30)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 500;
+                stoneAmount -= 50;
+                ironAmount -= 30;
+                //Zwiększenie poziomu kamieniołomu
+                stoneQuarryLevel++;
+                //Zwrocenie komunikatu o udanym ulepszeniu
+                return "Ulepszyłeś kamieniołom";
+            }
+            else
+            {
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(500, 50, 30);
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu kopalni i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
+        public String MineUpgrade()
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
+            if (woodAmount >= 700 && stoneAmount >= 80 && ironAmount >= 10)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 700;
+                stoneAmount -= 80;
+                ironAmount -= 10;
+                //Zwiększenie poziomu kopalni
+                mineLevel++;
+                //Zwrocenie komunikatu o udanym ulepszeniu
+                return "Ulepszyłeś kopalnię";
+            }
+            else
+            {
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(700, 80, 10);
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu łuczarza i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
+        public String FletcherUpgrade()
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
+            if (woodAmount >= 700 && stoneAmount >= 120 && ironAmount >= 50)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 700;
+                stoneAmount -= 120;
+                ironAmount -= 50;
+                //Zwiększenie poziomu łuczarza
+                fletcherLevel++;
+                //Zwrocenie komunikatu o udanym ulepszeniu
+                return "Ulepszyłeś łuczarza";
+            }
+            else
+            {
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(700, 120, 50);
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu tokarza i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
+        public String PoleturnerUpgrade()
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
+            if (woodAmount >= 800 && stoneAmount >= 140 && ironAmount >= 60)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 800;
+                stoneAmount -= 140;
+                ironAmount -= 60;
+                //Zwiększenie poziomu tokarza
+                poleturnerLevel++;
+                //Zwrocenie komunikatu o udanym ulepszeniu
+                return "Ulepszyłeś tokarza";
+            }
+            else
+            {
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(800, 140, 60);
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu kowala i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
+        public String BlacksmithUpgrade()
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
+            if (woodAmount >= 1000 && stoneAmount >= 300 && ironAmount >= 100)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 1000;
+                stoneAmount -= 300;
+                ironAmount -= 100;
+                //Zwiększenie poziomu kowala
+                blacksmithLevel++;
+                //Zwrocenie komunikatu o udanym ulepszeniu
+                return "Ulepszyłeś kowala";
+            }
+            else
+            {
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(1000, 300, 100);
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu murów i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
+        public String WallUpgrade()
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
+            if (woodAmount >= 500 && stoneAmount >= 1000 && ironAmount >= 100)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 500;
+                stoneAmount -= 1000;
+                ironAmount -= 100;
+                //Zwiększenie poziomu murów
+                wallLevel++;
+                //Zwrocenie komunikatu o udanym ulepszeniu
+                return "Ulepszyłeś mur";
+            }
+            else
+            {
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(500, 1000, 100);
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu więzienia i odjęcie surowców potrzebnych do ulepszenia
+        /// </summary>
+        /// <returns></returns>
+        public String PrisonUpgrade()
+        {
+            //Sprawdzenie czy gracz posiada potrzebną do ulepszenia, ilość surowców
+            if (woodAmount >= 250 && stoneAmount >= 750 && ironAmount >= 300)
+            {
+                //Odjęcie surowców z konta gracza
+                woodAmount -= 250;
+                stoneAmount -= 750;
+                ironAmount -= 300;
+                //Zwiększenie poziomu więzienia
+                prisonLevel++;
+                //Zwrocenie komunikatu o udanym ulepszeniu
+                return "Ulepszyłeś więzienie";
+            }
+            else
+            {
+                //Wywołanie metody generującej komunikat błędu i zwrócenie jej wyniku
+                return ErrorMessageCreator(250, 750, 300);
             }
         }
     }

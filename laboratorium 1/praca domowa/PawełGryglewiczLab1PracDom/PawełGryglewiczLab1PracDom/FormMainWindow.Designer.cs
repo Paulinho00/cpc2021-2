@@ -497,6 +497,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradePrison.TabIndex = 31;
             this.buttonUpgradePrison.Text = "Ulepsz";
             this.buttonUpgradePrison.UseVisualStyleBackColor = true;
+            this.buttonUpgradePrison.Click += new System.EventHandler(this.buttonUpgradePrison_Click);
             // 
             // labelPrisonLevel
             // 
@@ -525,6 +526,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeWall.TabIndex = 28;
             this.buttonUpgradeWall.Text = "Ulepsz";
             this.buttonUpgradeWall.UseVisualStyleBackColor = true;
+            this.buttonUpgradeWall.Click += new System.EventHandler(this.buttonUpgradeWall_Click);
             // 
             // labelWallLevel
             // 
@@ -543,6 +545,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeBlacksmith.TabIndex = 26;
             this.buttonUpgradeBlacksmith.Text = "Ulepsz";
             this.buttonUpgradeBlacksmith.UseVisualStyleBackColor = true;
+            this.buttonUpgradeBlacksmith.Click += new System.EventHandler(this.buttonUpgradeBlacksmith_Click);
             // 
             // buttonUpgradePoleturner
             // 
@@ -552,6 +555,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradePoleturner.TabIndex = 25;
             this.buttonUpgradePoleturner.Text = "Ulepsz";
             this.buttonUpgradePoleturner.UseVisualStyleBackColor = true;
+            this.buttonUpgradePoleturner.Click += new System.EventHandler(this.buttonUpgradePoleturner_Click);
             // 
             // buttonUpgradeFletcher
             // 
@@ -561,6 +565,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeFletcher.TabIndex = 24;
             this.buttonUpgradeFletcher.Text = "Ulepsz";
             this.buttonUpgradeFletcher.UseVisualStyleBackColor = true;
+            this.buttonUpgradeFletcher.Click += new System.EventHandler(this.buttonUpgradeFletcher_Click);
             // 
             // pictureBoxBlacksmith
             // 
@@ -628,6 +633,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeMine.TabIndex = 17;
             this.buttonUpgradeMine.Text = "Ulepsz";
             this.buttonUpgradeMine.UseVisualStyleBackColor = true;
+            this.buttonUpgradeMine.Click += new System.EventHandler(this.buttonUpgradeMine_Click);
             // 
             // pictureBoxMine
             // 
@@ -647,6 +653,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeStoneQuarry.TabIndex = 15;
             this.buttonUpgradeStoneQuarry.Text = "Ulepsz";
             this.buttonUpgradeStoneQuarry.UseVisualStyleBackColor = true;
+            this.buttonUpgradeStoneQuarry.Click += new System.EventHandler(this.buttonUpgradeStoneQuarry_Click);
             // 
             // pictureBoxStoneQuarry
             // 

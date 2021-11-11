@@ -124,13 +124,15 @@ namespace PawełGryglewiczLab1PracDom
         /// <param name="e"></param>
         private void buttonUpgradeWoodcutter_Click(object sender, EventArgs e)
         {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.WoodcutterUpgrade();
 
+            //Sprawdzenie czy ulepszenie powiodło się
             if (message.Equals("Ulepszyłeś drwala")) {
                 //Wyświetlenie nowego poziomu w oknie
                 labelWoodcutterLevel.Text = "Poziom: " + player.WoodcutterLevel;
                 //Wyświetlenie komunikatu o poprawnym ulepszeniu
-                MessageBox.Show("Ulepszyłeś drwala");
+                MessageBox.Show(message);
             }
             else 
             { 
@@ -143,6 +145,229 @@ namespace PawełGryglewiczLab1PracDom
             {
                 //Ukrycie przycisku ulepszającego
                 buttonUpgradeWoodcutter.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu kamieniołomu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradeStoneQuarry_Click(object sender, EventArgs e)
+        {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
+            String message = player.StoneQuarryUpgrade();
+
+            //Sprawdzenie czy ulepszenie powiodło się
+            if (message.Equals("Ulepszyłeś kamieniołom")){
+                //Wyświetlenie nowego poziomu w oknie
+                labelStoneQuarryLevel.Text = "Poziom: " + player.StoneQuarryLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show(message);
+            }
+            else
+            {
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if (player.StoneQuarryLevel == 3)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradeStoneQuarry.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu kopalni
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradeMine_Click(object sender, EventArgs e)
+        {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
+            String message = player.MineUpgrade();
+
+            //Sprawdzenie czy ulepszenie powiodło się
+            if (message.Equals("Ulepszyłeś kopalnię"))
+            {
+                //Wyświetlenie nowego poziomu w oknie
+                labelMineLevel.Text = "Poziom: " + player.MineLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show(message);
+            }
+            else
+            {
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if (player.MineLevel == 3)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradeMine.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu łuczarza
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradeFletcher_Click(object sender, EventArgs e)
+        {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
+            String message = player.FletcherUpgrade();
+
+            //Sprawdzenie czy ulepszenie powiodło się
+            if (message.Equals("Ulepszyłeś łuczarza"))
+            {
+                //Wyświetlenie nowego poziomu w oknie
+                labelFletcherLevel.Text = "Poziom: " + player.FletcherLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show(message);
+            }
+            else
+            {
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if (player.FletcherLevel == 3)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradeFletcher.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu tokarza
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradePoleturner_Click(object sender, EventArgs e)
+        {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
+            String message = player.PoleturnerUpgrade();
+
+            //Sprawdzenie czy ulepszenie powiodło się
+            if (message.Equals("Ulepszyłeś tokarza"))
+            {
+                //Wyświetlenie nowego poziomu w oknie
+                labelPoleturnerLevel.Text = "Poziom: " + player.PoleturnerLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show(message);
+            }
+            else
+            {
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if (player.PoleturnerLevel == 3)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradePoleturner.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu kowala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradeBlacksmith_Click(object sender, EventArgs e)
+        {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
+            String message = player.BlacksmithUpgrade();
+
+            //Sprawdzenie czy ulepszenie powiodło się
+            if (message.Equals("Ulepszyłeś kowala"))
+            {
+                //Wyświetlenie nowego poziomu w oknie
+                labelBlacksmithLevel.Text = "Poziom: " + player.BlacksmithLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show(message);
+            }
+            else
+            {
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if (player.BlacksmithLevel == 3)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradeBlacksmith.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu muru
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradeWall_Click(object sender, EventArgs e)
+        {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
+            String message = player.WallUpgrade();
+
+            //Sprawdzenie czy ulepszenie powiodło się
+            if (message.Equals("Ulepszyłeś mur"))
+            {
+                //Wyświetlenie nowego poziomu w oknie
+                labelWallLevel.Text = "Poziom: " + player.WallLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show(message);
+            }
+            else
+            {
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if (player.WallLevel == 5)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradeWall.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zwiększenie poziomu więzienia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpgradePrison_Click(object sender, EventArgs e)
+        {
+            //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
+            String message = player.PrisonUpgrade();
+
+            //Sprawdzenie czy ulepszenie powiodło się
+            if (message.Equals("Ulepszyłeś więzienie"))
+            {
+                //Wyświetlenie nowego poziomu w oknie
+                labelPrisonLevel.Text = "Poziom: " + player.PrisonLevel;
+                //Wyświetlenie komunikatu o poprawnym ulepszeniu
+                MessageBox.Show(message);
+            }
+            else
+            {
+                //Wyświetlenie komunikatu błędu
+                MessageBox.Show(message);
+            }
+
+            //Sprawdzenie czy budynek osiągnął maksymalny poziom
+            if (player.PrisonLevel == 5)
+            {
+                //Ukrycie przycisku ulepszającego
+                buttonUpgradePrison.Visible = false;
             }
         }
     }
