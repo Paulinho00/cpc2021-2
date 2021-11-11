@@ -97,6 +97,7 @@ namespace PawełGryglewiczLab1PracDom
             this.labelGoldAmount = new System.Windows.Forms.Label();
             this.labelNumberOfGold = new System.Windows.Forms.Label();
             this.timerCounter = new System.Windows.Forms.Timer(this.components);
+            this.buttonPause = new System.Windows.Forms.Button();
             this.groupBoxResources.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneImage)).BeginInit();
@@ -818,11 +819,22 @@ namespace PawełGryglewiczLab1PracDom
             this.timerCounter.Interval = 1500;
             this.timerCounter.Tick += new System.EventHandler(this.timerCounter_Tick);
             // 
+            // buttonPause
+            // 
+            this.buttonPause.Location = new System.Drawing.Point(165, 399);
+            this.buttonPause.Name = "buttonPause";
+            this.buttonPause.Size = new System.Drawing.Size(75, 23);
+            this.buttonPause.TabIndex = 34;
+            this.buttonPause.Text = "Pauza";
+            this.buttonPause.UseVisualStyleBackColor = true;
+            this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
+            // 
             // FormMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.labelNumberOfGold);
             this.Controls.Add(this.labelGoldAmount);
             this.Controls.Add(this.groupBoxBuildings);
@@ -929,6 +941,7 @@ namespace PawełGryglewiczLab1PracDom
         private System.Windows.Forms.Label labelPrisonLevel;
         private System.Windows.Forms.Label labelNumberOfGold;
         private System.Windows.Forms.Timer timerCounter;
+        private System.Windows.Forms.Button buttonPause;
     }
 }
 

@@ -12,8 +12,14 @@ namespace PawełGryglewiczLab1PracDom
 {
     public partial class FormMainWindow : Form
     {
+        /// <summary>
+        /// Zmienna przechowująca referencję do obiektu gracza ze stanem konta
+        /// </summary>
         private Player player;
-        
+        /// <summary>
+        /// Zmienna przechowująca informację czy gra jest zatrzymana
+        /// </summary>
+        private Boolean isStoped = false;
         public FormMainWindow()
         {
             InitializeComponent();
@@ -368,6 +374,32 @@ namespace PawełGryglewiczLab1PracDom
             {
                 //Ukrycie przycisku ulepszającego
                 buttonUpgradePrison.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Zatrzymanie gry
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonPause_Click(object sender, EventArgs e)
+        {
+            //Sprawdzenie czy gra jest zatrzymana
+            if (isStoped)
+            {
+                //Wystartowanie timera
+                timerCounter.Start();
+                isStoped = false;
+                //Zmiana tesktu przycisku pauzy
+                buttonPause.Text = "Pauza";
+            }
+            else
+            {
+                //Zatrzymanie gry
+                timerCounter.Stop();
+                isStoped = true;
+                //Zmiana tekstu przycisku pauzy
+                buttonPause.Text = "Odpauzuj";
             }
         }
     }
