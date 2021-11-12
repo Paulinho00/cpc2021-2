@@ -118,61 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="mine1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mine1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stoneQuarry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="StoneQuarry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stoneQuarry.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fletcher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Fletcher" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fletcher.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pike" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Pike" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wood1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wood1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Iron" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="swordsman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Swordsman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\swordsman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="woodcutter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Woodcutter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\woodcutter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pikeman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Pikeman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pikeman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="poleturner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Poleturner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\poleturner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blacksmith" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Blacksmith" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blacksmith.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Mine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mine.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="archer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Archer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Stone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="prison" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Prison" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prison.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

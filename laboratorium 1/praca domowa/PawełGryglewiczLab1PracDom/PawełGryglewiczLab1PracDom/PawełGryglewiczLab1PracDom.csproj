@@ -100,61 +100,58 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wood1.png" />
+    <None Include="Resources\Wood1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stone.png" />
+    <None Include="Resources\Stone.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\iron.png" />
+    <None Include="Resources\Iron.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bow.png" />
+    <None Include="Resources\Bow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pike.png" />
+    <None Include="Resources\Pike.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sword.png" />
+    <None Include="Resources\Sword.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\swordsman.png" />
+    <None Include="Resources\Swordsman.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pikeman.png" />
+    <None Include="Resources\Pikeman.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\archer.png" />
+    <None Include="Resources\Archer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\woodcutter.jpg" />
+    <None Include="Resources\Woodcutter.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mine.jpg" />
+    <None Include="Resources\Mine.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stoneQuarry.jpg" />
+    <None Include="Resources\StoneQuarry.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mine1.jpg" />
+    <None Include="Resources\Fletcher.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fletcher.jpg" />
+    <None Include="Resources\Poleturner.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\poleturner.jpg" />
+    <None Include="Resources\Blacksmith.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\blacksmith.jpg" />
+    <None Include="Resources\Wall.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wall.jpg" />
+    <None Include="Resources\Prison.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\prison.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\gold.png" />
+    <None Include="Resources\Gold.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

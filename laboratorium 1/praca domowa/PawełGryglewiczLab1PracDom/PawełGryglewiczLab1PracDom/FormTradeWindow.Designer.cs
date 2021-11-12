@@ -106,6 +106,7 @@ namespace PawełGryglewiczLab1PracDom
             this.radioButtonSell.TabStop = true;
             this.radioButtonSell.Text = "Sprzedawaj";
             this.radioButtonSell.UseVisualStyleBackColor = true;
+            this.radioButtonSell.CheckedChanged += new System.EventHandler(this.RadioButtonSell_CheckedChanged);
             // 
             // radioButtonBuy
             // 
@@ -117,10 +118,11 @@ namespace PawełGryglewiczLab1PracDom
             this.radioButtonBuy.TabStop = true;
             this.radioButtonBuy.Text = "Kupuj";
             this.radioButtonBuy.UseVisualStyleBackColor = true;
+            this.radioButtonBuy.CheckedChanged += new System.EventHandler(this.RadioButtonBuy_CheckedChanged);
             // 
             // pictureBoxWood
             // 
-            this.pictureBoxWood.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.wood1;
+            this.pictureBoxWood.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Wood;
             this.pictureBoxWood.Location = new System.Drawing.Point(80, 113);
             this.pictureBoxWood.Name = "pictureBoxWood";
             this.pictureBoxWood.Size = new System.Drawing.Size(110, 94);
@@ -140,7 +142,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxStone
             // 
-            this.pictureBoxStone.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.stone;
+            this.pictureBoxStone.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Stone;
             this.pictureBoxStone.Location = new System.Drawing.Point(330, 113);
             this.pictureBoxStone.Name = "pictureBoxStone";
             this.pictureBoxStone.Size = new System.Drawing.Size(110, 94);
@@ -160,7 +162,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxIron
             // 
-            this.pictureBoxIron.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.iron;
+            this.pictureBoxIron.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Iron;
             this.pictureBoxIron.Location = new System.Drawing.Point(575, 113);
             this.pictureBoxIron.Name = "pictureBoxIron";
             this.pictureBoxIron.Size = new System.Drawing.Size(110, 94);
@@ -186,6 +188,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeWood1.TabIndex = 8;
             this.buttonTradeWood1.Text = "1";
             this.buttonTradeWood1.UseVisualStyleBackColor = true;
+            this.buttonTradeWood1.Click += new System.EventHandler(this.ButtonTradeWood1_Click);
             // 
             // buttonTradeWood10
             // 
@@ -195,6 +198,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeWood10.TabIndex = 9;
             this.buttonTradeWood10.Text = "10";
             this.buttonTradeWood10.UseVisualStyleBackColor = true;
+            this.buttonTradeWood10.Click += new System.EventHandler(this.ButtonTradeWood10_Click);
             // 
             // buttonTradeWood100
             // 
@@ -204,6 +208,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeWood100.TabIndex = 10;
             this.buttonTradeWood100.Text = "100";
             this.buttonTradeWood100.UseVisualStyleBackColor = true;
+            this.buttonTradeWood100.Click += new System.EventHandler(this.ButtonTradeWood100_Click);
             // 
             // buttonTradeStone1
             // 
@@ -213,6 +218,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeStone1.TabIndex = 11;
             this.buttonTradeStone1.Text = "1";
             this.buttonTradeStone1.UseVisualStyleBackColor = true;
+            this.buttonTradeStone1.Click += new System.EventHandler(this.ButtonTradeStone1_Click);
             // 
             // buttonTradeStone10
             // 
@@ -222,6 +228,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeStone10.TabIndex = 12;
             this.buttonTradeStone10.Text = "10";
             this.buttonTradeStone10.UseVisualStyleBackColor = true;
+            this.buttonTradeStone10.Click += new System.EventHandler(this.ButtonTradeStone10_Click);
             // 
             // buttonTradeStone100
             // 
@@ -231,6 +238,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeStone100.TabIndex = 13;
             this.buttonTradeStone100.Text = "100";
             this.buttonTradeStone100.UseVisualStyleBackColor = true;
+            this.buttonTradeStone100.Click += new System.EventHandler(this.ButtonTradeStone100_Click);
             // 
             // buttonTradeIron1
             // 
@@ -240,6 +248,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeIron1.TabIndex = 14;
             this.buttonTradeIron1.Text = "1";
             this.buttonTradeIron1.UseVisualStyleBackColor = true;
+            this.buttonTradeIron1.Click += new System.EventHandler(this.ButtonTradeIron1_Click);
             // 
             // buttonTradeIron10
             // 
@@ -249,6 +258,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeIron10.TabIndex = 15;
             this.buttonTradeIron10.Text = "10";
             this.buttonTradeIron10.UseVisualStyleBackColor = true;
+            this.buttonTradeIron10.Click += new System.EventHandler(this.ButtonTradeIron10_Click);
             // 
             // buttonTradeIron100
             // 
@@ -258,10 +268,11 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeIron100.TabIndex = 16;
             this.buttonTradeIron100.Text = "100";
             this.buttonTradeIron100.UseVisualStyleBackColor = true;
+            this.buttonTradeIron100.Click += new System.EventHandler(this.ButtonTradeIron100_Click);
             // 
             // pictureBoxBow
             // 
-            this.pictureBoxBow.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.bow;
+            this.pictureBoxBow.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Bow;
             this.pictureBoxBow.Location = new System.Drawing.Point(80, 295);
             this.pictureBoxBow.Name = "pictureBoxBow";
             this.pictureBoxBow.Size = new System.Drawing.Size(110, 94);
@@ -281,7 +292,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxPike
             // 
-            this.pictureBoxPike.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.pike;
+            this.pictureBoxPike.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Pike;
             this.pictureBoxPike.Location = new System.Drawing.Point(330, 295);
             this.pictureBoxPike.Name = "pictureBoxPike";
             this.pictureBoxPike.Size = new System.Drawing.Size(110, 94);
@@ -300,7 +311,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxSword
             // 
-            this.pictureBoxSword.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.sword;
+            this.pictureBoxSword.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Sword;
             this.pictureBoxSword.Location = new System.Drawing.Point(575, 295);
             this.pictureBoxSword.Name = "pictureBoxSword";
             this.pictureBoxSword.Size = new System.Drawing.Size(110, 94);
@@ -325,6 +336,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeBows1.TabIndex = 23;
             this.buttonTradeBows1.Text = "1";
             this.buttonTradeBows1.UseVisualStyleBackColor = true;
+            this.buttonTradeBows1.Click += new System.EventHandler(this.ButtonTradeBows1_Click);
             // 
             // buttonTradeBows10
             // 
@@ -334,6 +346,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeBows10.TabIndex = 24;
             this.buttonTradeBows10.Text = "10";
             this.buttonTradeBows10.UseVisualStyleBackColor = true;
+            this.buttonTradeBows10.Click += new System.EventHandler(this.ButtonTradeBows10_Click);
             // 
             // buttonTradeBows100
             // 
@@ -343,6 +356,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeBows100.TabIndex = 25;
             this.buttonTradeBows100.Text = "100";
             this.buttonTradeBows100.UseVisualStyleBackColor = true;
+            this.buttonTradeBows100.Click += new System.EventHandler(this.ButtonTradeBows100_Click);
             // 
             // buttonTradePikes1
             // 
@@ -352,6 +366,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradePikes1.TabIndex = 26;
             this.buttonTradePikes1.Text = "1";
             this.buttonTradePikes1.UseVisualStyleBackColor = true;
+            this.buttonTradePikes1.Click += new System.EventHandler(this.ButtonTradePikes1_Click);
             // 
             // buttonTradePikes10
             // 
@@ -361,6 +376,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradePikes10.TabIndex = 27;
             this.buttonTradePikes10.Text = "10";
             this.buttonTradePikes10.UseVisualStyleBackColor = true;
+            this.buttonTradePikes10.Click += new System.EventHandler(this.ButtonTradePikes10_Click);
             // 
             // buttonTradePikes100
             // 
@@ -370,6 +386,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradePikes100.TabIndex = 28;
             this.buttonTradePikes100.Text = "100";
             this.buttonTradePikes100.UseVisualStyleBackColor = true;
+            this.buttonTradePikes100.Click += new System.EventHandler(this.ButtonTradePikes100_Click);
             // 
             // buttonTradeSwords1
             // 
@@ -379,6 +396,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeSwords1.TabIndex = 29;
             this.buttonTradeSwords1.Text = "1";
             this.buttonTradeSwords1.UseVisualStyleBackColor = true;
+            this.buttonTradeSwords1.Click += new System.EventHandler(this.ButtonTradeSwords1_Click);
             // 
             // buttonTradeSwords10
             // 
@@ -388,6 +406,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeSwords10.TabIndex = 30;
             this.buttonTradeSwords10.Text = "10";
             this.buttonTradeSwords10.UseVisualStyleBackColor = true;
+            this.buttonTradeSwords10.Click += new System.EventHandler(this.ButtonTradeSwords10_Click);
             // 
             // buttonTradeSwords100
             // 
@@ -397,10 +416,11 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonTradeSwords100.TabIndex = 31;
             this.buttonTradeSwords100.Text = "100";
             this.buttonTradeSwords100.UseVisualStyleBackColor = true;
+            this.buttonTradeSwords100.Click += new System.EventHandler(this.ButtonTradeSwords100_Click);
             // 
             // pictureBoxGoldAmount
             // 
-            this.pictureBoxGoldAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.gold;
+            this.pictureBoxGoldAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Gold;
             this.pictureBoxGoldAmount.Location = new System.Drawing.Point(21, 12);
             this.pictureBoxGoldAmount.Name = "pictureBoxGoldAmount";
             this.pictureBoxGoldAmount.Size = new System.Drawing.Size(34, 30);
@@ -419,7 +439,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxWoodAmount
             // 
-            this.pictureBoxWoodAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.wood1;
+            this.pictureBoxWoodAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Wood;
             this.pictureBoxWoodAmount.Location = new System.Drawing.Point(97, 12);
             this.pictureBoxWoodAmount.Name = "pictureBoxWoodAmount";
             this.pictureBoxWoodAmount.Size = new System.Drawing.Size(37, 30);
@@ -438,7 +458,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxStoneAmount
             // 
-            this.pictureBoxStoneAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.stone;
+            this.pictureBoxStoneAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Stone;
             this.pictureBoxStoneAmount.Location = new System.Drawing.Point(175, 12);
             this.pictureBoxStoneAmount.Name = "pictureBoxStoneAmount";
             this.pictureBoxStoneAmount.Size = new System.Drawing.Size(37, 30);
@@ -457,7 +477,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxIronAmount
             // 
-            this.pictureBoxIronAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.iron;
+            this.pictureBoxIronAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Iron;
             this.pictureBoxIronAmount.Location = new System.Drawing.Point(249, 12);
             this.pictureBoxIronAmount.Name = "pictureBoxIronAmount";
             this.pictureBoxIronAmount.Size = new System.Drawing.Size(37, 30);
@@ -476,7 +496,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxBowsAmount
             // 
-            this.pictureBoxBowsAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.bow;
+            this.pictureBoxBowsAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Bow;
             this.pictureBoxBowsAmount.Location = new System.Drawing.Point(319, 12);
             this.pictureBoxBowsAmount.Name = "pictureBoxBowsAmount";
             this.pictureBoxBowsAmount.Size = new System.Drawing.Size(37, 30);
@@ -495,7 +515,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxPikesAmount
             // 
-            this.pictureBoxPikesAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.pike;
+            this.pictureBoxPikesAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Pike;
             this.pictureBoxPikesAmount.Location = new System.Drawing.Point(390, 12);
             this.pictureBoxPikesAmount.Name = "pictureBoxPikesAmount";
             this.pictureBoxPikesAmount.Size = new System.Drawing.Size(37, 30);
@@ -514,7 +534,7 @@ namespace PawełGryglewiczLab1PracDom
             // 
             // pictureBoxSwordsAmount
             // 
-            this.pictureBoxSwordsAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.sword;
+            this.pictureBoxSwordsAmount.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Sword;
             this.pictureBoxSwordsAmount.Location = new System.Drawing.Point(463, 12);
             this.pictureBoxSwordsAmount.Name = "pictureBoxSwordsAmount";
             this.pictureBoxSwordsAmount.Size = new System.Drawing.Size(37, 30);
@@ -644,6 +664,7 @@ namespace PawełGryglewiczLab1PracDom
             this.Controls.Add(this.radioButtonSell);
             this.Name = "FormTradeWindow";
             this.Text = "Targowisko";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTradeWindow_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIron)).EndInit();

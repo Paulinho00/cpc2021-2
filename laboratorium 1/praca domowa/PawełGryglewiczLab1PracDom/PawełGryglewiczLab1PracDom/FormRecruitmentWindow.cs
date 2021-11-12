@@ -69,7 +69,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void trackBarArchers_Scroll(object sender, EventArgs e)
+        private void TrackBarArchers_Scroll(object sender, EventArgs e)
         {
             // Wyświetlenie wartości wskazywanej przez suwak
             labelArchersTrackBarValue.Text = trackBarArchers.Value.ToString();
@@ -80,7 +80,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void trackBarPikemen_Scroll(object sender, EventArgs e)
+        private void TrackBarPikemen_Scroll(object sender, EventArgs e)
         {
             // Wyświetlenie wartości wskazywanej przez suwak
             labelPikemenTrackBarValue.Text = trackBarPikemen.Value.ToString();
@@ -91,7 +91,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void trackBarSwordsmen_Scroll(object sender, EventArgs e)
+        private void TrackBarSwordsmen_Scroll(object sender, EventArgs e)
         {
             // Wyświetlenie wartości wskazywanej przez suwak
             labelSwordmenTrackBarValue.Text = trackBarSwordsmen.Value.ToString();
@@ -102,7 +102,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonRecruit_Click(object sender, EventArgs e)
+        private void ButtonRecruit_Click(object sender, EventArgs e)
         {
             //Zapisanie na koncie gracza zrekrutowanej liczby wojsk i odjęcie odpowiednich kosztów
             player.Recruitment(trackBarArchers.Value, trackBarPikemen.Value, trackBarSwordsmen.Value);

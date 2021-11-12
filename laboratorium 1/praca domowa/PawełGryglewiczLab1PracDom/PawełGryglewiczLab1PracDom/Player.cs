@@ -549,5 +549,156 @@ namespace PawełGryglewiczLab1PracDom
             this.swordsmen += swordsmen;
 
         }
+
+        /// <summary>
+        /// Metoda wymieniająca drewno na złoto lub złoto na drewno w zależności od parametrów
+        /// </summary>
+        /// <param name="tradedResources">ilość drewna do wymiany</param>
+        /// <param name="goldValue">koszt/zysk wymiany w złocie</param>
+        /// <param name="isBuying">parametr określający czy wykonano kupno, czy sprzedaż</param>
+        public void TradeWood(int tradedResources, int goldValue, Boolean isBuying )
+        {
+            //Sprawdzenie czy dokonano kupna
+            if(isBuying)
+            {
+                //Dodanie odpowiedniej kupionej ilości drewna do konta
+                woodAmount += tradedResources;
+                //Odjęcie kosztu zakupu w złocie z konta
+                goldAmount -= goldValue;
+            }
+            else
+            {
+                //Odjęcie odpowiedniej sprzedanej ilości drewna z konta
+                woodAmount -= tradedResources;
+                //Dodanie zysku ze sprzedaży w złocie do konta
+                goldAmount += goldValue;
+            }
+        }
+
+        /// <summary>
+        /// Metoda wymieniająca kamień na złoto lub złoto na kamień w zależności od parametrów
+        /// </summary>
+        /// <param name="tradedResources">ilość kamienia do wymiany</param>
+        /// <param name="goldValue">koszt/zysk wymiany w złocie</param>
+        /// <param name="isBuying">parametr określający czy wykonano kupno, czy sprzedaż</param>
+        public void TradeStone(int tradedResources, int goldValue, Boolean isBuying)
+        {
+            //Sprawdzenie czy dokonano kupna
+            if (isBuying)
+            {
+                //Dodanie odpowiedniej kupionej ilości kamienia do konta
+                stoneAmount += tradedResources;
+                //Odjęcie kosztu zakupu w złocie z konta
+                goldAmount -= goldValue;
+            }
+            else
+            {
+                //Odjęcie odpowiedniej sprzedanej ilości kamienia z konta
+                stoneAmount -= tradedResources;
+                //Dodanie zysku ze sprzedaży w złocie do konta
+                goldAmount += goldValue;
+            }
+        }
+
+        /// <summary>
+        /// Metoda wymieniająca żelazo na złoto lub złoto na żelazo w zależności od parametrów
+        /// </summary>
+        /// <param name="tradedResources">ilość żelaza do wymiany</param>
+        /// <param name="goldValue">koszt/zysk wymiany w złocie</param>
+        /// <param name="isBuying">parametr określający czy wykonano kupno, czy sprzedaż</param>
+        public void TradeIron(int tradedResources, int goldValue, Boolean isBuying)
+        {
+            //Sprawdzenie czy dokonano kupna
+            if (isBuying)
+            {
+                //Dodanie odpowiedniej kupionej ilości żelaza do konta
+                ironAmount += tradedResources;
+                //Odjęcie kosztu zakupu w złocie z konta
+                goldAmount -= goldValue;
+            }
+            else
+            {
+                //Odjęcie odpowiedniej sprzedanej ilości żelaza z konta
+                ironAmount -= tradedResources;
+                //Dodanie zysku ze sprzedaży w złocie do konta
+                goldAmount += goldValue;
+            }
+        }
+
+        /// <summary>
+        /// Metoda wymieniająca łuki na złoto lub złoto na łuki w zależności od parametrów
+        /// </summary>
+        /// <param name="tradedResources">ilość łuków do wymiany</param>
+        /// <param name="goldValue">koszt/zysk wymiany w złocie</param>
+        /// <param name="isBuying">parametr określający czy wykonano kupno, czy sprzedaż</param>
+        public void TradeBows(int tradedResources, int goldValue, Boolean isBuying)
+        {
+            //Sprawdzenie czy dokonano kupna
+            if (isBuying)
+            {
+                //Dodanie odpowiedniej kupionej ilości łuków do konta
+                bowsAmount += tradedResources;
+                //Odjęcie kosztu zakupu w złocie z konta
+                goldAmount -= goldValue;
+            }
+            else
+            {
+                //Odjęcie odpowiedniej sprzedanej ilości łuków z konta
+                bowsAmount -= tradedResources;
+                //Dodanie zysku ze sprzedaży w złocie do konta
+                goldAmount += goldValue;
+            }
+        }
+
+        /// <summary>
+        /// Metoda wymieniająca piki na złoto lub złoto na piki w zależności od parametrów
+        /// </summary>
+        /// <param name="tradedResources">ilość pik do wymiany</param>
+        /// <param name="goldValue">koszt/zysk wymiany w złocie</param>
+        /// <param name="isBuying">parametr określający czy wykonano kupno, czy sprzedaż</param>
+        public void TradePikes(int tradedResources, int goldValue, Boolean isBuying)
+        {
+            //Sprawdzenie czy dokonano kupna
+            if (isBuying)
+            {
+                //Dodanie odpowiedniej kupionej ilości pik do konta
+                pikesAmount += tradedResources;
+                //Odjęcie kosztu zakupu w złocie z konta
+                goldAmount -= goldValue;
+            }
+            else
+            {
+                //Odjęcie odpowiedniej sprzedanej ilości pik z konta
+                pikesAmount -= tradedResources;
+                //Dodanie zysku ze sprzedaży w złocie do konta
+                goldAmount += goldValue;
+            }
+        }
+
+        /// <summary>
+        /// Metoda wymieniająca miecze na złoto lub złoto na miecze w zależności od parametrów
+        /// </summary>
+        /// <param name="tradedResources">ilość mieczy do wymiany</param>
+        /// <param name="goldValue">koszt/zysk wymiany w złocie</param>
+        /// <param name="isBuying">parametr określający czy wykonano kupno, czy sprzedaż</param>
+        public void TradeSwords(int tradedResources, int goldValue, Boolean isBuying)
+        {
+            //Sprawdzenie czy dokonano kupna
+            if (isBuying)
+            {
+                //Dodanie odpowiedniej kupionej ilości mieczy do konta
+                swordsAmount += tradedResources;
+                //Odjęcie kosztu zakupu w złocie z konta
+                goldAmount -= goldValue;
+            }
+            else
+            {
+                //Odjęcie odpowiedniej sprzedanej ilości mieczy z konta
+                swordsAmount -= tradedResources;
+                //Dodanie zysku ze sprzedaży w złocie do konta
+                goldAmount += goldValue;
+            }
+        }
+
     }
 }

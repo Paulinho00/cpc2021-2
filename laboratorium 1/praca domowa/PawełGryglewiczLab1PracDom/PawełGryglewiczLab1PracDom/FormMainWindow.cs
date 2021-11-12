@@ -32,7 +32,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timerCounter_Tick(object sender, EventArgs e)
+        private void TimerCounter_Tick(object sender, EventArgs e)
         {
             #region wywołanie metod odpowiedzialnych za zwiększenie ilości broni i surowców w każdej "turze"
             //Wywołanie metody zwiększającej ilości drewna w "magazynie"
@@ -40,13 +40,13 @@ namespace PawełGryglewiczLab1PracDom
             //Wywołanie metody zwiększającej ilości kamienia w "magazynie"
             StoneIncrease();
             //Wywołanie metody zwiększającej ilości żelaza w "magazynie"
-            ironIncrease();
+            IronIncrease();
             //Wywołanie metody zwiększającej ilości łuków w "magazynie"
-            bowsIncrease();
+            BowsIncrease();
             //Wywołanie metody zwiększającej ilości pik w "magazynie"
-            pikesIncrease();
+            PikesIncrease();
             //Wywołanie metody zwiększającej ilości mieczy w "magazynie"
-            swordsIncrease();
+            SwordsIncrease();
             #endregion
         }
 
@@ -75,7 +75,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Metoda zwiększająca ilość żelaza w "magazynie", zgodnie z poziomem ulepszenia kopalni
         /// </summary>
-        private void ironIncrease()
+        private void IronIncrease()
         {
             //Wywołanie metody zwiększającej stan konta
             player.IncreaseIronAmount();
@@ -86,7 +86,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Metoda zwiększająca ilość łuków w "zbrojowni", zgodnie z poziomem ulepszenia łuczarza
         /// </summary>
-        private void bowsIncrease()
+        private void BowsIncrease()
         {
             //Wywołanie metody zwiększającej stan konta
             player.IncreaseBowsAmount();
@@ -99,7 +99,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Metoda zwiększająca ilość włóczni w "zbrojowni", zgodnie z poziomem ulepszenia tokarza
         /// </summary>
-        private void pikesIncrease()
+        private void PikesIncrease()
         {
             //Wywołanie metody zwiększającej stan konta
             player.IncreasePikesAmount();
@@ -113,7 +113,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Metoda zwiększająca ilość mieczy w "zbrojowni", zgodnie z poziomem ulepszenia kowala
         /// </summary>
-        private void swordsIncrease()
+        private void SwordsIncrease()
         {
             //Wywołanie metody zwiększającej stan konta
             player.IncreaseSwordsAmount();
@@ -129,7 +129,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradeWoodcutter_Click(object sender, EventArgs e)
+        private void ButtonUpgradeWoodcutter_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.WoodcutterUpgrade();
@@ -160,7 +160,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradeStoneQuarry_Click(object sender, EventArgs e)
+        private void ButtonUpgradeStoneQuarry_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.StoneQuarryUpgrade();
@@ -191,7 +191,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradeMine_Click(object sender, EventArgs e)
+        private void ButtonUpgradeMine_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.MineUpgrade();
@@ -223,7 +223,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradeFletcher_Click(object sender, EventArgs e)
+        private void ButtonUpgradeFletcher_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.FletcherUpgrade();
@@ -255,7 +255,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradePoleturner_Click(object sender, EventArgs e)
+        private void ButtonUpgradePoleturner_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.PoleturnerUpgrade();
@@ -287,7 +287,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradeBlacksmith_Click(object sender, EventArgs e)
+        private void ButtonUpgradeBlacksmith_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.BlacksmithUpgrade();
@@ -319,7 +319,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradeWall_Click(object sender, EventArgs e)
+        private void ButtonUpgradeWall_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.WallUpgrade();
@@ -351,7 +351,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonUpgradePrison_Click(object sender, EventArgs e)
+        private void ButtonUpgradePrison_Click(object sender, EventArgs e)
         {
             //Wywołanie metody ulepszającej i zapisanie zwrotnego komunikatu
             String message = player.PrisonUpgrade();
@@ -383,7 +383,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonPause_Click(object sender, EventArgs e)
+        private void ButtonPause_Click(object sender, EventArgs e)
         {
             //Sprawdzenie czy gra jest zatrzymana
             if (isStoped)
@@ -409,7 +409,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonOpenRecruitmentWindow_Click(object sender, EventArgs e)
+        private void ButtonOpenRecruitmentWindow_Click(object sender, EventArgs e)
         {
             //Zmienna przechowująca referencję do obiektu okna rekrutacji
             FormRecruitmentWindow formRecruitmentWindow = new FormRecruitmentWindow(player, timerCounter, this);
@@ -449,10 +449,10 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonOpenTradeWindow_Click(object sender, EventArgs e)
+        private void ButtonOpenTradeWindow_Click(object sender, EventArgs e)
         {
             //Zmienna przechowująca referencję do obiektu okna handlu
-            FormTradeWindow formTradeWindow = new FormTradeWindow(player, timerCounter);
+            FormTradeWindow formTradeWindow = new FormTradeWindow(player, timerCounter, this);
             //Wyświetlenie okna handlu
             formTradeWindow.Show();
         }
