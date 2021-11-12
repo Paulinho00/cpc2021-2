@@ -14,7 +14,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Zmienna przechowująca ilośc złota
         /// </summary>
-        int goldAmount = 10000;
+        int goldAmount = 0;
         /// <summary>
         /// Zmienna przechowująca ilość drewna
         /// </summary>
@@ -30,7 +30,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Zmienna przechowująca ilość łuków
         /// </summary>
-        int bowsAmount = 60;
+        int bowsAmount = 0;
         /// <summary>
         /// Zmienna przechowująca ilość pik
         /// </summary>

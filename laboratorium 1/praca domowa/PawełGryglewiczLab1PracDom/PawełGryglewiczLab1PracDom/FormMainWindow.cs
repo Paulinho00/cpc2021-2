@@ -20,11 +20,20 @@ namespace PawełGryglewiczLab1PracDom
         /// Zmienna przechowująca informację czy gra jest zatrzymana
         /// </summary>
         private Boolean isStoped = false;
+        /// <summary>
+        /// Zmienna przechowująca referencję do obiektu losującego event
+        /// </summary>
+        private EventRandomizer eventRandomizer;
+        /// <summary>
+        /// Zmienna przechowująca liczbę ticków timera
+        /// </summary>
+        private int counter = 0;
 
         public FormMainWindow()
         {
             InitializeComponent();
             player = new Player();
+            eventRandomizer = new EventRandomizer(player, this);
         }
 
         /// <summary>
@@ -34,6 +43,8 @@ namespace PawełGryglewiczLab1PracDom
         /// <param name="e"></param>
         private void TimerCounter_Tick(object sender, EventArgs e)
         {
+            //Inkrementacja licznika ticków timera
+            counter++;
             #region wywołanie metod odpowiedzialnych za zwiększenie ilości broni i surowców w każdej "turze"
             //Wywołanie metody zwiększającej ilości drewna w "magazynie"
             WoodIncrease();
@@ -48,6 +59,14 @@ namespace PawełGryglewiczLab1PracDom
             //Wywołanie metody zwiększającej ilości mieczy w "magazynie"
             SwordsIncrease();
             #endregion
+            //Sprawdzenie czy minęło już 10 ticków i wywołanie metody losującej event
+            if (counter % 5 == 0) eventRandomizer.randomEvent();
+            //Sprawdzenie czy spełniono warunek zwycięstwa
+            if (player.GoldAmount == 10000)
+            {
+                MessageBox.Show("Zebrałeś 10000 złota i wygrałeś!!!", "Zwycięstwo");
+                Application.Exit();           
+            }
         }
 
         /// <summary>
@@ -433,7 +452,7 @@ namespace PawełGryglewiczLab1PracDom
             //Wyświetlenie aktualnej posiadanej przez gracza liczby łuków
             labelBowsAmount.Text = player.BowsAmount.ToString();
             //Wyświetlenie aktualnej posiadanej przez gracza liczby pik
-            labelPikemen.Text = player.PikesAmount.ToString();
+            labelPikesAmount.Text = player.PikesAmount.ToString();
             //Wyświetlenie aktualnej posiadanej przez gracza liczby mieczy
             labelSwordsAmount.Text = player.SwordsAmount.ToString();
             //Wyświetlenie aktualnej posiadanej przez gracza liczby łuczników
@@ -442,6 +461,12 @@ namespace PawełGryglewiczLab1PracDom
             labelPikemenNumber.Text = player.Pikemen.ToString();
             //Wyświetlenie aktualnej posiadanej przez gracza liczby mieczników
             labelSwordsmenNumber.Text = player.Swordsmen.ToString();
+            //Wyświetlenie aktualnego poziom ulepszenia łuczarza
+            labelFletcherLevel.Text = "Poziom: " + player.FletcherLevel;
+            //Wyświetlenie aktualnego poziom ulepszenia tokarza
+            labelPoleturnerLevel.Text = "Poziom: " + player.PoleturnerLevel;
+            //Wyświetlenie aktualnego poziom ulepszenia kowala
+            labelBlacksmithLevel.Text = "Poziom: " + player.BlacksmithLevel;
         }
 
         /// <summary>

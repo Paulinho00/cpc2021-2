@@ -60,7 +60,7 @@ namespace PawełGryglewiczLab1PracDom
             //Ustawienie maksymalnej liczby pikinierów, możliwej do zrekrutowania, na suwaku
             trackBarPikemen.Maximum = Math.Min((int)player.GoldAmount / 50, player.PikesAmount);
             //Ustawienie maksymalnej liczby mieczników, możliwej do zrekrutowania, na suwaku
-            trackBarSwordsmen.Maximum = Math.Min((int)player.GoldAmount / 100, player.PikesAmount);
+            trackBarSwordsmen.Maximum = Math.Min((int)player.GoldAmount / 100, player.SwordsAmount);
         }
 
 
