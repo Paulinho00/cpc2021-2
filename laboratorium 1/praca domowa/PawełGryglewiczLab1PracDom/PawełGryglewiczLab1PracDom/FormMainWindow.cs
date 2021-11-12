@@ -64,7 +64,11 @@ namespace PawełGryglewiczLab1PracDom
             //Sprawdzenie czy spełniono warunek zwycięstwa
             if (player.GoldAmount == 10000)
             {
+                //Zatrzymanie timera
+                timerCounter.Stop();
+                //Wyświetlenie komunikatu o końcu gry
                 MessageBox.Show("Zebrałeś 10000 złota i wygrałeś!!!", "Zwycięstwo");
+                //Zakończenie programu
                 Application.Exit();           
             }
         }
@@ -443,6 +447,8 @@ namespace PawełGryglewiczLab1PracDom
         {
             //Wyświetlenie aktualnej posiadnej ilości złota
             labelGoldAmount.Text = player.GoldAmount.ToString();
+            //Zaktualizowanie postępu na pasku postepów
+            progressBarWin.Value = player.GoldAmount;
             //Wyświetlenie aktualnej posiadanej przez gracza liczby drewna
             labelWoodAmount.Text = player.WoodAmount.ToString();
             //Wyświetlenie aktualnej posiadanej przez gracza liczby kamienia

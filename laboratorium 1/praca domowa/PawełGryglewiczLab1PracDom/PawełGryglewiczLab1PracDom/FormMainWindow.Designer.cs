@@ -32,6 +32,9 @@ namespace PawełGryglewiczLab1PracDom
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainWindow));
             this.groupBoxResources = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStoneImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxWoodImage = new System.Windows.Forms.PictureBox();
             this.labelIronAmount = new System.Windows.Forms.Label();
             this.labelStoneAmount = new System.Windows.Forms.Label();
             this.labelWoodAmount = new System.Windows.Forms.Label();
@@ -39,6 +42,9 @@ namespace PawełGryglewiczLab1PracDom
             this.labelStone = new System.Windows.Forms.Label();
             this.labelWood = new System.Windows.Forms.Label();
             this.groupBoxWeapons = new System.Windows.Forms.GroupBox();
+            this.pictureBoxSword = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPike = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBow = new System.Windows.Forms.PictureBox();
             this.labelSwordsAmount = new System.Windows.Forms.Label();
             this.labelSword = new System.Windows.Forms.Label();
             this.labelPikesAmount = new System.Windows.Forms.Label();
@@ -46,6 +52,9 @@ namespace PawełGryglewiczLab1PracDom
             this.labelBowsAmount = new System.Windows.Forms.Label();
             this.labelBow = new System.Windows.Forms.Label();
             this.groupBoxArmy = new System.Windows.Forms.GroupBox();
+            this.pictureBoxArcher = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPikeman = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSwordsman = new System.Windows.Forms.PictureBox();
             this.labelSwordsmenNumber = new System.Windows.Forms.Label();
             this.labelPikemenNumber = new System.Windows.Forms.Label();
             this.labelArchersNumber = new System.Windows.Forms.Label();
@@ -53,21 +62,29 @@ namespace PawełGryglewiczLab1PracDom
             this.labelPikemen = new System.Windows.Forms.Label();
             this.labelArchers = new System.Windows.Forms.Label();
             this.groupBoxBuildings = new System.Windows.Forms.GroupBox();
+            this.pictureBoxPrison = new System.Windows.Forms.PictureBox();
             this.buttonUpgradePrison = new System.Windows.Forms.Button();
             this.labelPrisonLevel = new System.Windows.Forms.Label();
+            this.pictureBoxWall = new System.Windows.Forms.PictureBox();
             this.buttonUpgradeWall = new System.Windows.Forms.Button();
             this.labelWallLevel = new System.Windows.Forms.Label();
             this.buttonUpgradeBlacksmith = new System.Windows.Forms.Button();
             this.buttonUpgradePoleturner = new System.Windows.Forms.Button();
             this.buttonUpgradeFletcher = new System.Windows.Forms.Button();
+            this.pictureBoxBlacksmith = new System.Windows.Forms.PictureBox();
             this.labelBlacksmithLevel = new System.Windows.Forms.Label();
+            this.pictureBoxPoleturner = new System.Windows.Forms.PictureBox();
             this.labelPoleturnerLevel = new System.Windows.Forms.Label();
+            this.pictureBoxFletcher = new System.Windows.Forms.PictureBox();
             this.labelFletcherLevel = new System.Windows.Forms.Label();
             this.buttonUpgradeMine = new System.Windows.Forms.Button();
+            this.pictureBoxMine = new System.Windows.Forms.PictureBox();
             this.buttonUpgradeStoneQuarry = new System.Windows.Forms.Button();
+            this.pictureBoxStoneQuarry = new System.Windows.Forms.PictureBox();
             this.buttonUpgradeWoodcutter = new System.Windows.Forms.Button();
             this.labelMineLevel = new System.Windows.Forms.Label();
             this.labelStoneQuarryLevel = new System.Windows.Forms.Label();
+            this.pictureBoxWoodcutter = new System.Windows.Forms.PictureBox();
             this.labelWoodcutterLevel = new System.Windows.Forms.Label();
             this.labelPrison = new System.Windows.Forms.Label();
             this.labelWall = new System.Windows.Forms.Label();
@@ -82,27 +99,21 @@ namespace PawełGryglewiczLab1PracDom
             this.timerCounter = new System.Windows.Forms.Timer(this.components);
             this.buttonPause = new System.Windows.Forms.Button();
             this.buttonOpenRecruitmentWindow = new System.Windows.Forms.Button();
-            this.pictureBoxPrison = new System.Windows.Forms.PictureBox();
-            this.pictureBoxWall = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBlacksmith = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPoleturner = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFletcher = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMine = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStoneQuarry = new System.Windows.Forms.PictureBox();
-            this.pictureBoxWoodcutter = new System.Windows.Forms.PictureBox();
-            this.pictureBoxArcher = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPikeman = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSwordsman = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSword = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPike = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBow = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStoneImage = new System.Windows.Forms.PictureBox();
-            this.pictureBoxWoodImage = new System.Windows.Forms.PictureBox();
             this.buttonOpenTradeWindow = new System.Windows.Forms.Button();
+            this.labelWinProgress = new System.Windows.Forms.Label();
+            this.progressBarWin = new System.Windows.Forms.ProgressBar();
             this.groupBoxResources.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWoodImage)).BeginInit();
             this.groupBoxWeapons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPike)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBow)).BeginInit();
             this.groupBoxArmy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArcher)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPikeman)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSwordsman)).BeginInit();
             this.groupBoxBuildings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrison)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWall)).BeginInit();
@@ -112,15 +123,6 @@ namespace PawełGryglewiczLab1PracDom
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneQuarry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWoodcutter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArcher)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPikeman)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSwordsman)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPike)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWoodImage)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxResources
@@ -140,6 +142,37 @@ namespace PawełGryglewiczLab1PracDom
             this.groupBoxResources.TabIndex = 0;
             this.groupBoxResources.TabStop = false;
             this.groupBoxResources.Text = "Surowce";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Iron;
+            this.pictureBox1.Location = new System.Drawing.Point(171, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxStoneImage
+            // 
+            this.pictureBoxStoneImage.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Stone;
+            this.pictureBoxStoneImage.Location = new System.Drawing.Point(96, 19);
+            this.pictureBoxStoneImage.Name = "pictureBoxStoneImage";
+            this.pictureBoxStoneImage.Size = new System.Drawing.Size(45, 37);
+            this.pictureBoxStoneImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStoneImage.TabIndex = 9;
+            this.pictureBoxStoneImage.TabStop = false;
+            // 
+            // pictureBoxWoodImage
+            // 
+            this.pictureBoxWoodImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxWoodImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxWoodImage.Image")));
+            this.pictureBoxWoodImage.Location = new System.Drawing.Point(20, 19);
+            this.pictureBoxWoodImage.Name = "pictureBoxWoodImage";
+            this.pictureBoxWoodImage.Size = new System.Drawing.Size(42, 37);
+            this.pictureBoxWoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxWoodImage.TabIndex = 3;
+            this.pictureBoxWoodImage.TabStop = false;
             // 
             // labelIronAmount
             // 
@@ -218,6 +251,36 @@ namespace PawełGryglewiczLab1PracDom
             this.groupBoxWeapons.TabStop = false;
             this.groupBoxWeapons.Text = "Broń";
             // 
+            // pictureBoxSword
+            // 
+            this.pictureBoxSword.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Sword;
+            this.pictureBoxSword.Location = new System.Drawing.Point(158, 16);
+            this.pictureBoxSword.Name = "pictureBoxSword";
+            this.pictureBoxSword.Size = new System.Drawing.Size(64, 56);
+            this.pictureBoxSword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSword.TabIndex = 8;
+            this.pictureBoxSword.TabStop = false;
+            // 
+            // pictureBoxPike
+            // 
+            this.pictureBoxPike.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Pike;
+            this.pictureBoxPike.Location = new System.Drawing.Point(76, 16);
+            this.pictureBoxPike.Name = "pictureBoxPike";
+            this.pictureBoxPike.Size = new System.Drawing.Size(73, 56);
+            this.pictureBoxPike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPike.TabIndex = 7;
+            this.pictureBoxPike.TabStop = false;
+            // 
+            // pictureBoxBow
+            // 
+            this.pictureBoxBow.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Bow;
+            this.pictureBoxBow.Location = new System.Drawing.Point(3, 16);
+            this.pictureBoxBow.Name = "pictureBoxBow";
+            this.pictureBoxBow.Size = new System.Drawing.Size(59, 56);
+            this.pictureBoxBow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBow.TabIndex = 6;
+            this.pictureBoxBow.TabStop = false;
+            // 
             // labelSwordsAmount
             // 
             this.labelSwordsAmount.AutoSize = true;
@@ -292,6 +355,36 @@ namespace PawełGryglewiczLab1PracDom
             this.groupBoxArmy.TabIndex = 0;
             this.groupBoxArmy.TabStop = false;
             this.groupBoxArmy.Text = "Wojsko";
+            // 
+            // pictureBoxArcher
+            // 
+            this.pictureBoxArcher.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Archer;
+            this.pictureBoxArcher.Location = new System.Drawing.Point(7, 15);
+            this.pictureBoxArcher.Name = "pictureBoxArcher";
+            this.pictureBoxArcher.Size = new System.Drawing.Size(43, 50);
+            this.pictureBoxArcher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxArcher.TabIndex = 17;
+            this.pictureBoxArcher.TabStop = false;
+            // 
+            // pictureBoxPikeman
+            // 
+            this.pictureBoxPikeman.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Pikeman;
+            this.pictureBoxPikeman.Location = new System.Drawing.Point(83, 15);
+            this.pictureBoxPikeman.Name = "pictureBoxPikeman";
+            this.pictureBoxPikeman.Size = new System.Drawing.Size(46, 50);
+            this.pictureBoxPikeman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPikeman.TabIndex = 16;
+            this.pictureBoxPikeman.TabStop = false;
+            // 
+            // pictureBoxSwordsman
+            // 
+            this.pictureBoxSwordsman.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Swordsman;
+            this.pictureBoxSwordsman.Location = new System.Drawing.Point(158, 15);
+            this.pictureBoxSwordsman.Name = "pictureBoxSwordsman";
+            this.pictureBoxSwordsman.Size = new System.Drawing.Size(47, 50);
+            this.pictureBoxSwordsman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSwordsman.TabIndex = 15;
+            this.pictureBoxSwordsman.TabStop = false;
             // 
             // labelSwordsmenNumber
             // 
@@ -391,6 +484,16 @@ namespace PawełGryglewiczLab1PracDom
             this.groupBoxBuildings.TabStop = false;
             this.groupBoxBuildings.Text = "Budynki";
             // 
+            // pictureBoxPrison
+            // 
+            this.pictureBoxPrison.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Prison;
+            this.pictureBoxPrison.Location = new System.Drawing.Point(297, 239);
+            this.pictureBoxPrison.Name = "pictureBoxPrison";
+            this.pictureBoxPrison.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxPrison.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPrison.TabIndex = 32;
+            this.pictureBoxPrison.TabStop = false;
+            // 
             // buttonUpgradePrison
             // 
             this.buttonUpgradePrison.Location = new System.Drawing.Point(297, 317);
@@ -409,6 +512,16 @@ namespace PawełGryglewiczLab1PracDom
             this.labelPrisonLevel.Size = new System.Drawing.Size(53, 13);
             this.labelPrisonLevel.TabIndex = 30;
             this.labelPrisonLevel.Text = "Poziom: 0";
+            // 
+            // pictureBoxWall
+            // 
+            this.pictureBoxWall.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Wall;
+            this.pictureBoxWall.Location = new System.Drawing.Point(116, 239);
+            this.pictureBoxWall.Name = "pictureBoxWall";
+            this.pictureBoxWall.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxWall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxWall.TabIndex = 29;
+            this.pictureBoxWall.TabStop = false;
             // 
             // buttonUpgradeWall
             // 
@@ -459,6 +572,16 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeFletcher.UseVisualStyleBackColor = true;
             this.buttonUpgradeFletcher.Click += new System.EventHandler(this.ButtonUpgradeFletcher_Click);
             // 
+            // pictureBoxBlacksmith
+            // 
+            this.pictureBoxBlacksmith.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Blacksmith;
+            this.pictureBoxBlacksmith.Location = new System.Drawing.Point(381, 135);
+            this.pictureBoxBlacksmith.Name = "pictureBoxBlacksmith";
+            this.pictureBoxBlacksmith.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxBlacksmith.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBlacksmith.TabIndex = 23;
+            this.pictureBoxBlacksmith.TabStop = false;
+            // 
             // labelBlacksmithLevel
             // 
             this.labelBlacksmithLevel.AutoSize = true;
@@ -468,6 +591,16 @@ namespace PawełGryglewiczLab1PracDom
             this.labelBlacksmithLevel.TabIndex = 22;
             this.labelBlacksmithLevel.Text = "Poziom: 0";
             // 
+            // pictureBoxPoleturner
+            // 
+            this.pictureBoxPoleturner.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Poleturner;
+            this.pictureBoxPoleturner.Location = new System.Drawing.Point(213, 135);
+            this.pictureBoxPoleturner.Name = "pictureBoxPoleturner";
+            this.pictureBoxPoleturner.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxPoleturner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPoleturner.TabIndex = 21;
+            this.pictureBoxPoleturner.TabStop = false;
+            // 
             // labelPoleturnerLevel
             // 
             this.labelPoleturnerLevel.AutoSize = true;
@@ -476,6 +609,16 @@ namespace PawełGryglewiczLab1PracDom
             this.labelPoleturnerLevel.Size = new System.Drawing.Size(53, 13);
             this.labelPoleturnerLevel.TabIndex = 20;
             this.labelPoleturnerLevel.Text = "Poziom: 0";
+            // 
+            // pictureBoxFletcher
+            // 
+            this.pictureBoxFletcher.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Fletcher;
+            this.pictureBoxFletcher.Location = new System.Drawing.Point(35, 135);
+            this.pictureBoxFletcher.Name = "pictureBoxFletcher";
+            this.pictureBoxFletcher.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxFletcher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxFletcher.TabIndex = 19;
+            this.pictureBoxFletcher.TabStop = false;
             // 
             // labelFletcherLevel
             // 
@@ -497,6 +640,16 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeMine.UseVisualStyleBackColor = true;
             this.buttonUpgradeMine.Click += new System.EventHandler(this.ButtonUpgradeMine_Click);
             // 
+            // pictureBoxMine
+            // 
+            this.pictureBoxMine.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Mine;
+            this.pictureBoxMine.Location = new System.Drawing.Point(378, 19);
+            this.pictureBoxMine.Name = "pictureBoxMine";
+            this.pictureBoxMine.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxMine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMine.TabIndex = 16;
+            this.pictureBoxMine.TabStop = false;
+            // 
             // buttonUpgradeStoneQuarry
             // 
             this.buttonUpgradeStoneQuarry.Location = new System.Drawing.Point(213, 100);
@@ -506,6 +659,16 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonUpgradeStoneQuarry.Text = "Ulepsz";
             this.buttonUpgradeStoneQuarry.UseVisualStyleBackColor = true;
             this.buttonUpgradeStoneQuarry.Click += new System.EventHandler(this.ButtonUpgradeStoneQuarry_Click);
+            // 
+            // pictureBoxStoneQuarry
+            // 
+            this.pictureBoxStoneQuarry.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.StoneQuarry;
+            this.pictureBoxStoneQuarry.Location = new System.Drawing.Point(210, 19);
+            this.pictureBoxStoneQuarry.Name = "pictureBoxStoneQuarry";
+            this.pictureBoxStoneQuarry.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxStoneQuarry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStoneQuarry.TabIndex = 14;
+            this.pictureBoxStoneQuarry.TabStop = false;
             // 
             // buttonUpgradeWoodcutter
             // 
@@ -534,6 +697,16 @@ namespace PawełGryglewiczLab1PracDom
             this.labelStoneQuarryLevel.Size = new System.Drawing.Size(53, 13);
             this.labelStoneQuarryLevel.TabIndex = 11;
             this.labelStoneQuarryLevel.Text = "Poziom: 1";
+            // 
+            // pictureBoxWoodcutter
+            // 
+            this.pictureBoxWoodcutter.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Woodcutter;
+            this.pictureBoxWoodcutter.Location = new System.Drawing.Point(35, 18);
+            this.pictureBoxWoodcutter.Name = "pictureBoxWoodcutter";
+            this.pictureBoxWoodcutter.Size = new System.Drawing.Size(53, 50);
+            this.pictureBoxWoodcutter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxWoodcutter.TabIndex = 10;
+            this.pictureBoxWoodcutter.TabStop = false;
             // 
             // labelWoodcutterLevel
             // 
@@ -670,177 +843,6 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonOpenRecruitmentWindow.UseVisualStyleBackColor = true;
             this.buttonOpenRecruitmentWindow.Click += new System.EventHandler(this.ButtonOpenRecruitmentWindow_Click);
             // 
-            // pictureBoxPrison
-            // 
-            this.pictureBoxPrison.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Prison;
-            this.pictureBoxPrison.Location = new System.Drawing.Point(297, 239);
-            this.pictureBoxPrison.Name = "pictureBoxPrison";
-            this.pictureBoxPrison.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxPrison.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPrison.TabIndex = 32;
-            this.pictureBoxPrison.TabStop = false;
-            // 
-            // pictureBoxWall
-            // 
-            this.pictureBoxWall.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Wall;
-            this.pictureBoxWall.Location = new System.Drawing.Point(116, 239);
-            this.pictureBoxWall.Name = "pictureBoxWall";
-            this.pictureBoxWall.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxWall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxWall.TabIndex = 29;
-            this.pictureBoxWall.TabStop = false;
-            // 
-            // pictureBoxBlacksmith
-            // 
-            this.pictureBoxBlacksmith.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Blacksmith;
-            this.pictureBoxBlacksmith.Location = new System.Drawing.Point(381, 135);
-            this.pictureBoxBlacksmith.Name = "pictureBoxBlacksmith";
-            this.pictureBoxBlacksmith.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxBlacksmith.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBlacksmith.TabIndex = 23;
-            this.pictureBoxBlacksmith.TabStop = false;
-            // 
-            // pictureBoxPoleturner
-            // 
-            this.pictureBoxPoleturner.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Poleturner;
-            this.pictureBoxPoleturner.Location = new System.Drawing.Point(213, 135);
-            this.pictureBoxPoleturner.Name = "pictureBoxPoleturner";
-            this.pictureBoxPoleturner.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxPoleturner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPoleturner.TabIndex = 21;
-            this.pictureBoxPoleturner.TabStop = false;
-            // 
-            // pictureBoxFletcher
-            // 
-            this.pictureBoxFletcher.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Fletcher;
-            this.pictureBoxFletcher.Location = new System.Drawing.Point(35, 135);
-            this.pictureBoxFletcher.Name = "pictureBoxFletcher";
-            this.pictureBoxFletcher.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxFletcher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxFletcher.TabIndex = 19;
-            this.pictureBoxFletcher.TabStop = false;
-            // 
-            // pictureBoxMine
-            // 
-            this.pictureBoxMine.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Mine;
-            this.pictureBoxMine.Location = new System.Drawing.Point(378, 19);
-            this.pictureBoxMine.Name = "pictureBoxMine";
-            this.pictureBoxMine.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxMine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMine.TabIndex = 16;
-            this.pictureBoxMine.TabStop = false;
-            // 
-            // pictureBoxStoneQuarry
-            // 
-            this.pictureBoxStoneQuarry.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.StoneQuarry;
-            this.pictureBoxStoneQuarry.Location = new System.Drawing.Point(210, 19);
-            this.pictureBoxStoneQuarry.Name = "pictureBoxStoneQuarry";
-            this.pictureBoxStoneQuarry.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxStoneQuarry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxStoneQuarry.TabIndex = 14;
-            this.pictureBoxStoneQuarry.TabStop = false;
-            // 
-            // pictureBoxWoodcutter
-            // 
-            this.pictureBoxWoodcutter.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Woodcutter;
-            this.pictureBoxWoodcutter.Location = new System.Drawing.Point(35, 18);
-            this.pictureBoxWoodcutter.Name = "pictureBoxWoodcutter";
-            this.pictureBoxWoodcutter.Size = new System.Drawing.Size(53, 50);
-            this.pictureBoxWoodcutter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxWoodcutter.TabIndex = 10;
-            this.pictureBoxWoodcutter.TabStop = false;
-            // 
-            // pictureBoxArcher
-            // 
-            this.pictureBoxArcher.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Archer;
-            this.pictureBoxArcher.Location = new System.Drawing.Point(7, 15);
-            this.pictureBoxArcher.Name = "pictureBoxArcher";
-            this.pictureBoxArcher.Size = new System.Drawing.Size(43, 50);
-            this.pictureBoxArcher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxArcher.TabIndex = 17;
-            this.pictureBoxArcher.TabStop = false;
-            // 
-            // pictureBoxPikeman
-            // 
-            this.pictureBoxPikeman.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Pikeman;
-            this.pictureBoxPikeman.Location = new System.Drawing.Point(83, 15);
-            this.pictureBoxPikeman.Name = "pictureBoxPikeman";
-            this.pictureBoxPikeman.Size = new System.Drawing.Size(46, 50);
-            this.pictureBoxPikeman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPikeman.TabIndex = 16;
-            this.pictureBoxPikeman.TabStop = false;
-            // 
-            // pictureBoxSwordsman
-            // 
-            this.pictureBoxSwordsman.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Swordsman;
-            this.pictureBoxSwordsman.Location = new System.Drawing.Point(158, 15);
-            this.pictureBoxSwordsman.Name = "pictureBoxSwordsman";
-            this.pictureBoxSwordsman.Size = new System.Drawing.Size(47, 50);
-            this.pictureBoxSwordsman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSwordsman.TabIndex = 15;
-            this.pictureBoxSwordsman.TabStop = false;
-            // 
-            // pictureBoxSword
-            // 
-            this.pictureBoxSword.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Sword;
-            this.pictureBoxSword.Location = new System.Drawing.Point(158, 16);
-            this.pictureBoxSword.Name = "pictureBoxSword";
-            this.pictureBoxSword.Size = new System.Drawing.Size(64, 56);
-            this.pictureBoxSword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSword.TabIndex = 8;
-            this.pictureBoxSword.TabStop = false;
-            // 
-            // pictureBoxPike
-            // 
-            this.pictureBoxPike.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Pike;
-            this.pictureBoxPike.Location = new System.Drawing.Point(76, 16);
-            this.pictureBoxPike.Name = "pictureBoxPike";
-            this.pictureBoxPike.Size = new System.Drawing.Size(73, 56);
-            this.pictureBoxPike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPike.TabIndex = 7;
-            this.pictureBoxPike.TabStop = false;
-            // 
-            // pictureBoxBow
-            // 
-            this.pictureBoxBow.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Bow;
-            this.pictureBoxBow.Location = new System.Drawing.Point(3, 16);
-            this.pictureBoxBow.Name = "pictureBoxBow";
-            this.pictureBoxBow.Size = new System.Drawing.Size(59, 56);
-            this.pictureBoxBow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBow.TabIndex = 6;
-            this.pictureBoxBow.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Iron;
-            this.pictureBox1.Location = new System.Drawing.Point(171, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxStoneImage
-            // 
-            this.pictureBoxStoneImage.Image = global::PawełGryglewiczLab1PracDom.Properties.Resources.Stone;
-            this.pictureBoxStoneImage.Location = new System.Drawing.Point(96, 19);
-            this.pictureBoxStoneImage.Name = "pictureBoxStoneImage";
-            this.pictureBoxStoneImage.Size = new System.Drawing.Size(45, 37);
-            this.pictureBoxStoneImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxStoneImage.TabIndex = 9;
-            this.pictureBoxStoneImage.TabStop = false;
-            // 
-            // pictureBoxWoodImage
-            // 
-            this.pictureBoxWoodImage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxWoodImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxWoodImage.Image")));
-            this.pictureBoxWoodImage.Location = new System.Drawing.Point(20, 19);
-            this.pictureBoxWoodImage.Name = "pictureBoxWoodImage";
-            this.pictureBoxWoodImage.Size = new System.Drawing.Size(42, 37);
-            this.pictureBoxWoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxWoodImage.TabIndex = 3;
-            this.pictureBoxWoodImage.TabStop = false;
-            // 
             // buttonOpenTradeWindow
             // 
             this.buttonOpenTradeWindow.Location = new System.Drawing.Point(8, 399);
@@ -851,11 +853,31 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonOpenTradeWindow.UseVisualStyleBackColor = true;
             this.buttonOpenTradeWindow.Click += new System.EventHandler(this.ButtonOpenTradeWindow_Click);
             // 
+            // labelWinProgress
+            // 
+            this.labelWinProgress.AutoSize = true;
+            this.labelWinProgress.Location = new System.Drawing.Point(642, 9);
+            this.labelWinProgress.Name = "labelWinProgress";
+            this.labelWinProgress.Size = new System.Drawing.Size(103, 13);
+            this.labelWinProgress.TabIndex = 37;
+            this.labelWinProgress.Text = "Postęp do wygranej:";
+            // 
+            // progressBarWin
+            // 
+            this.progressBarWin.Location = new System.Drawing.Point(645, 25);
+            this.progressBarWin.Maximum = 10000;
+            this.progressBarWin.Name = "progressBarWin";
+            this.progressBarWin.Size = new System.Drawing.Size(100, 23);
+            this.progressBarWin.Step = 1;
+            this.progressBarWin.TabIndex = 38;
+            // 
             // FormMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBarWin);
+            this.Controls.Add(this.labelWinProgress);
             this.Controls.Add(this.buttonOpenTradeWindow);
             this.Controls.Add(this.buttonOpenRecruitmentWindow);
             this.Controls.Add(this.buttonPause);
@@ -869,10 +891,19 @@ namespace PawełGryglewiczLab1PracDom
             this.Text = "Twierdza";
             this.groupBoxResources.ResumeLayout(false);
             this.groupBoxResources.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWoodImage)).EndInit();
             this.groupBoxWeapons.ResumeLayout(false);
             this.groupBoxWeapons.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPike)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBow)).EndInit();
             this.groupBoxArmy.ResumeLayout(false);
             this.groupBoxArmy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArcher)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPikeman)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSwordsman)).EndInit();
             this.groupBoxBuildings.ResumeLayout(false);
             this.groupBoxBuildings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrison)).EndInit();
@@ -883,15 +914,6 @@ namespace PawełGryglewiczLab1PracDom
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneQuarry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWoodcutter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArcher)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPikeman)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSwordsman)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPike)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoneImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWoodImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -968,6 +990,8 @@ namespace PawełGryglewiczLab1PracDom
         private System.Windows.Forms.Button buttonPause;
         private System.Windows.Forms.Button buttonOpenRecruitmentWindow;
         private System.Windows.Forms.Button buttonOpenTradeWindow;
+        private System.Windows.Forms.Label labelWinProgress;
+        private System.Windows.Forms.ProgressBar progressBarWin;
     }
 }
 

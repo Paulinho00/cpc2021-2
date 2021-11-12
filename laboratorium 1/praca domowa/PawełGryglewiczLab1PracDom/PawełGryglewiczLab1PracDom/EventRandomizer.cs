@@ -266,11 +266,11 @@ namespace PawełGryglewiczLab1PracDom
             //Utworzenie obiektu Random
             Random random = new Random();
             //Wylosowanie liczby wrogich łuczników
-            int enemyArchers = random.Next(1, 151);
+            int enemyArchers = random.Next(1, 101);
             //Wylosowanie liczby wrogich pikinierów
-            int enemyPikemen = random.Next(1, 151);
+            int enemyPikemen = random.Next(1, 51);
             //Wylosowanie liczby wrogich mieczników
-            int enemySwordsman = random.Next(1, 51);
+            int enemySwordsman = random.Next(1, 26);
             //Obliczenie sumarycznej siły wojsk wroga
             int enemyStrength = enemyArchers + enemyPikemen*2 + enemySwordsman * 4;
             //Obliczenie sumarycznej siły wojsk gracza
