@@ -98,14 +98,44 @@ namespace PawełGryglewiczLab1PracDom
         }
 
         /// <summary>
-        /// Rekrutacja wybranej liczby wojsk
+        /// Rekrutacja wybranej liczby łuczników
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonRecruit_Click(object sender, EventArgs e)
+        private void ButtonRecruitArchers_Click(object sender, EventArgs e)
         {
-            //Zapisanie na koncie gracza zrekrutowanej liczby wojsk i odjęcie odpowiednich kosztów
-            player.Recruitment(trackBarArchers.Value, trackBarPikemen.Value, trackBarSwordsmen.Value);
+            //Zapisanie na koncie gracza zrekrutowanej liczby łuczników i odjęcie odpowiednich kosztów
+            player.Recruitment(trackBarArchers.Value, 0, 0 );
+            //Zaktualizowanie wartości na suwakach
+            ValuesUpdate();
+            //Zaktualizowanie danych wyświetlanych w głównym oknie
+            formMainWindow.ValuesUpdate();
+        }
+
+        /// <summary>
+        /// Rekrutacja wybranej liczby pikinierów
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonRecruitPikemen_Click(object sender, EventArgs e)
+        {
+            //Zapisanie na koncie gracza zrekrutowanej liczby pikinierów i odjęcie odpowiednich kosztów
+            player.Recruitment(0, trackBarPikemen.Value, 0);
+            //Zaktualizowanie wartości na suwakach
+            ValuesUpdate();
+            //Zaktualizowanie danych wyświetlanych w głównym oknie
+            formMainWindow.ValuesUpdate();
+        }
+
+        /// <summary>
+        /// Rekrutacja wybranej liczby mieczników
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonRecruitSwordsmen_Click(object sender, EventArgs e)
+        {
+            //Zapisanie na koncie gracza zrekrutowanej liczby mieczników i odjęcie odpowiednich kosztów
+            player.Recruitment(0, 0, trackBarSwordsmen.Value);
             //Zaktualizowanie wartości na suwakach
             ValuesUpdate();
             //Zaktualizowanie danych wyświetlanych w głównym oknie
@@ -122,5 +152,6 @@ namespace PawełGryglewiczLab1PracDom
             //Ponowne wystartowanie timera z okna głównego
             timerFromMainWindow.Start();
         }
+
     }
 }

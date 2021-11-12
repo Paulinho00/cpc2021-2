@@ -61,7 +61,7 @@ namespace PawełGryglewiczLab1PracDom
             //Wywołanie metody sprawdzającej i zmieniającej prawdopodobieństwo eventów
             EventsProbabilityChecker();
             //Utworzenie zmiennej przechowującej górny zakres losowania
-            int range = fletcherCollapsedEventProbability + poleturnerCollapsedEventProbability + blacksmithCollapsedEventProbability + attackEventProbability + thiefEventProbability + desertionEventProbability+150;
+            int range = fletcherCollapsedEventProbability + poleturnerCollapsedEventProbability + blacksmithCollapsedEventProbability + attackEventProbability + thiefEventProbability + desertionEventProbability+80;
             //Utworzenie obiektu Random
             Random random = new Random();
             //Wylosowanie losowej liczby

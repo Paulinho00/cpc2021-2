@@ -52,6 +52,8 @@ namespace PawełGryglewiczLab1PracDom
             this.labelPikesAmount = new System.Windows.Forms.Label();
             this.pictureBoxSword = new System.Windows.Forms.PictureBox();
             this.labelSwordsAmount = new System.Windows.Forms.Label();
+            this.buttonRecruitPikemen = new System.Windows.Forms.Button();
+            this.buttonRecruitSwordsmen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarArchers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPikemen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSwordsmen)).BeginInit();
@@ -149,13 +151,13 @@ namespace PawełGryglewiczLab1PracDom
             // buttonRecruit
             // 
             this.buttonRecruit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRecruit.Location = new System.Drawing.Point(297, 388);
+            this.buttonRecruit.Location = new System.Drawing.Point(115, 366);
             this.buttonRecruit.Name = "buttonRecruit";
-            this.buttonRecruit.Size = new System.Drawing.Size(215, 32);
+            this.buttonRecruit.Size = new System.Drawing.Size(110, 32);
             this.buttonRecruit.TabIndex = 12;
             this.buttonRecruit.Text = "Rekrutuj";
             this.buttonRecruit.UseVisualStyleBackColor = true;
-            this.buttonRecruit.Click += new System.EventHandler(this.ButtonRecruit_Click);
+            this.buttonRecruit.Click += new System.EventHandler(this.ButtonRecruitArchers_Click);
             // 
             // pictureBoxGold
             // 
@@ -263,11 +265,35 @@ namespace PawełGryglewiczLab1PracDom
             this.labelSwordsAmount.TabIndex = 20;
             this.labelSwordsAmount.Text = "0";
             // 
+            // buttonRecruitPikemen
+            // 
+            this.buttonRecruitPikemen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRecruitPikemen.Location = new System.Drawing.Point(353, 366);
+            this.buttonRecruitPikemen.Name = "buttonRecruitPikemen";
+            this.buttonRecruitPikemen.Size = new System.Drawing.Size(110, 32);
+            this.buttonRecruitPikemen.TabIndex = 21;
+            this.buttonRecruitPikemen.Text = "Rekrutuj";
+            this.buttonRecruitPikemen.UseVisualStyleBackColor = true;
+            this.buttonRecruitPikemen.Click += new System.EventHandler(this.ButtonRecruitPikemen_Click);
+            // 
+            // buttonRecruitSwordsmen
+            // 
+            this.buttonRecruitSwordsmen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRecruitSwordsmen.Location = new System.Drawing.Point(589, 366);
+            this.buttonRecruitSwordsmen.Name = "buttonRecruitSwordsmen";
+            this.buttonRecruitSwordsmen.Size = new System.Drawing.Size(110, 32);
+            this.buttonRecruitSwordsmen.TabIndex = 22;
+            this.buttonRecruitSwordsmen.Text = "Rekrutuj";
+            this.buttonRecruitSwordsmen.UseVisualStyleBackColor = true;
+            this.buttonRecruitSwordsmen.Click += new System.EventHandler(this.buttonRecruitSwordsmen_Click);
+            // 
             // FormRecruitmentWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRecruitSwordsmen);
+            this.Controls.Add(this.buttonRecruitPikemen);
             this.Controls.Add(this.labelSwordsAmount);
             this.Controls.Add(this.pictureBoxSword);
             this.Controls.Add(this.labelPikesAmount);
@@ -330,5 +356,7 @@ namespace PawełGryglewiczLab1PracDom
         private Label labelPikesAmount;
         private PictureBox pictureBoxSword;
         private Label labelSwordsAmount;
+        private Button buttonRecruitPikemen;
+        private Button buttonRecruitSwordsmen;
     }
 }
