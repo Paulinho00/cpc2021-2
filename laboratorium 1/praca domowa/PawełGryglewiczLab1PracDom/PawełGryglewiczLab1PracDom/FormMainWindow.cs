@@ -60,16 +60,16 @@ namespace PawełGryglewiczLab1PracDom
             SwordsIncrease();
             #endregion
             //Sprawdzenie czy minęło już 10 ticków i wywołanie metody losującej event
-            if (counter % 5 == 0) eventRandomizer.randomEvent();
+            if (counter % 5 == 0) eventRandomizer.RandomEvent();
             //Sprawdzenie czy spełniono warunek zwycięstwa
-            if (player.GoldAmount == 10000)
+            if (player.GoldAmount >= 30000)
             {
                 //Zatrzymanie timera
                 timerCounter.Stop();
                 //Wyświetlenie komunikatu o końcu gry
-                MessageBox.Show("Zebrałeś 10000 złota i wygrałeś!!!", "Zwycięstwo");
+                MessageBox.Show("Zebrałeś 30000 złota i wygrałeś!!!", "Zwycięstwo");
                 //Zakończenie programu
-                Application.Exit();           
+                Application.ExitThread();           
             }
         }
 
@@ -445,11 +445,31 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         public void ValuesUpdate()
         {
+            //Sprawdzenie czy osiągneto warunek wygranej
+            if (player.GoldAmount >= 30000)
+            {
+                //Zatrzymanie timera
+                timerCounter.Stop();
+                //Wyświetlenie komunikatu o końcu gry
+                MessageBox.Show("Zebrałeś 30000 złota i wygrałeś!!!", "Zwycięstwo");
+                //Zakończenie programu
+                Application.ExitThread();
+            }
             //Wyświetlenie aktualnej posiadnej ilości złota
             labelGoldAmount.Text = player.GoldAmount.ToString();
-            //Zaktualizowanie postępu na pasku postepów
-            progressBarWin.Value = player.GoldAmount;
-            //Wyświetlenie aktualnej posiadanej przez gracza liczby drewna
+            //Obsługa wyjątku
+            try
+            {
+                //Zaktualizowanie postępu na pasku postepów
+                progressBarWin.Value = player.GoldAmount;
+            }catch(ArgumentOutOfRangeException e)
+            {
+                //Wyświetlenie komunikatu błędu
+                System.Console.WriteLine("Pasek postępu poza skalą");
+                //Zakończenie programu
+                Application.ExitThread();
+            }
+            //Wyswietlenie aktualnej posiadanej przez gracza liczby drewna
             labelWoodAmount.Text = player.WoodAmount.ToString();
             //Wyświetlenie aktualnej posiadanej przez gracza liczby kamienia
             labelStoneAmount.Text = player.StoneAmount.ToString();

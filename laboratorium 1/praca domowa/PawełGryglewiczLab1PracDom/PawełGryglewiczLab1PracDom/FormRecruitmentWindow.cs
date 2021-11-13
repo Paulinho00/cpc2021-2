@@ -132,7 +132,7 @@ namespace PawełGryglewiczLab1PracDom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonRecruitSwordsmen_Click(object sender, EventArgs e)
+        private void ButtonRecruitSwordsmen_Click(object sender, EventArgs e)
         {
             //Zapisanie na koncie gracza zrekrutowanej liczby mieczników i odjęcie odpowiednich kosztów
             player.Recruitment(0, 0, trackBarSwordsmen.Value);

@@ -285,7 +285,7 @@ namespace PawełGryglewiczLab1PracDom
             this.buttonRecruitSwordsmen.TabIndex = 22;
             this.buttonRecruitSwordsmen.Text = "Rekrutuj";
             this.buttonRecruitSwordsmen.UseVisualStyleBackColor = true;
-            this.buttonRecruitSwordsmen.Click += new System.EventHandler(this.buttonRecruitSwordsmen_Click);
+            this.buttonRecruitSwordsmen.Click += new System.EventHandler(this.ButtonRecruitSwordsmen_Click);
             // 
             // FormRecruitmentWindow
             // 
@@ -315,6 +315,9 @@ namespace PawełGryglewiczLab1PracDom
             this.Controls.Add(this.labelSwordsmen);
             this.Controls.Add(this.labelPikemen);
             this.Controls.Add(this.labelArchers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormRecruitmentWindow";
             this.Text = "Rekrutacja wojska";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRecruitmentWindow_FormClosing);

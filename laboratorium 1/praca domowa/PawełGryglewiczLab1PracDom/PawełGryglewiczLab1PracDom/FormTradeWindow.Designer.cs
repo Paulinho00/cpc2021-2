@@ -662,6 +662,9 @@ namespace PawełGryglewiczLab1PracDom
             this.Controls.Add(this.pictureBoxWood);
             this.Controls.Add(this.radioButtonBuy);
             this.Controls.Add(this.radioButtonSell);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormTradeWindow";
             this.Text = "Targowisko";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTradeWindow_FormClosing);

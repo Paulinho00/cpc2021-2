@@ -56,7 +56,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Metodą losoująca event
         /// </summary>
-        public void randomEvent()
+        public void RandomEvent()
         {
             //Wywołanie metody sprawdzającej i zmieniającej prawdopodobieństwo eventów
             EventsProbabilityChecker();
@@ -90,12 +90,12 @@ namespace PawełGryglewiczLab1PracDom
             intervalBeginning += attackEventProbability;
 
             //Sprawdzenie czy liczba mieści w przedziale eventu i wywołanie go jeśli mieści się
-            if (randomNumber > intervalBeginning && randomNumber <= (intervalBeginning +thiefEventProbability)) thiefEvent();
+            if (randomNumber > intervalBeginning && randomNumber <= (intervalBeginning +thiefEventProbability)) ThiefEvent();
             //Zwiększenie dolnego zakresu przedziału liczbowego, do kolejengo eventu
             intervalBeginning += thiefEventProbability;
 
             //Sprawdzenie czy liczba mieści w przedziale eventu i wywołanie go jeśli mieści się
-            if (randomNumber > intervalBeginning && randomNumber <= (intervalBeginning + desertionEventProbability)) desertionEvent();
+            if (randomNumber > intervalBeginning && randomNumber <= (intervalBeginning + desertionEventProbability)) DesertionEvent();
         }
         /// <summary>
         /// Metoda przypisująca odpowiednie prawdopodobieństwo eventowi o zawaleniu się łuczarza
@@ -285,7 +285,7 @@ namespace PawełGryglewiczLab1PracDom
                 if (player.Archers > enemyArchers)
                 {
                     //Dodanie informacji o stratach do komunikatu
-                    message = message + (player.Archers - enemyArchers) + " łuczników";
+                    message = message + enemyArchers + " łuczników";
                     //Odjęcie straconych łuczników od konta gracza
                     player.Archers -= enemyArchers;
                 }
@@ -301,7 +301,7 @@ namespace PawełGryglewiczLab1PracDom
                 if (player.Pikemen > enemyPikemen)
                 {
                     //Dodanie informacji o stratach do komunikatu
-                    message = message + ", " + (player.Pikemen - enemyPikemen) + " pikinierów";
+                    message = message + ", " + enemyPikemen + " pikinierów";
                     //Odjęcie straconych pikinierów od konta gracza
                     player.Pikemen -= enemyPikemen;
                 }
@@ -317,7 +317,7 @@ namespace PawełGryglewiczLab1PracDom
                 if (player.Swordsmen > enemySwordsman)
                 {
                     //Dodanie informacji o stratach do komunikatu
-                    message = message + ", " + (player.Swordsmen - enemySwordsman) + " mieczników.";
+                    message = message + ", " + enemySwordsman + " mieczników.";
                     //Odjęcie straconych mieczników od konta gracza
                     player.Swordsmen -= enemySwordsman;
                 }
@@ -352,7 +352,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Metoda odpowiedzialna za event kradzieży
         /// </summary>
-        private void thiefEvent()
+        private void ThiefEvent()
         {
             //Utworzenie obiektu Random
             Random random = new Random();
@@ -411,7 +411,7 @@ namespace PawełGryglewiczLab1PracDom
         /// <summary>
         /// Metoda odpowiedzialna za event dezercji
         /// </summary>
-        private void desertionEvent()
+        private void DesertionEvent()
         {
             //Sprawdzenie czy gracz posiada wojsko
             if ((player.Archers + player.Pikemen + player.Swordsmen) > 0) 

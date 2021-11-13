@@ -865,7 +865,7 @@ namespace PawełGryglewiczLab1PracDom
             // progressBarWin
             // 
             this.progressBarWin.Location = new System.Drawing.Point(645, 25);
-            this.progressBarWin.Maximum = 10000;
+            this.progressBarWin.Maximum = 30000;
             this.progressBarWin.Name = "progressBarWin";
             this.progressBarWin.Size = new System.Drawing.Size(100, 23);
             this.progressBarWin.Step = 1;
@@ -887,6 +887,9 @@ namespace PawełGryglewiczLab1PracDom
             this.Controls.Add(this.groupBoxArmy);
             this.Controls.Add(this.groupBoxWeapons);
             this.Controls.Add(this.groupBoxResources);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMainWindow";
             this.Text = "Twierdza";
             this.groupBoxResources.ResumeLayout(false);
