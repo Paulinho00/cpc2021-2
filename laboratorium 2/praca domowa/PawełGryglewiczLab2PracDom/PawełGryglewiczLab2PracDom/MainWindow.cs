@@ -111,8 +111,29 @@ namespace PawełGryglewiczLab2PracDom
             
         }
 
+        /// <summary>
+        /// Przycisk usuwający wybrany rekord z bazy danych
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDeleteCar_Click(object sender, EventArgs e)
         {
+            //Sprawdzenie czy użytkownik zaznaczył tylko jeden wiersz
+            int rowCount = dataGridViewCars.SelectedRows.Count;
+            if (rowCount != 1)
+            {
+                //Wyświetlenie informacji o błędzie
+                MessageBox.Show("Wybrałeś za dużo rekordów");
+                //Wyjście z metody
+                return;
+            }
+            //Odczyt ID usuwanego samochodu
+            int carId = (int)dataGridViewCars.SelectedRows[0].Cells[5].Value;
+            //Wywołanie metody usuwającej samochód z bazy danych
+            _databaseHandler.DeleteCar(carId);
+            //Wywołanie metody odświeżającej dataGrid
+            RefreshDataGrid();
+
 
         }
 

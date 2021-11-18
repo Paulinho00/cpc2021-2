@@ -265,6 +265,24 @@ namespace PawełGryglewiczLab2PracDom.Database
             _connection.Close();
         }
 
+        /// <summary>
+        /// Metoda usuwająca dany samochód z bazy danych
+        /// </summary>
+        /// <param name="carId">ID usuwanego samochodu</param>
+        public void DeleteCar(int carId)
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = $"DELETE FROM Cars WHERE Id = {carId};";
+            //Otwarcie połączenia z bazą danych
+            _connection.Open();
+            //Stworzenie komendy sql
+            SqlCommand commandInsertCar = new SqlCommand(query, _connection);
+            //Wykonanie komendy
+            commandInsertCar.ExecuteNonQuery();
+            //Zamknięcie połączenia
+            _connection.Close();
+        }
+
 
     }
 }
