@@ -47,11 +47,13 @@ namespace PawełGryglewiczLab2PracDom
             this.comboBoxBrakes = new System.Windows.Forms.ComboBox();
             this.comboBoxGearboxes = new System.Windows.Forms.ComboBox();
             this.comboBoxTyres = new System.Windows.Forms.ComboBox();
-            this.comboBoxLength = new System.Windows.Forms.ComboBox();
-            this.comboBoxWidth = new System.Windows.Forms.ComboBox();
             this.comboBoxTeams = new System.Windows.Forms.ComboBox();
             this.comboBoxEngines = new System.Windows.Forms.ComboBox();
+            this.numericUpDownLength = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownWidth = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYearOfReveal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // labelCarName
@@ -78,7 +80,7 @@ namespace PawełGryglewiczLab2PracDom
             // 
             this.labelDesigner.AutoSize = true;
             this.labelDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDesigner.Location = new System.Drawing.Point(60, 123);
+            this.labelDesigner.Location = new System.Drawing.Point(60, 163);
             this.labelDesigner.Name = "labelDesigner";
             this.labelDesigner.Size = new System.Drawing.Size(96, 20);
             this.labelDesigner.TabIndex = 2;
@@ -88,7 +90,7 @@ namespace PawełGryglewiczLab2PracDom
             // 
             this.labelBrakes.AutoSize = true;
             this.labelBrakes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBrakes.Location = new System.Drawing.Point(72, 163);
+            this.labelBrakes.Location = new System.Drawing.Point(72, 350);
             this.labelBrakes.Name = "labelBrakes";
             this.labelBrakes.Size = new System.Drawing.Size(84, 20);
             this.labelBrakes.TabIndex = 3;
@@ -156,7 +158,7 @@ namespace PawełGryglewiczLab2PracDom
             // 
             this.labelTeam.AutoSize = true;
             this.labelTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelTeam.Location = new System.Drawing.Point(87, 347);
+            this.labelTeam.Location = new System.Drawing.Point(87, 126);
             this.labelTeam.Name = "labelTeam";
             this.labelTeam.Size = new System.Drawing.Size(69, 20);
             this.labelTeam.TabIndex = 10;
@@ -204,7 +206,7 @@ namespace PawełGryglewiczLab2PracDom
             // comboBoxDesigners
             // 
             this.comboBoxDesigners.FormattingEnabled = true;
-            this.comboBoxDesigners.Location = new System.Drawing.Point(162, 122);
+            this.comboBoxDesigners.Location = new System.Drawing.Point(162, 165);
             this.comboBoxDesigners.Name = "comboBoxDesigners";
             this.comboBoxDesigners.Size = new System.Drawing.Size(211, 21);
             this.comboBoxDesigners.TabIndex = 14;
@@ -212,7 +214,7 @@ namespace PawełGryglewiczLab2PracDom
             // comboBoxBrakes
             // 
             this.comboBoxBrakes.FormattingEnabled = true;
-            this.comboBoxBrakes.Location = new System.Drawing.Point(162, 162);
+            this.comboBoxBrakes.Location = new System.Drawing.Point(162, 352);
             this.comboBoxBrakes.Name = "comboBoxBrakes";
             this.comboBoxBrakes.Size = new System.Drawing.Size(211, 21);
             this.comboBoxBrakes.TabIndex = 15;
@@ -233,26 +235,10 @@ namespace PawełGryglewiczLab2PracDom
             this.comboBoxTyres.Size = new System.Drawing.Size(211, 21);
             this.comboBoxTyres.TabIndex = 17;
             // 
-            // comboBoxLength
-            // 
-            this.comboBoxLength.FormattingEnabled = true;
-            this.comboBoxLength.Location = new System.Drawing.Point(162, 279);
-            this.comboBoxLength.Name = "comboBoxLength";
-            this.comboBoxLength.Size = new System.Drawing.Size(211, 21);
-            this.comboBoxLength.TabIndex = 18;
-            // 
-            // comboBoxWidth
-            // 
-            this.comboBoxWidth.FormattingEnabled = true;
-            this.comboBoxWidth.Location = new System.Drawing.Point(162, 315);
-            this.comboBoxWidth.Name = "comboBoxWidth";
-            this.comboBoxWidth.Size = new System.Drawing.Size(211, 21);
-            this.comboBoxWidth.TabIndex = 19;
-            // 
             // comboBoxTeams
             // 
             this.comboBoxTeams.FormattingEnabled = true;
-            this.comboBoxTeams.Location = new System.Drawing.Point(162, 346);
+            this.comboBoxTeams.Location = new System.Drawing.Point(162, 125);
             this.comboBoxTeams.Name = "comboBoxTeams";
             this.comboBoxTeams.Size = new System.Drawing.Size(211, 21);
             this.comboBoxTeams.TabIndex = 20;
@@ -265,15 +251,59 @@ namespace PawełGryglewiczLab2PracDom
             this.comboBoxEngines.Size = new System.Drawing.Size(211, 21);
             this.comboBoxEngines.TabIndex = 21;
             // 
-            // EditWindow
+            // numericUpDownLength
+            // 
+            this.numericUpDownLength.Location = new System.Drawing.Point(162, 283);
+            this.numericUpDownLength.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.numericUpDownLength.Minimum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numericUpDownLength.Name = "numericUpDownLength";
+            this.numericUpDownLength.Size = new System.Drawing.Size(211, 20);
+            this.numericUpDownLength.TabIndex = 22;
+            this.numericUpDownLength.Value = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownWidth
+            // 
+            this.numericUpDownWidth.Location = new System.Drawing.Point(162, 316);
+            this.numericUpDownWidth.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numericUpDownWidth.Minimum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.numericUpDownWidth.Name = "numericUpDownWidth";
+            this.numericUpDownWidth.Size = new System.Drawing.Size(211, 20);
+            this.numericUpDownWidth.TabIndex = 23;
+            this.numericUpDownWidth.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            // 
+            // EditCreateWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 473);
+            this.Controls.Add(this.numericUpDownWidth);
+            this.Controls.Add(this.numericUpDownLength);
             this.Controls.Add(this.comboBoxEngines);
             this.Controls.Add(this.comboBoxTeams);
-            this.Controls.Add(this.comboBoxWidth);
-            this.Controls.Add(this.comboBoxLength);
             this.Controls.Add(this.comboBoxTyres);
             this.Controls.Add(this.comboBoxGearboxes);
             this.Controls.Add(this.comboBoxBrakes);
@@ -292,8 +322,10 @@ namespace PawełGryglewiczLab2PracDom
             this.Controls.Add(this.labelDesigner);
             this.Controls.Add(this.labelYearOfReveal);
             this.Controls.Add(this.labelCarName);
-            this.Name = "EditWindow";
+            this.Name = "EditCreateWindow";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYearOfReveal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,9 +351,9 @@ namespace PawełGryglewiczLab2PracDom
         private System.Windows.Forms.ComboBox comboBoxBrakes;
         private System.Windows.Forms.ComboBox comboBoxGearboxes;
         private System.Windows.Forms.ComboBox comboBoxTyres;
-        private System.Windows.Forms.ComboBox comboBoxLength;
-        private System.Windows.Forms.ComboBox comboBoxWidth;
         private System.Windows.Forms.ComboBox comboBoxTeams;
         private System.Windows.Forms.ComboBox comboBoxEngines;
+        private System.Windows.Forms.NumericUpDown numericUpDownLength;
+        private System.Windows.Forms.NumericUpDown numericUpDownWidth;
     }
 }

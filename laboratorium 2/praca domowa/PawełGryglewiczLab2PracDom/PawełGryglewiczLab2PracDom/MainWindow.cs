@@ -96,7 +96,7 @@ namespace PawełGryglewiczLab2PracDom
         private void buttonCreateCar_Click(object sender, EventArgs e)
         {
             //Stworzenie obiektu okna tworzenia nowego samochodu
-            EditCreateWindow createWindow = new EditCreateWindow();
+            EditCreateWindow createWindow = new EditCreateWindow(_databaseHandler);
             createWindow.Text = "Nowe auto";
         }
     }

@@ -11,7 +11,7 @@ namespace PawełGryglewiczLab2PracDom.Database
     /// <summary>
     /// Klasa zarządzająca połączeniem z bazą danych i wysyłająca do niej zapytania
     /// </summary>
-    class DatabaseHandler
+    public class DatabaseHandler
     {
         /// <summary>
         /// Zmienna przechowująca połączenie z bazą danych
@@ -81,6 +81,105 @@ namespace PawełGryglewiczLab2PracDom.Database
                            "JOIN Tyres ON Tyres.Id = Cars.TyreId " +
                            $"WHERE Cars.Id = {carId};";
 
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+        }
+
+        /// <summary>
+        /// Metoda zwracająca wszystkie dostępne zespoły w bazie danych
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetTeams()
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT Name, Id FROM Teams;";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+
+        }
+
+        /// <summary>
+        /// Metoda zwracająca wszystkich projektantów należących do danego zespołu
+        /// </summary>
+        /// <param name="teamId">Id wybranego zespołu</param>
+        /// <returns></returns>
+        public DataTable GetDesigners(int teamId)
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT FirstName, LastName, Id FROM Designers " +
+                           $"WHERE Id = {teamId};";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+        }
+
+        /// <summary>
+        /// Metoda zwracająca wszystkie dostępna skrzynie biegów w bazie danych
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetGearboxes()
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT Manufacturer, Id FROM Gearboxes;";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+        }
+
+        /// <summary>
+        /// Metoda zwracająca wszystkie dostępne opony w bazie danych
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetTyres()
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT Manufacturer, FrontTyresWidth, Id FROM Tyres;";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+        }
+
+        /// <summary>
+        /// Metoda zwracająca wszystkie dostępne hamulce w bazie danych
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetBrakes()
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT Manufacturer, Model, Id FROM Brakes;";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+        }
+
+        /// <summary>
+        /// Metoda zwracająca wszystkie dostepne silniki w bazie danych
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetEngines()
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT Manufacturer, Model, Id FROM Engines;";
             SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
             DataTable dataFromQuery = new DataTable();
             //Pobranie danych z bazy
