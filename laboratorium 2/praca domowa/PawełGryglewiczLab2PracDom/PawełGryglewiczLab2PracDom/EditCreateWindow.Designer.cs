@@ -144,6 +144,7 @@ namespace PawełGryglewiczLab2PracDom
             this.buttonConfirm.TabIndex = 8;
             this.buttonConfirm.Text = "Zatwierdź";
             this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // buttonCancel
             // 
@@ -153,6 +154,7 @@ namespace PawełGryglewiczLab2PracDom
             this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "Anuluj";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelTeam
             // 

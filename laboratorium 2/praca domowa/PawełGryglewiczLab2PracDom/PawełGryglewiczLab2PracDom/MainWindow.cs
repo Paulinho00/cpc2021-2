@@ -21,6 +21,16 @@ namespace PawełGryglewiczLab2PracDom
         public MainWindow()
         {
             InitializeComponent();
+            //Wywołanie metody odświeżającej dataGrid
+            RefreshDataGrid();
+        }
+
+
+        /// <summary>
+        /// Metoda odświeżająca dataGrid
+        /// </summary>
+        public void RefreshDataGrid()
+        {
             //Pobranie danych wszystkich aut z bazy danych
             DataTable table = _databaseHandler.GetCars();
             //Odświeżenie danych w dataGridViewCars
@@ -96,8 +106,9 @@ namespace PawełGryglewiczLab2PracDom
         private void buttonCreateCar_Click(object sender, EventArgs e)
         {
             //Stworzenie obiektu okna tworzenia nowego samochodu
-            EditCreateWindow createWindow = new EditCreateWindow(_databaseHandler);
+            EditCreateWindow createWindow = new EditCreateWindow(_databaseHandler, this);
             createWindow.Text = "Nowe auto";
+            
         }
     }
 }

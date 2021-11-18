@@ -111,11 +111,10 @@ namespace PawełGryglewiczLab2PracDom.Database
         /// </summary>
         /// <param name="teamId">Id wybranego zespołu</param>
         /// <returns></returns>
-        public DataTable GetDesigners(int teamId)
+        public DataTable GetDesigners()
         {
             //Zmienna przechowująca zapytanie do bazy danych
-            string query = "SELECT FirstName, LastName, Id FROM Designers " +
-                           $"WHERE Id = {teamId};";
+            string query = "SELECT FirstName, LastName, Id FROM Designers;";
             SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
             DataTable dataFromQuery = new DataTable();
             //Pobranie danych z bazy
@@ -186,6 +185,35 @@ namespace PawełGryglewiczLab2PracDom.Database
             adapter.Fill(dataFromQuery);
             //Zwrócenie wyników zapytania
             return dataFromQuery;
+        }
+
+        /// <summary>
+        /// Metoda dodająca rekord do bazy danych
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="yearOfReveal"></param>
+        /// <param name="teamId"></param>
+        /// <param name="designerId"></param>
+        /// <param name="gearboxId"></param>
+        /// <param name="tyresId"></param>
+        /// <param name="length"></param>
+        /// <param name="width"></param>
+        /// <param name="brakeId"></param>
+        /// <param name="engineId"></param>
+        public void InsertCar(String name, int yearOfReveal, int teamId, int designerId, int gearboxId, int tyresId, int length, int width, int brakeId, int engineId)
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "INSERT INTO Cars (Model, YearOfReveal, DesignerId, BrakesId, GearboxId, TyreId, Length, Width, TeamId, EngineId) " +
+                           $"VALUES ('{name}', {yearOfReveal}, {designerId}, {brakeId}, {gearboxId}, {tyresId}, {length}, {width}, {teamId}, {engineId});";
+
+            //Otwarcie połączenia z bazą danych
+            _connection.Open();
+            //Stworzenie komendy sql
+            SqlCommand commandInsertCar = new SqlCommand(query, _connection);
+            //Wykonanie komendy
+            commandInsertCar.ExecuteNonQuery();
+            //Zamknięcie połączenia
+            _connection.Close();
         }
 
 
