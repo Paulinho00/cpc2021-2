@@ -307,7 +307,7 @@ namespace PawełGryglewiczLab2PracDom
             // labelGearboxName
             // 
             this.labelGearboxName.AutoSize = true;
-            this.labelGearboxName.Location = new System.Drawing.Point(124, 129);
+            this.labelGearboxName.Location = new System.Drawing.Point(105, 129);
             this.labelGearboxName.Name = "labelGearboxName";
             this.labelGearboxName.Size = new System.Drawing.Size(35, 13);
             this.labelGearboxName.TabIndex = 7;
@@ -316,7 +316,7 @@ namespace PawełGryglewiczLab2PracDom
             // labelEngineName
             // 
             this.labelEngineName.AutoSize = true;
-            this.labelEngineName.Location = new System.Drawing.Point(63, 96);
+            this.labelEngineName.Location = new System.Drawing.Point(105, 96);
             this.labelEngineName.Name = "labelEngineName";
             this.labelEngineName.Size = new System.Drawing.Size(35, 13);
             this.labelEngineName.TabIndex = 6;
@@ -325,7 +325,7 @@ namespace PawełGryglewiczLab2PracDom
             // labelDesignerName
             // 
             this.labelDesignerName.AutoSize = true;
-            this.labelDesignerName.Location = new System.Drawing.Point(95, 63);
+            this.labelDesignerName.Location = new System.Drawing.Point(105, 63);
             this.labelDesignerName.Name = "labelDesignerName";
             this.labelDesignerName.Size = new System.Drawing.Size(35, 13);
             this.labelDesignerName.TabIndex = 5;
@@ -334,7 +334,7 @@ namespace PawełGryglewiczLab2PracDom
             // labelCarNameValue
             // 
             this.labelCarNameValue.AutoSize = true;
-            this.labelCarNameValue.Location = new System.Drawing.Point(95, 29);
+            this.labelCarNameValue.Location = new System.Drawing.Point(105, 29);
             this.labelCarNameValue.Name = "labelCarNameValue";
             this.labelCarNameValue.Size = new System.Drawing.Size(35, 13);
             this.labelCarNameValue.TabIndex = 4;
@@ -344,17 +344,17 @@ namespace PawełGryglewiczLab2PracDom
             // 
             this.labelGearbox.AutoSize = true;
             this.labelGearbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelGearbox.Location = new System.Drawing.Point(15, 129);
+            this.labelGearbox.Location = new System.Drawing.Point(0, 129);
             this.labelGearbox.Name = "labelGearbox";
-            this.labelGearbox.Size = new System.Drawing.Size(103, 13);
+            this.labelGearbox.Size = new System.Drawing.Size(107, 13);
             this.labelGearbox.TabIndex = 3;
-            this.labelGearbox.Text = "Skrzynia  biegów";
+            this.labelGearbox.Text = "Skrzynia  biegów:";
             // 
             // labelEngine
             // 
             this.labelEngine.AutoSize = true;
             this.labelEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelEngine.Location = new System.Drawing.Point(15, 96);
+            this.labelEngine.Location = new System.Drawing.Point(0, 96);
             this.labelEngine.Name = "labelEngine";
             this.labelEngine.Size = new System.Drawing.Size(42, 13);
             this.labelEngine.TabIndex = 2;
@@ -364,7 +364,7 @@ namespace PawełGryglewiczLab2PracDom
             // 
             this.labelDesigner.AutoSize = true;
             this.labelDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDesigner.Location = new System.Drawing.Point(15, 63);
+            this.labelDesigner.Location = new System.Drawing.Point(0, 63);
             this.labelDesigner.Name = "labelDesigner";
             this.labelDesigner.Size = new System.Drawing.Size(69, 13);
             this.labelDesigner.TabIndex = 1;
@@ -374,7 +374,7 @@ namespace PawełGryglewiczLab2PracDom
             // 
             this.labelCarName.AutoSize = true;
             this.labelCarName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCarName.Location = new System.Drawing.Point(15, 29);
+            this.labelCarName.Location = new System.Drawing.Point(0, 29);
             this.labelCarName.Name = "labelCarName";
             this.labelCarName.Size = new System.Drawing.Size(74, 13);
             this.labelCarName.TabIndex = 0;

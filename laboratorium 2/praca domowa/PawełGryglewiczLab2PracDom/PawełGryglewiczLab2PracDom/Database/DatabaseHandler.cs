@@ -40,9 +40,9 @@ namespace PawełGryglewiczLab2PracDom.Database
         }
 
         /// <summary>
-        /// MNetoda zwracająca szczegółowe dane o danym zespole
+        /// Metoda zwracająca szczegółowe dane o danym zespole
         /// </summary>
-        /// <param name="teamId">id pożadanego zespołu</param>
+        /// <param name="teamId">ID wybranego zespołu</param>
         /// <returns></returns>
         public DataTable GetTeamDetails(int teamId)
         {
@@ -55,6 +55,31 @@ namespace PawełGryglewiczLab2PracDom.Database
                            $"WHERE Teams.Id = {teamId};";
 
 
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+        }
+
+        /// <summary>
+        /// Metoda zwracająca szczegółowe dane o danym samochodzie
+        /// </summary>
+        /// <param name="carId">ID wybranego samochodu</param>
+        /// <returns></returns>
+        public DataTable GetCarDetails(int carId)
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT Cars.Model, Designers.FirstName, Designers.LastName, Engines.Manufacturer, Engines.Model,  Gearboxes.Manufacturer, Brakes.Manufacturer, Brakes.Model, Tyres.Manufacturer, Cars.Length, Cars.Width " +
+                           "FROM Cars " +
+                           "JOIN Designers ON Designers.Id = Cars.DesignerId " +
+                           "JOIN Engines ON Engines.Id = Cars.EngineId " +
+                           "JOIN Gearboxes ON Gearboxes.Id = Cars.GearboxId " +
+                           "JOIN Brakes ON Brakes.Id = Cars.BrakesId " +
+                           "JOIN Tyres ON Tyres.Id = Cars.TyreId " +
+                           $"WHERE Cars.Id = {carId};";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
             DataTable dataFromQuery = new DataTable();
