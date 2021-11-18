@@ -188,24 +188,73 @@ namespace PawełGryglewiczLab2PracDom.Database
         }
 
         /// <summary>
+        /// Metoda zwracająca dane samochodu z podanym Id
+        /// </summary>
+        /// <param name="carId">Id wybranego samochodu</param>
+        /// <returns></returns>
+        public DataTable getCar(int carId)
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "SELECT * FROM Cars " +
+                           $"WHERE Id = {carId};";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            DataTable dataFromQuery = new DataTable();
+            //Pobranie danych z bazy
+            adapter.Fill(dataFromQuery);
+            //Zwrócenie wyników zapytania
+            return dataFromQuery;
+
+        }
+
+        /// <summary>
         /// Metoda dodająca rekord do bazy danych
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="yearOfReveal"></param>
-        /// <param name="teamId"></param>
-        /// <param name="designerId"></param>
-        /// <param name="gearboxId"></param>
-        /// <param name="tyresId"></param>
-        /// <param name="length"></param>
-        /// <param name="width"></param>
-        /// <param name="brakeId"></param>
-        /// <param name="engineId"></param>
-        public void InsertCar(String name, int yearOfReveal, int teamId, int designerId, int gearboxId, int tyresId, int length, int width, int brakeId, int engineId)
+        /// <param name="name">nazwa modelu samochodu</param>
+        /// <param name="yearOfReveal">rok debiutu samochodu </param>
+        /// <param name="teamId">ID zespołu posiadającego samochodu</param>
+        /// <param name="designerId">ID projektanta samochodu</param>
+        /// <param name="gearboxId">ID skrzyni biegów samochodu</param>
+        /// <param name="tyresId">ID opon samochodu</param>
+        /// <param name="length">długość samochodu</param>
+        /// <param name="width">szerokość samochodu</param>
+        /// <param name="brakeId">ID hamulców samochodu</param>
+        /// <param name="engineId">ID silnika samochodu</param>
+            public void InsertCar(String name, int yearOfReveal, int teamId, int designerId, int gearboxId, int tyresId, int length, int width, int brakeId, int engineId)
         {
             //Zmienna przechowująca zapytanie do bazy danych
             string query = "INSERT INTO Cars (Model, YearOfReveal, DesignerId, BrakesId, GearboxId, TyreId, Length, Width, TeamId, EngineId) " +
                            $"VALUES ('{name}', {yearOfReveal}, {designerId}, {brakeId}, {gearboxId}, {tyresId}, {length}, {width}, {teamId}, {engineId});";
 
+            //Otwarcie połączenia z bazą danych
+            _connection.Open();
+            //Stworzenie komendy sql
+            SqlCommand commandInsertCar = new SqlCommand(query, _connection);
+            //Wykonanie komendy
+            commandInsertCar.ExecuteNonQuery();
+            //Zamknięcie połączenia
+            _connection.Close();
+        }
+
+        /// <summary>
+        /// Metoda modyfikująca rekord o podanym ID w bazie danych
+        /// </summary>
+        /// <param name="name">nowa nazwa modelu samochodu</param>
+        /// <param name="yearOfReveal">nowy rok debiutu samochodu </param>
+        /// <param name="teamId">nowe ID zespołu posiadającego samochodu</param>
+        /// <param name="designerId">nowe ID projektanta samochodu</param>
+        /// <param name="gearboxId">nowe ID skrzyni biegów samochodu</param>
+        /// <param name="tyresId">nowe ID opon samochodu</param>
+        /// <param name="length">nowa długość samochodu</param>
+        /// <param name="width">nowa szerokość samochodu</param>
+        /// <param name="brakeId">nowe ID hamulców samochodu</param>
+        /// <param name="engineId">nowe ID silnika samochodu</param>
+        /// <param name="Id">ID modyfikowanego samochodu</param>
+        public void UpdateCar(String name, int yearOfReveal, int teamId, int designerId, int gearboxId, int tyresId, int length, int width, int brakeId, int engineId, int Id)
+        {
+            //Zmienna przechowująca zapytanie do bazy danych
+            string query = "UPDATE Cars " +
+                           $"SET Model = '{name}', YearOfReveal = {yearOfReveal}, DesignerId = {designerId}, BrakesId = {brakeId}, GearboxId = {gearboxId}, TyreId = {tyresId}, Length = {length}, Width = {width}, TeamId = {teamId}, EngineId = {engineId} " +
+                           $"WHERE Id = {Id};";
             //Otwarcie połączenia z bazą danych
             _connection.Open();
             //Stworzenie komendy sql

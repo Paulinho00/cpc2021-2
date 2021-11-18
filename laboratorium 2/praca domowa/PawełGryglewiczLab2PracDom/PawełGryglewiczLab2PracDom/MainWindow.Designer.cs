@@ -61,7 +61,7 @@ namespace PawełGryglewiczLab2PracDom
             this.labelCarName = new System.Windows.Forms.Label();
             this.buttonCreateCar = new System.Windows.Forms.Button();
             this.buttonDeleteCar = new System.Windows.Forms.Button();
-            this.buttonUpdateAuto = new System.Windows.Forms.Button();
+            this.buttonUpdateCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCars)).BeginInit();
             this.groupBoxTeamDetails.SuspendLayout();
             this.groupBoxCarDetails.SuspendLayout();
@@ -384,22 +384,24 @@ namespace PawełGryglewiczLab2PracDom
             this.buttonDeleteCar.TabIndex = 2;
             this.buttonDeleteCar.Text = "Usuń auto";
             this.buttonDeleteCar.UseVisualStyleBackColor = true;
+            this.buttonDeleteCar.Click += new System.EventHandler(this.buttonDeleteCar_Click);
             // 
-            // buttonUpdateAuto
+            // buttonUpdateCar
             // 
-            this.buttonUpdateAuto.Location = new System.Drawing.Point(609, 353);
-            this.buttonUpdateAuto.Name = "buttonUpdateAuto";
-            this.buttonUpdateAuto.Size = new System.Drawing.Size(90, 34);
-            this.buttonUpdateAuto.TabIndex = 3;
-            this.buttonUpdateAuto.Text = "Zmień parametry auta";
-            this.buttonUpdateAuto.UseVisualStyleBackColor = true;
+            this.buttonUpdateCar.Location = new System.Drawing.Point(609, 353);
+            this.buttonUpdateCar.Name = "buttonUpdateCar";
+            this.buttonUpdateCar.Size = new System.Drawing.Size(90, 34);
+            this.buttonUpdateCar.TabIndex = 3;
+            this.buttonUpdateCar.Text = "Zmień parametry auta";
+            this.buttonUpdateCar.UseVisualStyleBackColor = true;
+            this.buttonUpdateCar.Click += new System.EventHandler(this.buttonUpdateCar_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 426);
-            this.Controls.Add(this.buttonUpdateAuto);
+            this.Controls.Add(this.buttonUpdateCar);
             this.Controls.Add(this.buttonDeleteCar);
             this.Controls.Add(this.buttonCreateCar);
             this.Controls.Add(this.groupBoxCarDetails);
@@ -423,7 +425,7 @@ namespace PawełGryglewiczLab2PracDom
         private System.Windows.Forms.GroupBox groupBoxCarDetails;
         private System.Windows.Forms.Button buttonCreateCar;
         private System.Windows.Forms.Button buttonDeleteCar;
-        private System.Windows.Forms.Button buttonUpdateAuto;
+        private System.Windows.Forms.Button buttonUpdateCar;
         private System.Windows.Forms.Label labelDrivers;
         private System.Windows.Forms.Label labelBase;
         private System.Windows.Forms.Label labelTeamPrincipal;

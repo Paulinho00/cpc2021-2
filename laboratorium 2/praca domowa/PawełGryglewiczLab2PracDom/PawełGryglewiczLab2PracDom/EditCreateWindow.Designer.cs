@@ -37,7 +37,7 @@ namespace PawełGryglewiczLab2PracDom
             this.labelTyres = new System.Windows.Forms.Label();
             this.labelLength = new System.Windows.Forms.Label();
             this.labelWidth = new System.Windows.Forms.Label();
-            this.buttonConfirm = new System.Windows.Forms.Button();
+            this.buttonConfirmCreate = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelTeam = new System.Windows.Forms.Label();
             this.labelEngine = new System.Windows.Forms.Label();
@@ -136,15 +136,15 @@ namespace PawełGryglewiczLab2PracDom
             this.labelWidth.TabIndex = 7;
             this.labelWidth.Text = "Szerokość:";
             // 
-            // buttonConfirm
+            // buttonConfirmCreate
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(177, 423);
-            this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(87, 38);
-            this.buttonConfirm.TabIndex = 8;
-            this.buttonConfirm.Text = "Zatwierdź";
-            this.buttonConfirm.UseVisualStyleBackColor = true;
-            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
+            this.buttonConfirmCreate.Location = new System.Drawing.Point(177, 423);
+            this.buttonConfirmCreate.Name = "buttonConfirmCreate";
+            this.buttonConfirmCreate.Size = new System.Drawing.Size(87, 38);
+            this.buttonConfirmCreate.TabIndex = 8;
+            this.buttonConfirmCreate.Text = "Zatwierdź";
+            this.buttonConfirmCreate.UseVisualStyleBackColor = true;
+            this.buttonConfirmCreate.Click += new System.EventHandler(this.buttonConfirmCreate_Click);
             // 
             // buttonCancel
             // 
@@ -257,7 +257,7 @@ namespace PawełGryglewiczLab2PracDom
             // 
             this.numericUpDownLength.Location = new System.Drawing.Point(162, 283);
             this.numericUpDownLength.Maximum = new decimal(new int[] {
-            400,
+            600,
             0,
             0,
             0});
@@ -315,7 +315,7 @@ namespace PawełGryglewiczLab2PracDom
             this.Controls.Add(this.labelEngine);
             this.Controls.Add(this.labelTeam);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonConfirm);
+            this.Controls.Add(this.buttonConfirmCreate);
             this.Controls.Add(this.labelWidth);
             this.Controls.Add(this.labelLength);
             this.Controls.Add(this.labelTyres);
@@ -343,7 +343,7 @@ namespace PawełGryglewiczLab2PracDom
         private System.Windows.Forms.Label labelTyres;
         private System.Windows.Forms.Label labelLength;
         private System.Windows.Forms.Label labelWidth;
-        private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.Button buttonConfirmCreate;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelTeam;
         private System.Windows.Forms.Label labelEngine;

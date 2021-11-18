@@ -110,5 +110,32 @@ namespace PawełGryglewiczLab2PracDom
             createWindow.Text = "Nowe auto";
             
         }
+
+        private void buttonDeleteCar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Przycisk odpowiadający za otworzenie okna edycji rekordu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpdateCar_Click(object sender, EventArgs e)
+        {
+            //Sprawdzenie czy użytkownik zaznaczył tylko jeden wiersz
+            int rowCount = dataGridViewCars.SelectedRows.Count;
+            if (rowCount != 1)
+            {
+                //Wyświetlenie informacji o błędzie
+                MessageBox.Show("Wybrałeś za dużo rekordów");
+                //Wyjście z metody
+                return;
+            }
+            //Odczyt ID edytowanego samochodu
+            int carId = (int) dataGridViewCars.SelectedRows[0].Cells[5].Value;
+            //Utworzenie okna edycji samochodu
+            EditCreateWindow editWindow = new EditCreateWindow(_databaseHandler, this, carId); 
+        }
     }
 }
