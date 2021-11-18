@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PawełGryglewiczLab2PracDom
+{
+    public partial class EditCreateWindow : Form
+    {
+        public EditCreateWindow()
+        {
+            InitializeComponent();
+            Visible = true;
+        }
+    }
+}

@@ -87,5 +87,17 @@ namespace PawełGryglewiczLab2PracDom
             //Wywołanie metody odświeżającej dane w głównym okniue
             RefreshDetails((int)dataGridViewCars.SelectedRows[0].Cells[6].Value, (int)dataGridViewCars.SelectedRows[0].Cells[5].Value);
         }
+
+        /// <summary>
+        /// Przycisk otwierający okno tworzenia nowego samochodu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonCreateCar_Click(object sender, EventArgs e)
+        {
+            //Stworzenie obiektu okna tworzenia nowego samochodu
+            EditCreateWindow createWindow = new EditCreateWindow();
+            createWindow.Text = "Nowe auto";
+        }
     }
 }

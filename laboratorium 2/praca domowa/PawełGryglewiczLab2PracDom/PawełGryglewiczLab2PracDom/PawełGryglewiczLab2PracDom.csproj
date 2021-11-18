@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DatabaseHandler.cs" />
+    <Compile Include="EditCreateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCreateWindow.Designer.cs">
+      <DependentUpon>EditCreateWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditCreateWindow.resx">
+      <DependentUpon>EditCreateWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

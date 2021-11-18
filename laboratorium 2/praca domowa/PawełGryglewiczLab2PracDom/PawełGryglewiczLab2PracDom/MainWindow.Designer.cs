@@ -104,54 +104,48 @@ namespace PawełGryglewiczLab2PracDom
             this.labelSecondDriverName.AutoSize = true;
             this.labelSecondDriverName.Location = new System.Drawing.Point(130, 163);
             this.labelSecondDriverName.Name = "labelSecondDriverName";
-            this.labelSecondDriverName.Size = new System.Drawing.Size(35, 13);
+            this.labelSecondDriverName.Size = new System.Drawing.Size(0, 13);
             this.labelSecondDriverName.TabIndex = 13;
-            this.labelSecondDriverName.Text = "label1";
             // 
             // labelFirstDriverName
             // 
             this.labelFirstDriverName.AutoSize = true;
             this.labelFirstDriverName.Location = new System.Drawing.Point(130, 141);
             this.labelFirstDriverName.Name = "labelFirstDriverName";
-            this.labelFirstDriverName.Size = new System.Drawing.Size(35, 13);
+            this.labelFirstDriverName.Size = new System.Drawing.Size(0, 13);
             this.labelFirstDriverName.TabIndex = 12;
-            this.labelFirstDriverName.Text = "label9";
             // 
             // labelTeamPrincipalName
             // 
             this.labelTeamPrincipalName.AutoSize = true;
             this.labelTeamPrincipalName.Location = new System.Drawing.Point(130, 108);
             this.labelTeamPrincipalName.Name = "labelTeamPrincipalName";
-            this.labelTeamPrincipalName.Size = new System.Drawing.Size(35, 13);
+            this.labelTeamPrincipalName.Size = new System.Drawing.Size(0, 13);
             this.labelTeamPrincipalName.TabIndex = 11;
-            this.labelTeamPrincipalName.Text = "label8";
             // 
             // labelBaseLocation
             // 
             this.labelBaseLocation.AutoSize = true;
             this.labelBaseLocation.Location = new System.Drawing.Point(130, 86);
             this.labelBaseLocation.Name = "labelBaseLocation";
-            this.labelBaseLocation.Size = new System.Drawing.Size(35, 13);
+            this.labelBaseLocation.Size = new System.Drawing.Size(0, 13);
             this.labelBaseLocation.TabIndex = 10;
-            this.labelBaseLocation.Text = "label7";
             // 
             // labelChampionshipTitlesNumber
             // 
             this.labelChampionshipTitlesNumber.AutoSize = true;
             this.labelChampionshipTitlesNumber.Location = new System.Drawing.Point(130, 56);
             this.labelChampionshipTitlesNumber.Name = "labelChampionshipTitlesNumber";
-            this.labelChampionshipTitlesNumber.Size = new System.Drawing.Size(35, 13);
+            this.labelChampionshipTitlesNumber.Size = new System.Drawing.Size(0, 13);
             this.labelChampionshipTitlesNumber.TabIndex = 9;
-            this.labelChampionshipTitlesNumber.Text = "label6";
             // 
             // labelTeamNameValue
             // 
             this.labelTeamNameValue.AutoSize = true;
             this.labelTeamNameValue.Location = new System.Drawing.Point(130, 31);
             this.labelTeamNameValue.Name = "labelTeamNameValue";
-            this.labelTeamNameValue.Size = new System.Drawing.Size(35, 13);
+            this.labelTeamNameValue.Size = new System.Drawing.Size(0, 13);
             this.labelTeamNameValue.TabIndex = 8;
-            this.labelTeamNameValue.Text = "label5";
             // 
             // labelDrivers
             // 
@@ -233,36 +227,32 @@ namespace PawełGryglewiczLab2PracDom
             this.labelBrakesName.AutoSize = true;
             this.labelBrakesName.Location = new System.Drawing.Point(278, 29);
             this.labelBrakesName.Name = "labelBrakesName";
-            this.labelBrakesName.Size = new System.Drawing.Size(35, 13);
+            this.labelBrakesName.Size = new System.Drawing.Size(0, 13);
             this.labelBrakesName.TabIndex = 15;
-            this.labelBrakesName.Text = "label4";
             // 
             // labelTyresName
             // 
             this.labelTyresName.AutoSize = true;
             this.labelTyresName.Location = new System.Drawing.Point(278, 63);
             this.labelTyresName.Name = "labelTyresName";
-            this.labelTyresName.Size = new System.Drawing.Size(35, 13);
+            this.labelTyresName.Size = new System.Drawing.Size(0, 13);
             this.labelTyresName.TabIndex = 14;
-            this.labelTyresName.Text = "label3";
             // 
             // labelLengthValue
             // 
             this.labelLengthValue.AutoSize = true;
             this.labelLengthValue.Location = new System.Drawing.Point(278, 96);
             this.labelLengthValue.Name = "labelLengthValue";
-            this.labelLengthValue.Size = new System.Drawing.Size(35, 13);
+            this.labelLengthValue.Size = new System.Drawing.Size(0, 13);
             this.labelLengthValue.TabIndex = 13;
-            this.labelLengthValue.Text = "label2";
             // 
             // labelWidthValue
             // 
             this.labelWidthValue.AutoSize = true;
             this.labelWidthValue.Location = new System.Drawing.Point(278, 129);
             this.labelWidthValue.Name = "labelWidthValue";
-            this.labelWidthValue.Size = new System.Drawing.Size(35, 13);
+            this.labelWidthValue.Size = new System.Drawing.Size(0, 13);
             this.labelWidthValue.TabIndex = 12;
-            this.labelWidthValue.Text = "label1";
             // 
             // labelWidth
             // 
@@ -309,36 +299,32 @@ namespace PawełGryglewiczLab2PracDom
             this.labelGearboxName.AutoSize = true;
             this.labelGearboxName.Location = new System.Drawing.Point(105, 129);
             this.labelGearboxName.Name = "labelGearboxName";
-            this.labelGearboxName.Size = new System.Drawing.Size(35, 13);
+            this.labelGearboxName.Size = new System.Drawing.Size(0, 13);
             this.labelGearboxName.TabIndex = 7;
-            this.labelGearboxName.Text = "label4";
             // 
             // labelEngineName
             // 
             this.labelEngineName.AutoSize = true;
             this.labelEngineName.Location = new System.Drawing.Point(105, 96);
             this.labelEngineName.Name = "labelEngineName";
-            this.labelEngineName.Size = new System.Drawing.Size(35, 13);
+            this.labelEngineName.Size = new System.Drawing.Size(0, 13);
             this.labelEngineName.TabIndex = 6;
-            this.labelEngineName.Text = "label3";
             // 
             // labelDesignerName
             // 
             this.labelDesignerName.AutoSize = true;
             this.labelDesignerName.Location = new System.Drawing.Point(105, 63);
             this.labelDesignerName.Name = "labelDesignerName";
-            this.labelDesignerName.Size = new System.Drawing.Size(35, 13);
+            this.labelDesignerName.Size = new System.Drawing.Size(0, 13);
             this.labelDesignerName.TabIndex = 5;
-            this.labelDesignerName.Text = "label2";
             // 
             // labelCarNameValue
             // 
             this.labelCarNameValue.AutoSize = true;
             this.labelCarNameValue.Location = new System.Drawing.Point(105, 29);
             this.labelCarNameValue.Name = "labelCarNameValue";
-            this.labelCarNameValue.Size = new System.Drawing.Size(35, 13);
+            this.labelCarNameValue.Size = new System.Drawing.Size(0, 13);
             this.labelCarNameValue.TabIndex = 4;
-            this.labelCarNameValue.Text = "label1";
             // 
             // labelGearbox
             // 
@@ -388,6 +374,7 @@ namespace PawełGryglewiczLab2PracDom
             this.buttonCreateCar.TabIndex = 0;
             this.buttonCreateCar.Text = "Dodaj nowe auto";
             this.buttonCreateCar.UseVisualStyleBackColor = true;
+            this.buttonCreateCar.Click += new System.EventHandler(this.buttonCreateCar_Click);
             // 
             // buttonDeleteCar
             // 
