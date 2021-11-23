@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<!-- Stworzone na Google Chrome -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<!--Dane o stronie-->
+<head>
+    <meta charset="utf-8" />
+    <title>Miernik reakcji</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<!--Wygląd strony-->
+<body>
+    <!--Nagłówek naszej strony-->
+    <header>
+       Sprawdź swój czas reakcji!
+    </header>
+
+    <!-- Sekcja z przyciskiem i tabelą -->
+    <section>
+        <!--Kontener z opisem naszej gry-->
+        <div id="description">
+            Zrób pięć testów reakcji i poznaj średnią
+        </div>
+
+        <!--Kontener z przyciskiem do pomiaru czasu-->
+        <div class="left half">
+            <p>
+                <img src="images/buttonRed.png" id="button-timer" onclick="StartIdle();"/>
+            </p>
+        </div>
+
+        <!--Kontener z tabelą z wynikami-->
+        <div class="right half">
+            <h2>Twoje czasy:</h2>
+            <table id="times-table"/>
+        </div>
+    </section>
+
+    <!-- Podłączenie skryptów do strony-->
+    <script src="scripts/script.js"></script>
+    <script>ResetTimes();</script>
+    <script>UpdateTable(0);</script>
+</body>
+</html>
