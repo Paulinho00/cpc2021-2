@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Dane o stronie -->
+<head>
+    <meta charset="utf-8" />
+    <link href="../styles/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=M+PLUS+1:wght@100&family=Quicksand&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Lista zadań</title>
+</head>
+<!-- Wygląd strony -->
+<body>
+    
+    <!-- Główna sekcja kreatora-->
+    <section class="main-section creator-section">
+        <!-- Nagłówek-->
+        <header>Nowe zadanie</header>
+        <!-- Paragraf z textboxem do wprowadzenia nazwy zadania-->
+        <p>
+            <span class="creator-labels">Nazwa zadania:</span>
+            <input type="text"/>
+        </p>
+        <!-- Paragraf z textarea do wprowadzenia opisu zadania-->
+        <p>
+            <span class="creator-labels">Opis:</span>
+            <textarea id="description-input" cols="40" rows="5"></textarea>
+        </p>
+        <!-- Paragraf z dateboxem do wprowadzenia daty wykonania zadania-->
+        <p>
+            <span class="creator-labels">Deadline:</span>
+            <input type="date" />
+        </p>
+        <!-- Przycisk potwierdzający wprowadzone dane -->
+        <button type="button" class="normal button">Dodaj</button>
+    </section>
+
+</body>
+</html>

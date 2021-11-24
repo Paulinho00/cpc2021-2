@@ -13,10 +13,10 @@ header {
 }
 
 /* Styl głównej sekcji*/
-#main-section {
+.main-section {
     text-align: center;
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 26%;
+    max-height: 50%;
     margin: auto;
     background-color: white;
 }
@@ -28,7 +28,6 @@ ul {
     max-height: 500px;
     padding-left: 0px;
 }
-
 
 /* Styl tekstu w elemencie listy*/
 .task-text {
@@ -63,6 +62,7 @@ ul {
 /* Styl przycisków głównych*/
 .normal {
     background: #339DFF;
+    margin-bottom: 5px;
 }
 
 /* Styl przycisku edycji*/
@@ -95,4 +95,31 @@ ul {
 /* Styl paska wyboru*/
 #searchbox {
     border: 3px solid #555;
+}
+
+/* Styl głównej sekcji w kreatorze nowego zadania*/
+creator-section {
+   display:flex;
+}
+
+/* Styl paragrafów*/
+p{
+    text-align:left;
+    margin-left:10px;
+    display: flex;
+}
+
+/* Styl textboxa przy wprowadzaniu opisu zadania*/
+#description-input{
+    height: 40px;
+}
+
+/* Styl podpisów boxów w oknie kreatora*/
+.creator-labels {
+    margin-right: 5px;
+    font-family: 'Cabin', sans-serif;
+    font-family: 'M PLUS 1', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
