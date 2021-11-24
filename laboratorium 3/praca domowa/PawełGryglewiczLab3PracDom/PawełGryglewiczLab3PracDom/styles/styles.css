@@ -1,26 +1,98 @@
-﻿body{
-    background-color: aquamarine;
+﻿/* Styl strony*/
+body{
+    background-color: lightgrey;
 }
 
-section{
-    background-color: white;
+/* Styl nagłówka*/
+header {
+    font-family: 'Cabin', sans-serif;
+    font-size: 40px;
+    text-align: left;
+    margin-left:20px;
+    color:brown;
 }
 
+/* Styl głównej sekcji*/
 #main-section {
     text-align: center;
     max-width: 500px;
     max-height: 500px;
     margin: auto;
+    background-color: white;
 }
 
+/* Styl listy*/
 ul {
-    list-style-type:none;
+    list-style-type: none;
+    max-width: 500px;
+    max-height: 500px;
+    padding-left: 0px;
 }
 
-li{
+
+/* Styl tekstu w elemencie listy*/
+.task-text {
+    margin-right: 280px;
+    white-space: nowrap;
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Styl daty w elemencie listy*/
+.task-date {
+    font-family: 'Cabin', sans-serif;
+    font-family: 'M PLUS 1', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Styl przycisków*/
+.button {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 25px;
+    border-radius: 50px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100px;
+    text-align: center;
+}
+
+/* Styl przycisków głównych*/
+.normal {
+    background: #339DFF;
+}
+
+/* Styl przycisku edycji*/
+.edit {
+    background: #36ff33;
+    line-height: 15px;
+}
+
+/* Styl przycisku usuwania*/
+.delete {
+    background: #ff3333;
+    line-height: 15px;
+}
+
+/* Styl elementów listy*/
+#task {
+    background-color: lightgoldenrodyellow;
+    max-width: 500px;
+    max-height: 500px;
+    margin-left: 0px;
     text-align: left;
+    display: flex;
 }
 
-.task{
-    margin-right: 290px;
+/* Styl kontenera paska wyboru */
+#searchbox-container{
+    margin-bottom: 10px;
+}
+
+/* Styl paska wyboru*/
+#searchbox {
+    border: 3px solid #555;
 }

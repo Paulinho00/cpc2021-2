@@ -7,6 +7,15 @@
     <meta charset="utf-8" />
     <title>Lista zadań</title>
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=M+PLUS+1:wght@100&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <!-- Wygląd strony -->
 <body>
@@ -15,30 +24,30 @@
         <!-- Nagłówek sekcji -->
         <header>Lista zadań</header>
         <!-- Kontener z przyciskiem i wyszukiwarką zadań-->
-        <div>
-            <!--  wyboru zadania-->
-            <input list="tasks-list" placeholder="Wybierz zadanie" />
+        <div id="searchbox-container">
+            <!--  Pasek wyboru zadania-->
+            <input list="searchbox" placeholder="Wybierz zadanie" />
             <!-- Lista z zadaniami do wyboru-->
-            <datalist id="tasks-list">
+            <datalist>
             </datalist>
             <!-- Przycisk oznaczający dane zadanie jako wykonane-->
-            <button type="button">Wykonane</button>
-        <!-- Kontener z listą zadań-->
+            <button type="button" class="normal button">Wykonane</button>
+           
         </div>
         <div>
             <!-- Przycisk otwierający okno kalendarza-->
-            <button type="button">Kalendarz</button>
+            <button type="button" class="normal button">Kalendarz</button>
             <!-- Przycisk dodający nowe zadanie-->
-            <button type="button">Dodaj</button>
+            <button type="button" class="normal button" >Dodaj</button>
         </div>
          <!-- Lista przechowująca zadania i przyciski-->
         <ul>
-            <li>
-            <span class="task">Kup coś</span>
+            <li id="task">
+            <span class="task-text">Kup coś<br /><span class="task-date">29.01.2021 19:56</span></span>
             <!-- Przycisk edytujący zadanie-->
-            <button type="button" class="task-button">Edytuj</button>
+            <button type="button" class="edit button ">Edytuj</button>
             <!-- Przycisk usuwający zadanie-->
-            <button type="button" class="task-button">Usuń</button>
+            <button type="button" class="delete button">Usuń</button>
             </li>
         </ul>
         <div>
