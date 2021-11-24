@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<!-- Stworzone na Google Chrome -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Dane o stronie -->
+<head>
+    <meta charset="utf-8" />
+    <title>Lista zadań</title>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Wygląd strony -->
+<body>
+    <!-- Główna sekcja strony-->
+    <section id="main-section">
+        <!-- Nagłówek sekcji -->
+        <header>Lista zadań</header>
+        <!-- Kontener z przyciskiem i wyszukiwarką zadań-->
+        <div>
+            <!--  wyboru zadania-->
+            <input list="tasks-list" placeholder="Wybierz zadanie" />
+            <!-- Lista z zadaniami do wyboru-->
+            <datalist id="tasks-list">
+            </datalist>
+            <!-- Przycisk oznaczający dane zadanie jako wykonane-->
+            <button type="button">Wykonane</button>
+        <!-- Kontener z listą zadań-->
+        </div>
+        <div>
+            <!-- Przycisk otwierający okno kalendarza-->
+            <button type="button">Kalendarz</button>
+            <!-- Przycisk dodający nowe zadanie-->
+            <button type="button">Dodaj</button>
+        </div>
+         <!-- Lista przechowująca zadania i przyciski-->
+        <ul>
+            <li>
+            <span class="task">Kup coś</span>
+            <!-- Przycisk edytujący zadanie-->
+            <button type="button" class="task-button">Edytuj</button>
+            <!-- Przycisk usuwający zadanie-->
+            <button type="button" class="task-button">Usuń</button>
+            </li>
+        </ul>
+        <div>
+
+        </div>
+    </section>
+
+</body>
+</html>
