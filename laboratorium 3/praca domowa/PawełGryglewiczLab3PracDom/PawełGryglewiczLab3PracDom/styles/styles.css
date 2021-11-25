@@ -1,5 +1,5 @@
 ﻿/* Styl strony*/
-body{
+body {
     background-color: lightgrey;
 }
 
@@ -31,18 +31,12 @@ ul {
 
 /* Styl tekstu w elemencie listy*/
 .task-text {
-    margin-right: 280px;
+    width: 280px;
     white-space: nowrap;
     font-family: 'Cabin', sans-serif;
     font-family: 'Quicksand', sans-serif;
 }
 
-/* Styl daty w elemencie listy*/
-.task-date {
-    font-family: 'Cabin', sans-serif;
-    font-family: 'M PLUS 1', sans-serif;
-    font-family: 'Quicksand', sans-serif;
-}
 
 /* Styl przycisków*/
 .button {
@@ -63,6 +57,10 @@ ul {
 .normal {
     background: #339DFF;
     margin-bottom: 5px;
+}
+
+.small-normal {
+    background: #339DFF;
 }
 
 /* Styl przycisku edycji*/
@@ -97,29 +95,4 @@ ul {
     border: 3px solid #555;
 }
 
-/* Styl głównej sekcji w kreatorze nowego zadania*/
-creator-section {
-   display:flex;
-}
 
-/* Styl paragrafów*/
-p{
-    text-align:left;
-    margin-left:10px;
-    display: flex;
-}
-
-/* Styl textboxa przy wprowadzaniu opisu zadania*/
-#description-input{
-    height: 40px;
-}
-
-/* Styl podpisów boxów w oknie kreatora*/
-.creator-labels {
-    margin-right: 5px;
-    font-family: 'Cabin', sans-serif;
-    font-family: 'M PLUS 1', sans-serif;
-    font-family: 'Quicksand', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-}

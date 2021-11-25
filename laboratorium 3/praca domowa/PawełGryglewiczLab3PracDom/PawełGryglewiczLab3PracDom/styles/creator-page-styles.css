@@ -1,0 +1,26 @@
+﻿/* Styl głównej sekcji w kreatorze nowego zadania*/
+creator-section {
+    display: flex;
+}
+
+/* Styl paragrafów*/
+p {
+    text-align: left;
+    margin-left: 10px;
+    display: flex;
+}
+
+/* Styl textboxa przy wprowadzaniu opisu zadania*/
+#description-input {
+    height: 40px;
+}
+
+/* Styl podpisów boxów w oknie kreatora*/
+.creator-labels {
+    margin-right: 5px;
+    font-family: 'Cabin', sans-serif;
+    font-family: 'M PLUS 1', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
