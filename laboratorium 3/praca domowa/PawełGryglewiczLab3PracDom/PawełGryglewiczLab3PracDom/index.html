@@ -27,34 +27,28 @@
         <!-- Kontener z przyciskiem i wyszukiwarką zadań-->
         <div id="searchbox-container">
             <!--  Pasek wyboru zadania-->
-            <input list="searchbox" placeholder="Wybierz zadanie" />
             <!-- Lista z zadaniami do wyboru-->
-            <datalist>
-            </datalist>
+            <select id="searchbox">
+            </select>
             <!-- Przycisk oznaczający dane zadanie jako wykonane-->
-            <button type="button" class="edit button">Edytuj</button>
-           
+            <button id="open-edit-page" type="button" class="edit button">Edytuj</button>
+
         </div>
         <div>
             <!-- Przycisk otwierający okno kalendarza-->
             <button type="button" class="normal button">Szczegóły</button>
-            <!-- Przycisk dodający nowe zadanie-->
-            <button type="button" class="normal button" >Dodaj</button>
+            <!-- Przycisk otwierający okno kreatora nowego zadania-->
+            <button id="open-creator-page" type="button" class="normal button">Dodaj</button>
         </div>
-         <!-- Lista przechowująca zadania i przyciski-->
-        <ul>
-            <li id="task">
-            <span class="task-text">Kup coś</span>
-            <!-- Przycisk edytujący zadanie-->
-            <button type="button" class="small-normal button ">Wykonane</button>
-            <!-- Przycisk usuwający zadanie-->
-            <button type="button" class="delete button">Usuń</button>
-            </li>
+        <!-- Lista przechowująca zadania i przyciski-->
+        <ul id="tasks">
         </ul>
-        <div>
-
-        </div>
     </section>
-
+    <!-- Dołączenie skryptu-->
+    <script type="text/javascript" src="scripts/mainPageScripts.js"></script>
+    <!-- Wywołanie funkcji dodającej eventListenery do przycisków-->
+    <script>ButtonInit();</script>
+    <!-- Wywołanie funkcji odświeżającej listę zadań i searchbox-->
+    <script>ReloadTaskList();</script>
 </body>
 </html>

@@ -18,45 +18,50 @@
         <!-- Nagłówek-->
         <header>Nowe zadanie</header>
         <div id="inputs-container">
-        <!-- Paragraf z textboxem do wprowadzenia nazwy zadania-->
-        <p>
-            <span class="creator-labels">Nazwa zadania:</span>
-            <input id="name-input" type="text"/>
-        </p>
-        <!-- Paragraf z textarea do wprowadzenia opisu zadania-->
-        <p>
-            <span class="creator-labels">Opis:</span>
-            <textarea id="description-input" cols="40" rows="5"></textarea>
-        </p>
-        <!-- Paragraf z dateboxem do wprowadzenia daty wykonania zadania-->
-        <p>
-            <span class="creator-labels">Deadline:</span>
-            <input id="date-input" type="date" />
-        </p>
-        <!-- Paragraf z textboxem do wprowadzenia szacowanego czasu trwania zadania-->
-        <p>
-            <span class="creator-labels">Szacowany czas trwania:</span>
-            <input id="duration-input" type="text"/>
+            <!-- Paragraf z textboxem do wprowadzenia nazwy zadania-->
+            <p>
+                <span class="creator-labels">Nazwa zadania:</span>
+                <input id="name-input" type="text" />
+            </p>
+            <!-- Paragraf z textarea do wprowadzenia opisu zadania-->
+            <p>
+                <span class="creator-labels">Opis:</span>
+                <textarea id="description-input" cols="40" rows="5"></textarea>
+            </p>
+            <!-- Paragraf z dateboxem do wprowadzenia daty wykonania zadania-->
+            <p>
+                <span class="creator-labels">Deadline:</span>
+                <input id="date-input" type="date" />
+            </p>
+            <!-- Paragraf z textboxem do wprowadzenia szacowanego czasu trwania zadania-->
+            <p>
+                <span class="creator-labels">Szacowany czas trwania:</span>
+                <input id="duration-input" type="text" />
 
-        </p>
-        <!-- Paragraf z polem wyboru priorytetów -->
-        <p>
-            <span class="creator-labels">Priorytet:</span>
-            <input id="priority-input" list="priorities-list">
-            <!-- Lista dostępnych priorytetó -->
-            <datalist id="priorities-list">
-                <option>Wysoki</option>
-                <option>Normalny</option>
-                <option>Niski</option>
-            </datalist>
-        </p>
-            </div>
-        
-        <!-- Przycisk potwierdzający wprowadzone dane -->
-        <button type="button" id="confirm-values" class="normal button">Dodaj</button>
-    </section>
+            </p>
+            <!-- Paragraf z polem wyboru priorytetów -->
+            <p>
+                <span class="creator-labels">Priorytet:</span>
+                <!-- Selektor dostępnych priorytetów -->
+                <select id="priority">
+                    <option>Wysoki</option>
+                    <option>Normalny</option>
+                    <option>Niski</option>
+                </select>
+            </p>
+        </div>
 
-    <script type="text/javascript" src="../scripts/creatorScript.js"></script>
+        <!-- Kontener z przyciskami -->
+        <div>
+            <!-- Przycisk cofający do strony głównej -->
+            <button type="button" id="back-to-main-page" class="normal button">Cofnij</button>
+            <!-- Przycisk potwierdzający wprowadzone dane -->
+            <button type="button" id="confirm-values" class="normal button">Dodaj</button>
+        </div>
+</section>
+    
+    <!-- Dołączenie skryptu-->
+    <script type="text/javascript" src="../scripts/creatorEditScript.js"></script>
     <script>Start();</script>
 
 </body>

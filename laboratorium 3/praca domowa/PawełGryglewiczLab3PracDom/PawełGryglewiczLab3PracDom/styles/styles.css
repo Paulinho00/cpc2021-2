@@ -76,7 +76,7 @@ ul {
 }
 
 /* Styl elementów listy*/
-#task {
+.task {
     background-color: lightgoldenrodyellow;
     max-width: 500px;
     max-height: 500px;
@@ -93,6 +93,7 @@ ul {
 /* Styl paska wyboru*/
 #searchbox {
     border: 3px solid #555;
+    width:200px;
 }
 
 

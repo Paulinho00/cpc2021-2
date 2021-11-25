@@ -36,10 +36,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scripts\creatorScript.js" />
+    <Content Include="scripts\creatorEditScript.js" />
     <Content Include="index.html" />
     <Content Include="pages\detailed-view.html" />
     <Content Include="pages\new-task-creator-page.html" />
+    <Content Include="scripts\mainPageScripts.js" />
     <Content Include="styles\creator-page-styles.css" />
     <Content Include="styles\detailed-view-styles.css" />
     <Content Include="styles\styles.css" />
