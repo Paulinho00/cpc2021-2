@@ -3,15 +3,52 @@ body {
     background-color: lightgrey;
 }
 
-/* Styl głównej sekcji*/
-.main-section {
-    text-align: center;
-    min-width: 26%;
-    min-height: 50%;
-    margin: auto;
-    background-color: white;
+
+/* Styl kolorów nagłówka tabeli*/
+table thead {
+    display: flex;
+    background: #949494;
+    background: -moz-linear-gradient(top, #afafaf 0%, #9e9e9e 66%, #949494 100%);
+    background: -webkit-linear-gradient(top, #afafaf 0%, #9e9e9e 66%, #949494 100%);
+    background: linear-gradient(to bottom, #afafaf 0%, #9e9e9e 66%, #949494 100%);
 }
 
-#table-head{
-    display=flex;
+/* Styl tabeli */
+table {
+    border: 3px solid #940F0F;
+    text-align: center;
+}
+    /* Styl obramowań w tabeli*/
+    table td, table th {
+        border: 1px solid #949494;
+        padding: 4px 4px;
+    }
+
+    /* Styl czcionki w tabeli*/
+    table tbody td {
+        font-size: 13px;
+    }
+
+    /* Styl czcionek nagłówka tabeli*/
+    table thead th {
+        font-size: 17px;
+        font-weight: bold;
+        color: white;
+        text-align: left;
+        border-left: 2px solid #948473;
+    }
+
+/* Styl zadania o wysokim priorytecie*/
+#high-priority{
+    background-color:red;
+}
+
+/* Styl zadania o normalnym priorytecie priorytecie*/
+#normal-priority{
+    background-color:white;
+}
+
+/* Styl zadania o niski priorytecie*/
+#low-priority{
+    background-color:green;
 }
