@@ -1,6 +1,17 @@
-﻿/* Styl głównej sekcji w kreatorze nowego zadania*/
-creator-section {
-    display: flex;
+﻿/* Styl strony*/
+body {
+    background-color: lightgrey;
+}
+
+/* Styl głównej sekcji w kreatorze nowego zadania*/
+.creator-section {
+    background-color: white;
+    text-align: center;
+    width: 400px;
+    max-height: 50%;
+    position: relative;
+    margin: 0 auto;
+}
 }
 
 /* Styl paragrafów*/
@@ -13,14 +24,56 @@ p {
 /* Styl textboxa przy wprowadzaniu opisu zadania*/
 #description-input {
     height: 40px;
+    resize:vertical;
+    
 }
 
 /* Styl podpisów boxów w oknie kreatora*/
 .creator-labels {
+    text-align:left
     margin-right: 5px;
+    margin-left: 5px;
     font-family: 'Cabin', sans-serif;
     font-family: 'M PLUS 1', sans-serif;
     font-family: 'Quicksand', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
+
+/* Styl kontenera z inputboxami*/
+#inputs-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Styl nagłówka*/
+header {
+    font-family: 'Cabin', sans-serif;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 20px;
+    color: brown;
+}
+
+/* Styl przycisków*/
+.button {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 25px;
+    border-radius: 50px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100px;
+    text-align: center;
+}
+
+/* Styl przycisków głównych*/
+.normal {
+    background: #339DFF;
+    margin-bottom: 5px;
+}
+

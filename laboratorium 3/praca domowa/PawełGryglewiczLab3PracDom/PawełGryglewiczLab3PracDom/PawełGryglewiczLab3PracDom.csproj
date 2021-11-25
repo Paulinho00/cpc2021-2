@@ -40,6 +40,7 @@
     <Content Include="pages\detailed-view.html" />
     <Content Include="pages\new-task-creator-page.html" />
     <Content Include="styles\creator-page-styles.css" />
+    <Content Include="styles\detailed-view-styles.css" />
     <Content Include="styles\styles.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

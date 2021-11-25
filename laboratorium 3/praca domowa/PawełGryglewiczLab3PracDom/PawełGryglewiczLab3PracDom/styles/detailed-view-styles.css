@@ -1,0 +1,17 @@
+﻿/* Styl strony*/
+body {
+    background-color: lightgrey;
+}
+
+/* Styl głównej sekcji*/
+.main-section {
+    text-align: center;
+    min-width: 26%;
+    min-height: 50%;
+    margin: auto;
+    background-color: white;
+}
+
+#table-head{
+    display=flex;
+}

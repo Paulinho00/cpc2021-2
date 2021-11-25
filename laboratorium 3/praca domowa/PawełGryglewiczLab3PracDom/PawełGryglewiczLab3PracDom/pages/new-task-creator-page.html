@@ -4,7 +4,6 @@
 <!-- Dane o stronie -->
 <head>
     <meta charset="utf-8" />
-    <link href="../styles/styles.css" rel="stylesheet" type="text/css" />
     <link href="../styles/creator-page-styles.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +14,10 @@
 <body>
     
     <!-- Główna sekcja kreatora-->
-    <section class="main-section creator-section">
+    <section class="creator-section">
         <!-- Nagłówek-->
         <header>Nowe zadanie</header>
+        <div id="inputs-container">
         <!-- Paragraf z textboxem do wprowadzenia nazwy zadania-->
         <p>
             <span class="creator-labels">Nazwa zadania:</span>
@@ -33,6 +33,25 @@
             <span class="creator-labels">Deadline:</span>
             <input type="date" />
         </p>
+        <!-- Paragraf z textboxem do wprowadzenia szacowanego czasu trwania zadania-->
+        <p>
+            <span class="creator-labels">Szacowany czas trwania:</span>
+            <input type="text"/>
+
+        </p>
+        <!-- Paragraf z polem wyboru priorytetów -->
+        <p>
+            <span class="creator-labels">Priorytet:</span>
+            <input list="priorities-list">
+            <!-- Lista dostępnych priorytetó -->
+            <datalist id="priorities-list">
+                <option>Wysoki</option>
+                <option>Normalny</option>
+                <option>Niski</option>
+            </datalist>
+        </p>
+            </div>
+        
         <!-- Przycisk potwierdzający wprowadzone dane -->
         <button type="button" class="normal button">Dodaj</button>
     </section>
