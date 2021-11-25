@@ -36,6 +36,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\creatorScript.js" />
     <Content Include="index.html" />
     <Content Include="pages\detailed-view.html" />
     <Content Include="pages\new-task-creator-page.html" />

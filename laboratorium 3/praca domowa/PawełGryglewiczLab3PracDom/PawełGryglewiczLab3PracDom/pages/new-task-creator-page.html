@@ -21,7 +21,7 @@
         <!-- Paragraf z textboxem do wprowadzenia nazwy zadania-->
         <p>
             <span class="creator-labels">Nazwa zadania:</span>
-            <input type="text"/>
+            <input id="name-input" type="text"/>
         </p>
         <!-- Paragraf z textarea do wprowadzenia opisu zadania-->
         <p>
@@ -31,18 +31,18 @@
         <!-- Paragraf z dateboxem do wprowadzenia daty wykonania zadania-->
         <p>
             <span class="creator-labels">Deadline:</span>
-            <input type="date" />
+            <input id="date-input" type="date" />
         </p>
         <!-- Paragraf z textboxem do wprowadzenia szacowanego czasu trwania zadania-->
         <p>
             <span class="creator-labels">Szacowany czas trwania:</span>
-            <input type="text"/>
+            <input id="duration-input" type="text"/>
 
         </p>
         <!-- Paragraf z polem wyboru priorytetów -->
         <p>
             <span class="creator-labels">Priorytet:</span>
-            <input list="priorities-list">
+            <input id="priority-input" list="priorities-list">
             <!-- Lista dostępnych priorytetó -->
             <datalist id="priorities-list">
                 <option>Wysoki</option>
@@ -53,8 +53,11 @@
             </div>
         
         <!-- Przycisk potwierdzający wprowadzone dane -->
-        <button type="button" class="normal button">Dodaj</button>
+        <button type="button" id="confirm-values" class="normal button">Dodaj</button>
     </section>
+
+    <script type="text/javascript" src="../scripts/creatorScript.js"></script>
+    <script>Start();</script>
 
 </body>
 </html>
