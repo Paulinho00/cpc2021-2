@@ -31,7 +31,7 @@ function Start() {
 function CreateTask() {
 
     //Wywołanie metody zczytującej wartości w polach tekstowych
-    ReadValues();
+    if (ReadValues() === -1) { return; }
     
     //Wyczyszczenie pól tesktowych
     document.getElementById("name-input").value = " ";
@@ -44,12 +44,17 @@ function CreateTask() {
     window.sessionStorage.setItem(window.sessionStorage.getItem("counter") + 1, JSON.stringify(inputs));
     //Zwiększenie licznika
     window.sessionStorage.setItem("counter", window.sessionStorage.getItem("counter") + 1)
+    //Wyświetlenie napisu potwierdzającego dodanie zadania
+    DisplayLabel();
+    //Usunięcie napisu po 5s
+    window.setTimeout(DeleteLabel, 2000);
+
     
 }
 //Funkcja edytująca zadanie o danym indeksie
 function EditValues(index) {
     //Wywołanie metody zczytującej wartości w polach tekstowych
-    ReadValues();
+    if (ReadValues() === -1) { return; }
     //Zapisanie zaaktualizowanych danych w pamięci sesji
     window.sessionStorage.setItem(index, JSON.stringify(inputs));
     //Wywołanie metody otwierająca główną stronę
@@ -81,7 +86,7 @@ function ReadValues() {
     //Sprawdzenie czy pole jest puste
     if (document.getElementById("name-input") === null || document.getElementById("name-input").value === "") {
         alert("Wypełnij wszystkie pola!");
-        return;
+        return -1;
     }
     //Odczyt nazwy zadania
     inputs[0] = document.getElementById("name-input").value;
@@ -89,7 +94,7 @@ function ReadValues() {
     //Sprawdzenie czy pole jest puste
     if (document.getElementById("description-input") === null || document.getElementById("description-input").value === "") {
         alert("Wypełnij wszystkie pola!");
-        return;
+        return -1;
     }
     //Odczyt opisu zadania
     inputs[1] = document.getElementById("description-input").value;
@@ -97,7 +102,7 @@ function ReadValues() {
     //Sprawdzenie czy pole jest puste
     if (document.getElementById("date-input") === null || document.getElementById("date-input").value === "") {
         alert("Wypełnij wszystkie pola!");
-        return;
+        return -1;
     }
     //Odczyt daty wykonania zadania
     inputs[2] = document.getElementById("date-input").value;
@@ -107,7 +112,7 @@ function ReadValues() {
     let select = document.getElementById("priority");
     if (select.options[select.selectedIndex].value === "") {
         alert("Wypełnij wszystkie pola!");
-        return;
+        return -1;
     }
     //Odczyt priorytetu zadania
     inputs[3] = document.getElementById("priority").value;
@@ -115,10 +120,29 @@ function ReadValues() {
     //Sprawdzenie czy pole jest puste
     if (document.getElementById("duration-input") === null || document.getElementById("duration-input").value === "") {
         alert("Wypełnij wszystkie pola!");
-        return;
+        return -1;
     }
     //Odczyt czasu trwania zadania
     inputs[4] = document.getElementById("duration-input").value;
+    return 1;
 
+}
+
+// Funkcja wyświetlająca napis potwierdzający dodanie zadania
+function DisplayLabel() {
+    //Utworzenie elementu
+    let h3 = document.createElement("h3");
+    //Dodanie tekstu
+    h3.innerHTML = "Pomyślnie dodano";
+    //Dodanie id
+    h3.setAttribute("id", "confirm-label");
+    //Dodanie napisu do kontenera 
+    document.getElementById("confirm-label-container").appendChild(h3);
+}
+
+// Funkcja usuwająca napis potwierdzający
+function DeleteLabel() {
+    //Usunięcie napisu
+    document.getElementById("confirm-label").remove();
 }
 

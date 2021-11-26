@@ -76,3 +76,16 @@ header {
     margin-bottom: 5px;
 }
 
+/* Styl kontenera z napisem potwierdzającym*/
+#confirm-label-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styl napisu potwierdzającego*/
+#confirm-label{
+    color: brown;
+    text-align:center;
+}
+
