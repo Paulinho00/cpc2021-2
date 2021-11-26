@@ -6,24 +6,40 @@
 <head>
     <meta charset="utf-8" />
     <link href="../styles/detailed-view-styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Josefin+Sans&family=M+PLUS+1:wght@100&family=Quicksand&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Lista zadań</title>
 </head>
 <!-- Wygląd strony -->
 <body>
-    <!-- Wygląd tabeli -->
-    <table>
-        <!-- Wygląd nagłówka tabeli -->
-        <thead>
-            <tr>
-                <th>Zadanie</th>
-                <th>Opis</th>
-                <th>Data wykonania</th>
-                <th>Priorytet</th>
-                <th>Szacowany czas trwania</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <!-- Kontener z tabelą-->
+    <div>
+        <!-- Wygląd tabeli -->
+        <table>
+            <!-- Wygląd nagłówka tabeli -->
+            <thead>
+                <tr>
+                    <th>Zadanie</th>
+                    <th>Opis</th>
+                    <th>Data wykonania</th>
+                    <th>Priorytet</th>
+                    <th>Szacowany czas trwania</th>
+                </tr>
+            </thead>
+            <!-- Wpisy w tabeli -->
+            <tbody id="table-content">
+            </tbody>
+        </table>
+    </div>
+    <!-- Kontener z przyciskiem -->
+    <div>
+        <!-- Przycisk cofający na główną strone -->
+        <button type="button" id="back-to-main-page" class="normal button">Cofnij</button>
+    </div>
+    <!-- Dołączenie skryptu-->
+    <script type="text/javascript" src="../scripts/detailedViewScript.js"></script>
+    <script>Start();</script>
+    <script>LoadIntoTable();</script>
 </body>
 </html>

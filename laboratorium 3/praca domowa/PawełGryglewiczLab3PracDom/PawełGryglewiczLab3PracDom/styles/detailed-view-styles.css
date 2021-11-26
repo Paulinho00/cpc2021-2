@@ -1,12 +1,14 @@
 ﻿/* Styl strony*/
 body {
     background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 /* Styl kolorów nagłówka tabeli*/
 table thead {
-    display: flex;
     background: #949494;
     background: -moz-linear-gradient(top, #afafaf 0%, #9e9e9e 66%, #949494 100%);
     background: -webkit-linear-gradient(top, #afafaf 0%, #9e9e9e 66%, #949494 100%);
@@ -17,6 +19,9 @@ table thead {
 table {
     border: 3px solid #940F0F;
     text-align: center;
+    float: left;
+    clear: right;
+    display: inline;
 }
     /* Styl obramowań w tabeli*/
     table td, table th {
@@ -27,6 +32,12 @@ table {
     /* Styl czcionki w tabeli*/
     table tbody td {
         font-size: 13px;
+        color: white;
+        font-family: 'Cabin', sans-serif;
+        font-family: 'Josefin Sans', sans-serif;
+        font-family: 'M PLUS 1', sans-serif;
+        font-family: 'Quicksand', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     /* Styl czcionek nagłówka tabeli*/
@@ -39,16 +50,37 @@ table {
     }
 
 /* Styl zadania o wysokim priorytecie*/
-#high-priority{
-    background-color:red;
+.high-priority{
+    background-color:firebrick;
 }
 
 /* Styl zadania o normalnym priorytecie priorytecie*/
-#normal-priority{
-    background-color:white;
+.normal-priority{
+    background-color:orange;
 }
 
-/* Styl zadania o niski priorytecie*/
-#low-priority{
-    background-color:green;
+/* Styl zadania o niskim priorytecie*/
+.low-priority{
+    background-color:forestgreen;
+}
+
+/* Styl przycisków*/
+.button {
+    display: inline-block;
+    margin-top: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 25px;
+    border-radius: 50px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100px;
+    text-align: center;
+}
+
+/* Styl przycisków głównych*/
+.normal {
+    background: #339DFF;
+    margin-bottom: 5px;
 }
