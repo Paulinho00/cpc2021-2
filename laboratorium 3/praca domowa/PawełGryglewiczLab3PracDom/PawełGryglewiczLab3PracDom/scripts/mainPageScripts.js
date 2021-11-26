@@ -4,6 +4,7 @@
 function ButtonInit() {
     document.getElementById("open-creator-page").addEventListener("click", OpenCreatorPage);
     document.getElementById("open-edit-page").addEventListener("click", OpenEditPage);
+    document.getElementById("open-detailed-view").addEventListener("click", function () { window.open("./pages/detailed-view.html", "_self") });
 }
 
 //Funkcja otwierająca stronę 
@@ -21,8 +22,7 @@ function DeleteTask(index) {
     window.sessionStorage.removeItem(index);
     //Zresetowanie searchboxa
     ResetSelect();
-    //Ponowne załadowanie listy
-    ReloadTaskList();
+
 }
 
 // Funkcja zmieniają styl wyświetlania zadania
@@ -36,6 +36,11 @@ function MarkAsDone(index) {
 
     //Usunięcie przycisku 
     document.getElementById("marks-as-done-task" + index).remove();
+    //Usunięcie danych o zadaniu z pamięci sesji
+    window.sessionStorage.removeItem(index);
+    //Zresetowanie searchboxa
+    ResetSelect();
+
 }
 
 // Funkcja aktualizująca wyświetlane dane na głównej stronie
@@ -71,9 +76,22 @@ function ReloadTaskList() {
     }
 }
 
-// Funkcja resetujaca searchboxa
+// Funkcja aktualizująca searchboxa
 function ResetSelect() {
     document.getElementById("searchbox").innerHTML = "";
+    //Sprawdzenie czy pamięc sesji nie jest pusta
+    if (window.sessionStorage.length !== 0) {
+        //Wywołanie pętli do odczytu całej pamięci sesji
+        for (let i = 1; i <= window.sessionStorage.getItem("counter"); i++) {
+            //Sprawdzenie czy dany wpis w pamięci nie jest nullem
+            if (window.sessionStorage.getItem(i) !== null) {
+                //Odczyt tablicy stringów
+                let storage = JSON.parse(window.sessionStorage.getItem(i));
+                //Dodanie wartości do datelist searchboxa
+                AddElementToSelect(storage);
+            }
+        }
+    }
 }
 // Funkcja dodająca zadanie do searchboxa
 function AddElementToSelect(inputs) {

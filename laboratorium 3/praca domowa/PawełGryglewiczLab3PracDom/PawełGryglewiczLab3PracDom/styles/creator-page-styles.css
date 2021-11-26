@@ -12,7 +12,7 @@ body {
     position: relative;
     margin: 0 auto;
 }
-}
+
 
 /* Styl paragrafów*/
 p {
@@ -31,7 +31,6 @@ p {
 /* Styl podpisów boxów w oknie kreatora*/
 .creator-labels {
     text-align:left
-    margin-right: 5px;
     margin-left: 5px;
     font-family: 'Cabin', sans-serif;
     font-family: 'M PLUS 1', sans-serif;
