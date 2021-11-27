@@ -1,11 +1,17 @@
 ﻿
 //Tablica przechowująca dane z pól tekstowych
-let inputs =[];
+let inputs = [];
 
 //Funkcja startowa strony kreatora
 function Start() {
     //Dodanie eventListenra do przycisku cofającego na główną stronę
     document.getElementById("back-to-main-page").addEventListener("click", BackToMainPage);
+    //Sprawdzenie czy licznik jest zainicjalizowany
+    if (window.sessionStorage.getItem("isCounterInitialized") === null) {
+        //Inicjalizajca licznika
+        StartCounter();
+        window.sessionStorage.setItem("isCounterInitialized", true);
+    }
     //Sprawdzenie czy jest włączona opcja tworzenia
     if (window.sessionStorage.getItem("editOrCreate") === "create") {
         //Dodanie eventListnera do przycisku potwierdzeni
@@ -14,11 +20,11 @@ function Start() {
 
     //Sprawdzenie czy jest włączona opcja edycji
     if (window.sessionStorage.getItem("editOrCreate") === "edit") {
-
         //Pobranie indeksu edytowanego zadania
-        let index = window.sessionStorage.getItem("chosenIndex")
+        console.log(window.sessionStorage.getItem("chosenIndex"));
+        let index = window.sessionStorage.getItem("chosenIndex");
         //Pobranie danych edytowanego zadania
-        let storage = JSON.parse(window.sessionStorage.getItem(index));
+        let storage = JSON.parse(window.sessionStorage.getItem(index.toString()));
         //Wyświetlenie danych zadania w polach tekstowych
         BaseValues(storage);
         //Dodanie eventListnera do przycisku potwierdzenia
@@ -41,9 +47,12 @@ function CreateTask() {
     document.getElementById("duration-input").value = " ";
 
     //Zapisanie danych w sesji przeglądarki
-    window.sessionStorage.setItem(window.sessionStorage.getItem("counter") + 1, JSON.stringify(inputs));
+    let nextIndex = parseInt(window.sessionStorage.getItem("counter")) + 1;
+    console.log(nextIndex);
+    window.sessionStorage.setItem(nextIndex, JSON.stringify(inputs));
     //Zwiększenie licznika
-    window.sessionStorage.setItem("counter", window.sessionStorage.getItem("counter") + 1)
+    window.sessionStorage.setItem("counter", parseInt(window.sessionStorage.getItem("counter")) + 1)
+    console.log(window.sessionStorage.getItem("counter"));
     //Wyświetlenie napisu potwierdzającego dodanie zadania
     DisplayLabel();
     //Usunięcie napisu po 5s
@@ -57,6 +66,8 @@ function EditValues(index) {
     if (ReadValues() === -1) { return; }
     //Zapisanie zaaktualizowanych danych w pamięci sesji
     window.sessionStorage.setItem(index, JSON.stringify(inputs));
+    //Wyczyszczenie zapisanego indeksu
+    window.sessionStorage.setItem("chosenIndex", -1);
     //Wywołanie metody otwierająca główną stronę
     BackToMainPage();
 }
@@ -89,7 +100,7 @@ function ReadValues() {
         return -1;
     }
     //Odczyt nazwy zadania
-    inputs[0] = document.getElementById("name-input").value;
+    inputs[0] = document.getElementById("name-input").value.trim();
 
     //Sprawdzenie czy pole jest puste
     if (document.getElementById("description-input") === null || document.getElementById("description-input").value === "") {

@@ -48,7 +48,7 @@ function ReloadTaskList() {
     //Sprawdzenie czy pamięc sesji nie jest pusta
     if (window.sessionStorage.length !== 0) {
         //Wywołanie pętli do odczytu całej pamięci sesji
-        for (let i = 1; i <= window.sessionStorage.getItem("counter"); i++) {
+        for (let i = 0; i <= window.sessionStorage.getItem("counter"); i++) {
             //Sprawdzenie czy dany wpis w pamięci nie jest nullem
             if (window.sessionStorage.getItem(i) !== null) {
                 //Odczyt tablicy stringów
@@ -105,14 +105,19 @@ function AddElementToSelect(inputs) {
 
 // Funkcja otwierająca stronę edycji zadania
 function OpenEditPage() {
+    // Odczyt searchboxa
+    let select = document.getElementById("searchbox");
     //Pobranie nazwy wybranego zadania
-    let taskName = document.getElementById("searchbox").value;
+    let taskName = select.options[select.selectedIndex].value;
     //Pętla sprawdzająca jaki indeks ma dane zadanie
     for (let i = 0; i <= window.sessionStorage.getItem("counter"); i++) {
-        //Sprawdzenie czy nazwa zadani się zgadza i czy dany indeks nie jest nullem
-        if (window.sessionStorage.getItem(i) !== null && (JSON.parse(window.sessionStorage.getItem(i)))[0] === taskName) {
-            //Zapisanie indeksu wybranego zadania
-            window.sessionStorage.setItem("chosenIndex", i);
+        //Sprawdzenie czy nazwa zadania się zgadza i czy dany indeks nie jest nullem
+        if (window.sessionStorage.getItem(i) !== null) {
+            if (((JSON.parse(window.sessionStorage.getItem(i)))[0]) == taskName) {
+                //Zapisanie indeksu wybranego zadania
+                window.sessionStorage.setItem("chosenIndex", i);
+                break;
+            }
         }
     }
     //Otwarcie strony i ustawienie odpowiedniej opcji w pamięci sesji
