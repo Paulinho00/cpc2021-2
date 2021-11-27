@@ -24,13 +24,35 @@ function LoadIntoTable() {
                     '<td>' + storage[4] + '</td>';
                 //Dobranie odpowiednie koloru rzędu, w zależności od priorytetu
                 switch (storage[3]) {
-                    case "Wysoki": tr.setAttribute("class", "high-priority"); break;
+                    case "Wysoki": {
+                        tr.classList.add("high-priority","row");
+                    } break;
                     case "Normalny": tr.setAttribute("class", "normal-priority"); break;
-                    case "Niski": tr.setAttribute("class", "low-priority"); break;
+                    case "Niski": tr.setAttribute("class", "low-priority");
+                        break;
                 }
                 //Dodanie rzędu do tabeli na stronie
                 document.getElementById("table-content").appendChild(tr);
             }
+        }
+        //Wywoływanie funkcji zmieniającej kolor zadań o wysokim priorytecie
+        window.setInterval(flashBackgroundColor, 500);
+    }
+}
+
+//Funkcja zmieniająca kolor zadaniom o wysokim priorytecie
+function flashBackgroundColor() {
+    //Pobranie wszystkich zadań o wysokim priorytecie
+     elements = document.getElementsByClassName("row");
+    //Pętla przechodząca przez wszystkie elementy
+    for (let i = 0; i < elements.length; i++) {
+        //Sprawdzenie jaki styl ma przypisany zadanie
+        if (elements[i].getAttribute("class") === "high-priority row") {
+            //Zmiana koloru zadania
+            elements[i].classList = "flash row";
+        } else {
+            //Zmiana koloru zadania
+            elements[i].classList = "high-priority row";
         }
     }
 }

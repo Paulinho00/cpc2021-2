@@ -64,6 +64,18 @@ table {
     background-color:forestgreen;
 }
 
+/* Styl podczas błyskania zadania*/
+.flash {
+    background-color: white;
+    
+}
+
+    .flash td {
+        color: black;
+    }
+
+
+
 /* Styl przycisków*/
 .button {
     display: inline-block;
