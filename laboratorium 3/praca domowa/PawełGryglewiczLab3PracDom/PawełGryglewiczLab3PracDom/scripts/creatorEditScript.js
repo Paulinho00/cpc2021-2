@@ -6,6 +6,8 @@ let inputs = [];
 function Start() {
     //Dodanie eventListenra do przycisku cofającego na główną stronę
     document.getElementById("back-to-main-page").addEventListener("click", BackToMainPage);
+    //Wywołanie metody blokującej wcześniejsze daty niż aktualna w date-input
+    RefreshDateInput();
     //Sprawdzenie czy licznik jest zainicjalizowany
     if (window.sessionStorage.getItem("isCounterInitialized") === null) {
         //Inicjalizajca licznika
@@ -21,7 +23,6 @@ function Start() {
     //Sprawdzenie czy jest włączona opcja edycji
     if (window.sessionStorage.getItem("editOrCreate") === "edit") {
         //Pobranie indeksu edytowanego zadania
-        console.log(window.sessionStorage.getItem("chosenIndex"));
         let index = window.sessionStorage.getItem("chosenIndex");
         //Pobranie danych edytowanego zadania
         let storage = JSON.parse(window.sessionStorage.getItem(index.toString()));
@@ -31,6 +32,27 @@ function Start() {
         document.getElementById("confirm-values").addEventListener("click", function () { EditValues(index) });
 
     }
+}
+
+// Funkcja blokująca wybranie wcześniejszej daty niż aktualna w date-input
+function RefreshDateInput() {
+    //Pobranie aktualnej daty
+    let n = new Date();
+    let y = n.getFullYear();
+    let m = n.getMonth() + 1;
+    let d = n.getDate();
+
+    //Utworzenie stringa w formacie daty
+    if (m < 10)
+        m = '0' + m.toString();
+    else if (d < 10)
+        d = '0' + d.toString();
+    let minDate = y + '-' + m + '-' + d;
+
+    //Ustawienie minimalnej daty w polu date-input
+    let dateInput = document.getElementById("date-input");
+    dateInput.setAttribute("min", minDate);
+
 }
 
 //Funkcja tworząca nowe zadanie i zapisująca je w pamięci sesji
@@ -48,11 +70,9 @@ function CreateTask() {
 
     //Zapisanie danych w sesji przeglądarki
     let nextIndex = parseInt(window.sessionStorage.getItem("counter")) + 1;
-    console.log(nextIndex);
     window.sessionStorage.setItem(nextIndex, JSON.stringify(inputs));
     //Zwiększenie licznika
     window.sessionStorage.setItem("counter", parseInt(window.sessionStorage.getItem("counter")) + 1)
-    console.log(window.sessionStorage.getItem("counter"));
     //Wyświetlenie napisu potwierdzającego dodanie zadania
     DisplayLabel();
     //Usunięcie napisu po 5s

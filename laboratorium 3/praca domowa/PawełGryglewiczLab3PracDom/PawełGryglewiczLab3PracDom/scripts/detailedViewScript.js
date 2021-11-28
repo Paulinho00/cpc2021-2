@@ -1,7 +1,7 @@
 ﻿
 // Funkcja dodając eventListenery do przycisku
 function Start() {
-    document.getElementById("back-to-main-page").addEventListener("click", function () { window.open("../index.html", "_self");});
+    document.getElementById("back-to-main-page").addEventListener("click", function () { window.open("../index.html", "_self"); });
 }
 
 // Funkcja wczytująca dane z sesji do tabeli
