@@ -1,0 +1,16 @@
+﻿@model List<string>
+
+
+<h2>
+    Lista modeli samochodów
+</h2>
+
+<ul>
+
+    @foreach(var carModel in Model)
+            {
+                <li>
+                    @Html.ActionLink(carModel, "GetCarByModel","Home", new { model = carModel }, null)
+                </li>
+            }
+</ul>

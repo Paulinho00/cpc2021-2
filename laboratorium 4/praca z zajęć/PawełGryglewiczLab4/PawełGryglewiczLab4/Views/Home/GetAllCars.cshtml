@@ -1,0 +1,29 @@
+﻿@model List<PawełGryglewiczLab4.Models.CarViewModel>
+
+@{
+    ViewData["Title"] = "Wszystkie samochody";
+    int i = 1;
+    string text = "Cześć";
+}
+
+<h2>
+    @text
+</h2>
+
+@foreach(var car in Model)
+ {
+    <div>
+        <h2>
+            @car.Model
+        </h2>
+        <h4>
+            Producent: @car.Manufacturer
+        </h4>
+        <h4>
+            Cena: @car.Price
+        </h4>
+        <img src="@Url.Content(car.Photo)" alt="@car.Model" />
+        <hr />
+    </div>
+ }
+  
