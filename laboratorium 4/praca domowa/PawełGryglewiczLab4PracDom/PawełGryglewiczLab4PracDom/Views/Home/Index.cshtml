@@ -1,0 +1,30 @@
+﻿@model PawełGryglewiczLab4PracDom.Models.UserData
+@{
+    ViewData["Title"] = "Ekran Logowania";
+}
+
+<!--Formularz logowania-->
+<form class="form-horizontal">
+    <h2>Logowanie</h2>
+    <!-- Pole na adres email-->
+    <div class="form-group">
+        @Html.LabelFor(m => Model.Email, htmlAttributes: new { @class = "col-sm-2 control-label"})
+        <div class="col-sm-10">
+            @Html.EditorFor(m => Model.Email, new {htmlAttributes= new {@class="form-control", @placeholder="Email"}} )
+        </div>
+    </div>
+    <!-- Pole na hasło-->
+    <div class="form-group">
+        @Html.LabelFor(m =>Model.Password, "Hasło",htmlAttributes: new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(m => Model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Hasło" } })
+        </div>
+    </div>
+
+    <!--Przycisk logowania-->
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn-dark">Zaloguj</button>
+        </div>
+    </div>
+</form>
