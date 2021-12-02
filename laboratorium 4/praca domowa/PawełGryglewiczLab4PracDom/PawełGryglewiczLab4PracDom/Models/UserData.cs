@@ -14,5 +14,16 @@ namespace PawełGryglewiczLab4PracDom.Models
         public string Email { get; set; }
         //Hasło
         public string Password { get; set; }
+
+        public UserData()
+        {
+
+        }
+
+        public UserData(string email, string password)
+        {
+            Email = email;
+            Password = password;
+        }
     }
 }
