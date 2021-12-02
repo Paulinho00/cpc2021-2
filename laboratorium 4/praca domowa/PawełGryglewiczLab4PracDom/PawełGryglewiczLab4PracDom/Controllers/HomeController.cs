@@ -21,12 +21,13 @@ namespace PawełGryglewiczLab4PracDom.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            //Hardcodowanie przykładowego użytkownika
             List<Transfer> transfersList = new List<Transfer>();
             transfersList.Add(new Transfer("Wypłata", 1800, "30-10-2021"));
             transfersList.Add(new Transfer("Wygrana w lotto", 500,"04-11-2021"));
             transfersList.Add(new Transfer("Opłata za prąd", -300, "06-11-2021"));
             allUsers = new List<UserData>();
-            allUsers.Add(new UserData("jan.kowalski@gmail.com", "haslo123", "Jan", "Kowalski", 2000.39, "98122431817", "53 1020 5356 3272 8458 2581 9498",transfersList)) ;
+            allUsers.Add(new UserData("jan.kowalski@gmail.com", "haslo123", "Jan", "Kowalski", -2000.39, "98122431817", "53 1020 5356 3272 8458 2581 9498",transfersList)) ;
         }
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace PawełGryglewiczLab4PracDom.Controllers
                 if (user.Email.Equals(userData.Email) && user.Password.Equals(userData.Password)) 
                 {
                     //Zapisanie aktualnie zalogowanego użytkownika
-                    TempData["CurrentUser"] = userData;
+                    TempData["CurrentUser"] = user;
                     return View("MainPage");
                 }
             }

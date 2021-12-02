@@ -1,17 +1,110 @@
-﻿<navbar class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-        <li class="nav-item-active">
-            <a class="nav-link" href="#">Wyciągi</a>
-        </li>
-        <li class="nav-item-active">
-            <a class="nav-link" href="#">Przelew</a>
-        </li>
-        <li class="nav-item-active">
-            <a class="nav-link" href="#">Pomoc techniczna</a>
-        </li>
-    </ul>
-</navbar>
+﻿@model PawełGryglewiczLab4PracDom.Models.UserData
+    <!--Pasek nawigacyjny-->
+    <navbar class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Wyciągi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Przelew</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pomoc techniczna</a>
+            </li>
+        </ul>
+    </navbar>
 
-<div>
+    <!--Kontener z danymi osobowymi-->
+    <div class="container-fluid">
+        <!--Pole z imieniem-->
+        <div class="row">
+            <div class="col-sm-2 bg-secondary text-white">
+                <p>Imię:</p>
+            </div>
+            <div class="col-sm-9 bg-light text-dark">
+                @{
+                    string firstName = ((UserData)TempData["CurrentUser"]).FirstName;
+                    <p>@(firstName)</p>
+                }
 
-</div>
+            </div>
+        </div>
+
+        <!--Pole z nazwiskiem-->
+        <div class="row">
+            <div class="col-sm-2 bg-secondary text-white">
+                <p>Nazwisko:</p>
+            </div>
+            <div class="col-sm-9 bg-light text-dark">
+                @{
+                    string surname = ((UserData)TempData["CurrentUser"]).Surname;
+                    <p>@(surname)</p>
+                }
+
+            </div>
+        </div>
+
+        <!--Pole z adresem email-->
+        <div class="row">
+            <div class="col-sm-2 bg-secondary text-white">
+                <p>Adres Email:</p>
+            </div>
+            <div class="col-sm-9 bg-light text-dark">
+                @{
+                    string email = ((UserData)TempData["CurrentUser"]).Email;
+                    <p>@(email)</p>
+                }
+
+            </div>
+        </div>
+
+        <!--Pole z saldem-->
+        <div class="row">
+            <div class="col-sm-2 bg-secondary text-white">
+                <p>Saldo:</p>
+            </div>
+            <div class="col-sm-9 bg-light text-dark">
+                @{
+                    double balance = ((UserData)TempData["CurrentUser"]).Balance;
+                    if (balance > 0)
+                    {
+                        <p class="text-success">@(balance)</p>
+                    }
+                    else if (balance < 0)
+                    {
+                        <p class="text-danger">@(balance)</p>
+                    }
+                    else
+                    {
+                        <p>@(balance)</p>
+                    }
+                }
+            </div>
+        </div>
+
+        <!--Pole z nr PESEL-->
+        <div class="row">
+            <div class="col-sm-2 bg-secondary text-white">
+                <p>PESEL:</p>
+            </div>
+            <div class="col-sm-9 bg-light text-dark">
+                @{
+                    string idNumber = ((UserData)TempData["CurrentUser"]).IdNumber;
+                    <p>@(idNumber)</p>
+                }
+            </div>
+        </div>
+
+        <!--Pole z nr konta-->
+        <div class="row">
+            <div class="col-sm-2 bg-secondary text-white">
+                <p>Nr konta:</p>
+            </div>
+            <div class="col-sm-9 bg-light text-dark">
+                @{
+                    string accountNumber = ((UserData)TempData["CurrentUser"]).AccountNumber;
+                    <p>@(accountNumber)</p>
+                }
+            </div>
+        </div>
+    </div>
