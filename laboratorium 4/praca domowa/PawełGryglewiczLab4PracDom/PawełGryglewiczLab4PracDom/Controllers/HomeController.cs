@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 using PawełGryglewiczLab4PracDom.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace PawełGryglewiczLab4PracDom.Controllers
 {
@@ -52,7 +55,9 @@ namespace PawełGryglewiczLab4PracDom.Controllers
             {
                 if (user.Email.Equals(userData.Email) && user.Password.Equals(userData.Password)) 
                 {
-                    //Zapisanie aktualnie zalogowanego użytkownika
+                    //Zapisanie aktualnie zalogowanego użytkownika w sesji
+                    HttpContext.Session.SetString("CurrentUser", JsonConvert.SerializeObject(user));
+                    //Przekazanie użytkownika do widoku
                     TempData["CurrentUser"] = user;
                     return View("MainPage");
                 }
@@ -69,6 +74,21 @@ namespace PawełGryglewiczLab4PracDom.Controllers
         /// <returns></returns>
         public IActionResult MainPage()
         {
+            //Odczyt użytkownika z sesji
+            String serialized = HttpContext.Session.GetString("CurrentUser");
+            UserData user = JsonConvert.DeserializeObject<UserData>(serialized);
+            //Przekazanie użytkownika do widoku
+            TempData["CurrentUser"] = user;
+            return View();
+        }
+
+        public IActionResult TransfersView()
+        {
+            //Odczyt użytkownika z sesji
+            String serialized = HttpContext.Session.GetString("CurrentUser");
+            UserData user = JsonConvert.DeserializeObject<UserData>(serialized);
+            //Przekazanie listy przelewów użytkownika do widoku
+            TempData["Transfers"] = user.TransfersList;
             return View();
         }
 

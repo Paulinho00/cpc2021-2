@@ -17,7 +17,7 @@ namespace PawełGryglewiczLab4PracDom.Models
         /// <summary>
         /// Kwota przelewu
         /// </summary>
-        public float Sum { get; set; }
+        public double Sum { get; set; }
         /// <summary>
         /// Data przelewu
         /// </summary>
@@ -30,7 +30,7 @@ namespace PawełGryglewiczLab4PracDom.Models
         /// Nadawca przelewu
         /// </summary>
         public string Sender { get; set; }
-        public Transfer(string title, float sum, string date, string recipient, string sender)
+        public Transfer(string title, double sum, string date, string recipient, string sender)
         {
             Title = title;
             Sum = sum;
