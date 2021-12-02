@@ -22,12 +22,21 @@ namespace PawełGryglewiczLab4PracDom.Models
         /// Data przelewu
         /// </summary>
         public string Date { get; set; }
-
-        public Transfer(string title, float sum, string date)
+        /// <summary>
+        /// Nr konta odbiorcy
+        /// </summary>
+        public string Recipient { get; set; }
+        /// <summary>
+        /// Nadawca przelewu
+        /// </summary>
+        public string Sender { get; set; }
+        public Transfer(string title, float sum, string date, string recipient, string sender)
         {
             Title = title;
             Sum = sum;
             Date = date;
+            Recipient = recipient;
+            Sender = sender;
         }
 
     }
