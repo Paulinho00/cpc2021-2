@@ -10,20 +10,54 @@ namespace PawełGryglewiczLab4PracDom.Models
     /// </summary>
     public class UserData
     {
-        //Adres email
+        /// <summary>
+        /// Adres email
+        /// </summary>
         public string Email { get; set; }
-        //Hasło
+        /// <summary>
+        /// Hasło
+        /// </summary>
         public string Password { get; set; }
+        /// <summary>
+        /// Imię
+        /// </summary>
+        public string FirstName { get; set; }
+        /// <summary>
+        /// Nazwisko
+        /// </summary>
+        public string Surname { get; set; }
+        /// <summary>
+        /// Saldo konta
+        /// </summary>
+        public double Balance { get; set; }
+        /// <summary>
+        /// Nr PESEL
+        /// </summary>
+        public string IdNumber { get; set; }
+        /// <summary>
+        /// Nr konta
+        /// </summary>
+        public string AccountNumber { get; set; }
+        /// <summary>
+        /// Lista przelewów
+        /// </summary>
+        public List<Transfer> TransfersList { get; set; }
 
         public UserData()
         {
 
         }
 
-        public UserData(string email, string password)
+        public UserData(string email, string password, string firstName, string surname, double balance, string idNumber, string accountNumber, List<Transfer> transfersList)
         {
             Email = email;
             Password = password;
+            FirstName = firstName;
+            Surname = surname;
+            Balance = balance;
+            IdNumber = idNumber;
+            AccountNumber = accountNumber;
+            TransfersList = transfersList;
         }
     }
 }
