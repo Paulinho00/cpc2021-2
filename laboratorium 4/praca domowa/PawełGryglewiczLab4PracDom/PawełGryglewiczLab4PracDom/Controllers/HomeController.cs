@@ -26,9 +26,9 @@ namespace PawełGryglewiczLab4PracDom.Controllers
             _logger = logger;
             //Hardcodowanie przykładowego użytkownika
             List<Transfer> transfersList = new List<Transfer>();
-            transfersList.Add(new Transfer("Wypłata", 1800, "30-10-2021", "Jan Kowalski","JOB S.A."));
-            transfersList.Add(new Transfer("Wygrana w lotto", 500,"04-11-2021","Jan Kowalski","Lotto S.A."));
-            transfersList.Add(new Transfer("Opłata za prąd", -300, "06-11-2021","Tauron Energia","Jan Kowalski"));
+            transfersList.Add(new Transfer("Wypłata", 1800, new DateTime(2021,10,30,12,15,32), "Jan Kowalski","JOB S.A."));
+            transfersList.Add(new Transfer("Wygrana w lotto", 500,new DateTime(2021,11,4,21,30,34),"Jan Kowalski","Lotto S.A."));
+            transfersList.Add(new Transfer("Opłata za prąd", -300,new DateTime(2021,11,6,8,5,30),"Tauron Energia","Jan Kowalski"));
             allUsers = new List<UserData>();
             allUsers.Add(new UserData("jan.kowalski@gmail.com", "haslo123", "Jan", "Kowalski", -2000.39, "98122431817", "53 1020 5356 3272 8458 2581 9498",transfersList)) ;
         }
