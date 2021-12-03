@@ -167,6 +167,59 @@ namespace PawełGryglewiczLab4PracDom.Controllers
             return View("TransferForm");
         }
 
+        /// <summary>
+        /// Endpoint żądania GET strony edytującej dane użytkownika
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult EditUserData()
+        {
+            //Odczyt użytkownika z sesji
+            string serialized = HttpContext.Session.GetString("CurrentUser") as string;
+            UserData user = JsonConvert.DeserializeObject<UserData>(serialized);
+            return View(user);
+        }
+
+        /// <summary>
+        /// Endpoint żadania POST strony edytującej dane użytkownika
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult EditUserData(UserData user)
+        {
+            //Odczyt użytkownika z sesji
+            string serialized = HttpContext.Session.GetString("CurrentUser") as string;
+            UserData oldUser = JsonConvert.DeserializeObject<UserData>(serialized);
+            //Sprawdzenie czy wszystkie pola zostały poprawnie wypełnione
+            if (user.FirstName == null || user.Surname == null || user.Email == null)
+            {
+                //Przekazanie informacji o błędnych danych
+                ViewBag.IsCorrect = false;
+                return View(oldUser);
+
+            }
+
+            //Przekazanie listy przelewów do zmienionego obiektu użytkownika
+            user.TransfersList = oldUser.TransfersList;
+            //Pętla zmieniająca imię i nazwisko we wszystkich przelewach nadanych przez użytkownika
+            foreach(var transfer in user.TransfersList)
+            {
+                string sender = oldUser.FirstName + " " + oldUser.Surname;
+                if (transfer.Sender.Equals(sender))
+                {
+                    transfer.Sender = user.FirstName + " " + user.Surname;
+                }
+
+            }
+            //Zapisanie zmienionego użytkownika w sesji
+            HttpContext.Session.SetString("CurrentUser", JsonConvert.SerializeObject(user));
+            //Przekazanie użytkownika do widoku
+            TempData["CurrentUser"] = user;
+            return View("MainPage");
+        }
+
+
         public IActionResult Privacy()
         {
             return View();
