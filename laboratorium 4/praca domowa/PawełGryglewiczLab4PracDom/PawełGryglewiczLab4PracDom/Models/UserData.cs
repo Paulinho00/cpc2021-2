@@ -29,7 +29,7 @@ namespace PawełGryglewiczLab4PracDom.Models
         /// <summary>
         /// Saldo konta
         /// </summary>
-        public double Balance { get; set; }
+        public int Balance { get; set; }
         /// <summary>
         /// Nr PESEL
         /// </summary>
@@ -48,7 +48,7 @@ namespace PawełGryglewiczLab4PracDom.Models
 
         }
 
-        public UserData(string email, string password, string firstName, string surname, double balance, string idNumber, string accountNumber, List<Transfer> transfersList)
+        public UserData(string email, string password, string firstName, string surname, int balance, string idNumber, string accountNumber, List<Transfer> transfersList)
         {
             Email = email;
             Password = password;

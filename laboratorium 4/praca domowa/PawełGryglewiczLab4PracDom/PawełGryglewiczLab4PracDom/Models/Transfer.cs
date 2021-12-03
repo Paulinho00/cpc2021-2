@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,11 +18,11 @@ namespace PawełGryglewiczLab4PracDom.Models
         /// <summary>
         /// Kwota przelewu
         /// </summary>
-        public double Sum { get; set; }
+        public int Sum { get; set; }
         /// <summary>
         /// Data przelewu
         /// </summary>
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         /// <summary>
         /// Nr konta odbiorcy
         /// </summary>
@@ -30,7 +31,12 @@ namespace PawełGryglewiczLab4PracDom.Models
         /// Nadawca przelewu
         /// </summary>
         public string Sender { get; set; }
-        public Transfer(string title, double sum, DateTime date, string recipient, string sender)
+
+        public Transfer()
+        {
+        }
+
+        public Transfer(string title, int sum, string date, string recipient, string sender)
         {
             Title = title;
             Sum = sum;
