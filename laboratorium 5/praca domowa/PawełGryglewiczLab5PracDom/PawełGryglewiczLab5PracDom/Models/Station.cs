@@ -20,7 +20,8 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// <summary>
         /// Miejscowość stacji
         /// </summary>
-        [MaxLength(25)][Required]
+        [Required]
+        [MaxLength(25)]
         public string Town { get; set; }
 
         /// <summary>

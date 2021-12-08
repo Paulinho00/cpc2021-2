@@ -20,19 +20,22 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// <summary>
         /// Producent pociągu
         /// </summary>
-        [MaxLength(50)][Required]
+        [Required]
+        [MaxLength(50)]
         public string Manufacturer { get; set; }
 
         /// <summary>
         /// Model pociągu
         /// </summary>
-        [MaxLength(25)][Required]
+        [Required]
+        [MaxLength(25)]
         public string Model { get; set; }
 
         /// <summary>
         /// Typ napędu
         /// </summary>
-        [MaxLength(25)][Required]
+        [Required]
+        [MaxLength(25)]
         public string PowerType { get; set; }
 
         /// <summary>
