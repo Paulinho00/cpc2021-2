@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -41,5 +42,17 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [Required]
         public bool HasTicketOffice { get; set; }
+
+        /// <summary>
+        /// Połączenia w których stacja jest początkiem trasy
+        /// </summary>
+        [InverseProperty("PlaceOfDeparture")]
+        public ICollection<RailwayConnection> DeparturePlaceInConnection { get; set; }
+
+        /// <summary>
+        /// Połączenia w których stacja jest końcem trasy
+        /// </summary>
+        [InverseProperty("Destination")]
+        public ICollection<RailwayConnection> DestinationInConnection { get; set; }
     }
 }

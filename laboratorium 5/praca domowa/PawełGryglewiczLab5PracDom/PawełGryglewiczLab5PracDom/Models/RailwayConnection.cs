@@ -27,7 +27,6 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// <summary>
         /// Id stacji początkowej
         /// </summary>
-        [Required]
         public int PlaceOfDepartureId { get; set; }
 
         /// <summary>
@@ -39,8 +38,7 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// <summary>
         /// Id stacji końcowej
         /// </summary>
-        [Required]
-        public int DestinationId { get; set;}
+        public int? DestinationId { get; set;}
 
         /// <summary>
         /// Id pociągu
@@ -65,6 +63,11 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [ForeignKey("TrainId")]
         public Train Train { get; set; }
+
+        /// <summary>
+        /// Pasażerowie którzy kupili bilet na dane połączenie
+        /// </summary>
+        public ICollection<Passenger> Passerngers { get; set; }
 
     }
 }
