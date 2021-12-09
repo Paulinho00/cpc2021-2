@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Pasażerowie";
+}
+@model IEnumerable<Train>
+    <!--Nagłówek-->
+    <header>
+        <!--Pasek nawigacyjny-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Internetowy biletomat</a>
+            <!--Kontener z elementami paska nawigacyjnego-->
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href=@Url.Action("Index","Home")>Strona główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Rezerwacja biletu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lista wszystkich pasażerów</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lista połączeń</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Stacje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href=@Url.Action("ListOfTrains","Train")>Pociągi</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--Tabela do wyświetlenia zawartości bazy danych-->
+    <table class="table">
+        <!--Nagłówek tabeli-->
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(m => m.Manufacturer)</th>
+                <th scope="col">@Html.DisplayNameFor(m => m.Model)</th>
+                <th scope="col">@Html.DisplayNameFor(m => m.PowerType)</th>
+                <th scope="col">@Html.DisplayNameFor(m => m.YearOfProduction)</th>
+                <th scope="col">@Html.DisplayNameFor(m => m.NumberOfCars)</th>
+                <th scope="col">@Html.DisplayNameFor(m => m.MaxSpeed)</th>
+                <th scope="col">@Html.DisplayNameFor(m => m.Weigth)</th>
+            </tr>
+        </thead>
+
+        <!--Zawartość tabeli-->
+        <tbody>
+            
+            @foreach(var train in Model)
+            {
+             //Dodanie pojedynczego rekordu do tabeli
+            <tr>
+                <td>@Html.DisplayFor(modelItem => train.Manufacturer)</td>
+                <td>@Html.DisplayFor(modelItem => train.Model)</td>
+                <td>@Html.DisplayFor(modelItem => train.PowerType)</td>
+                <td>@Html.DisplayFor(modelItem => train.YearOfProduction)</td>
+                <td>@Html.DisplayFor(modelItem => train.NumberOfCars)</td>
+                <td>@Html.DisplayFor(modelItem => train.MaxSpeed)</td>
+                <td>@Html.DisplayFor(modelItem => train.Weigth) kg</td>
+            </tr>
+            }
+        </tbody>
+    </table>

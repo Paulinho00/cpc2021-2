@@ -22,6 +22,7 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [Required]
         [MaxLength(50)]
+        [Display(Name ="Producent")]
         public string Manufacturer { get; set; }
 
         /// <summary>
@@ -36,30 +37,35 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [Required]
         [MaxLength(25)]
+        [Display(Name ="Rodzaj napędu")]
         public string PowerType { get; set; }
 
         /// <summary>
         /// Rok produkcji
         /// </summary>
         [Required]
+        [Display(Name ="Rok produkcji")]
         public int YearOfProduction { get; set; }
 
         /// <summary>
         /// Liczba wagonów
         /// </summary>
         [Required]
+        [Display(Name ="Ilość wagonów")]
         public int NumberOfCars { get; set; }
 
         /// <summary>
         /// Maksymalna prędkość pociągu
         /// </summary>
         [Required]
+        [Display(Name ="Maksymalna prędkość")]
         public int MaxSpeed { get; set; }
 
         /// <summary>
         /// Waga pociągu
         /// </summary>
         [Required]
+        [Display(Name ="Masa")]
         public int Weigth { get; set; }
     }
 }

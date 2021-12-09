@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href=@Url.Action("Index","Home")>Strona główna</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Rezerwacja biletu</a>
@@ -26,7 +26,7 @@
                     <a class="nav-link" href="#">Stacje</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pociągi</a>
+                    <a class="nav-link" href=@Url.Action("ListOfTrains","Train")>Pociągi</a>
                 </li>
             </ul>
         </div>
@@ -38,7 +38,8 @@
     <!--Kontener z informacją dla użytkownika -->
     <div>
         <h3 class="display-6 text-center">Witaj w kolejowym internetowym biletomacie</h3>
-        <a class="display-6 text-center">Aby zamówić bilet lub wyświetlić listy pociągów, pasażerów, stacji czy połączeń kolejowych, przejdź do odpowiedniej zakładki na pasku nawigacyjnym lub odpowiedniego odnośnika poniżej:</a>
+        <a class="display-6 text-center ml-3" >Aby zamówić bilet lub wyświetlić odpowiednie listy, przejdź do odpowiedniej zakładki na pasku nawigacyjnym lub odpowiedniego odnośnika poniżej:
+        </a>
     </div>
 
     <!--Kontener z odnośnikami-->
@@ -48,7 +49,7 @@
             <li class="list-group-item list-group-item-action">Wyświetl listę wszystkich pasażerów </li>
             <li class="list-group-item list-group-item-action">Wyświetl listę wszystkich dostępnych połączeń</li>
             <li class="list-group-item list-group-item-action">Wyświetl listę stacji kolejowych </li>
-            <li class="list-group-item list-group-item-action">Wyświetl wszystkie używane pociągi</li>
+            <a href=@Url.Action("ListOfTrains","Train")><li class="list-group-item list-group-item-action" >Wyświetl wszystkie używane pociągi</li></a>
         </ul>
     </div>
 </body>
