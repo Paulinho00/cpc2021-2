@@ -2,7 +2,53 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!--Nagłówek-->
+<header>
+    <!--Pasek nawigacyjny-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Internetowy biletomat</a>
+        <!--Kontener z elementami paska nawigacyjnego-->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rezerwacja biletu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lista wszystkich pasażerów</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lista połączeń</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Stacje</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pociągi</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!--Treść strony-->
+<body>
+    <!--Kontener z informacją dla użytkownika -->
+    <div>
+        <h3 class="display-6 text-center">Witaj w kolejowym internetowym biletomacie</h3>
+        <a class="display-6 text-center">Aby zamówić bilet lub wyświetlić listy pociągów, pasażerów, stacji czy połączeń kolejowych, przejdź do odpowiedniej zakładki na pasku nawigacyjnym lub odpowiedniego odnośnika poniżej:</a>
+    </div>
+
+    <!--Kontener z odnośnikami-->
+    <div class="mt-5">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action ">Zarezerwuj bilet</li>
+            <li class="list-group-item list-group-item-action">Wyświetl listę wszystkich pasażerów </li>
+            <li class="list-group-item list-group-item-action">Wyświetl listę wszystkich dostępnych połączeń</li>
+            <li class="list-group-item list-group-item-action">Wyświetl listę stacji kolejowych </li>
+            <li class="list-group-item list-group-item-action">Wyświetl wszystkie używane pociągi</li>
+        </ul>
+    </div>
+</body>
