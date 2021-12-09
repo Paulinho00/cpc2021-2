@@ -1,0 +1,6 @@
+﻿
+/*Tło strony*/
+#main-body-background {
+    background-image: url("../images/railwayStation.jpg");
+    background-size: cover;
+}
