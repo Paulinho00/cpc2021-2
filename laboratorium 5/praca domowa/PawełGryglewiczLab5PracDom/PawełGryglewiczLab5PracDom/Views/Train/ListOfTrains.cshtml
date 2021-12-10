@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Pasażerowie";
+    ViewData["Title"] = "Pociągi";
 }
 @model IEnumerable<Train>
     <!--Nagłówek-->
@@ -23,7 +23,7 @@
                         <a class="nav-link" href="#">Lista połączeń</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Stacje</a>
+                        <a class="nav-link" href=@Url.Action("ListOfStations","Station")>Stacje</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href=@Url.Action("ListOfTrains","Train")>Pociągi</a>

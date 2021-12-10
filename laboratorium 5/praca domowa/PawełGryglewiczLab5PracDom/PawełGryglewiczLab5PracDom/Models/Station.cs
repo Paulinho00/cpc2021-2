@@ -23,24 +23,28 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [Required]
         [MaxLength(25)]
+        [Display(Name ="Miasto")]
         public string Town { get; set; }
 
         /// <summary>
         /// Liczba peronów na stacji
         /// </summary>
         [Required]
+        [Display(Name ="Liczba peronów")]
         public int PlatformsNumber { get; set; }
 
         /// <summary>
         /// Rok otwarcia stacji
         /// </summary>
         [Required]
+        [Display(Name ="Rok otwarcia")]
         public int YearOfFound { get; set; }
 
         /// <summary>
         /// Zmienna przechowująca informację czy stacja ma kasy biletowe
         /// </summary>
         [Required]
+        [Display(Name ="Kasy biletowe")]
         public bool HasTicketOffice { get; set; }
 
         /// <summary>
