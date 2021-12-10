@@ -73,10 +73,10 @@ namespace PawełGryglewiczLab5PracDom.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TimeOfArrival")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("smalldatetime");
 
                     b.Property<DateTime>("TimeOfDeparture")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("smalldatetime");
 
                     b.Property<int>("TrainId")
                         .HasColumnType("int");

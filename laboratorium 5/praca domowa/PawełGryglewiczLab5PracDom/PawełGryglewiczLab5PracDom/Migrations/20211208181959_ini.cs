@@ -48,9 +48,9 @@ namespace PawełGryglewiczLab5PracDom.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TimeOfDeparture = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TimeOfDeparture = table.Column<DateTime>(type: "smalldatetime", nullable: false),
                     PlaceOfDepartureId = table.Column<int>(type: "int", nullable: false),
-                    TimeOfArrival = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TimeOfArrival = table.Column<DateTime>(type: "smalldatetime", nullable: false),
                     DestinationId = table.Column<int>(type: "int", nullable: true),
                     TrainId = table.Column<int>(type: "int", nullable: false)
                 },

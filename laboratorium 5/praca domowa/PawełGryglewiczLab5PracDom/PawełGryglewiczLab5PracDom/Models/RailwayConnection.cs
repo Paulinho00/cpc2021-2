@@ -22,6 +22,7 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// Czas odjazdu
         /// </summary>
         [Required]
+        [Column(TypeName ="smalldatetime")]
         public DateTime TimeOfDeparture { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// Czas przyjazdu
         /// </summary>
         [Required]
+        [Column(TypeName = "smalldatetime")]
         public  DateTime TimeOfArrival { get; set; }
 
         /// <summary>
