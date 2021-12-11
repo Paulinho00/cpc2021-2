@@ -20,7 +20,7 @@
                     <a class="nav-link" href="#">Lista wszystkich pasażerów</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Lista połączeń</a>
+                    <a class="nav-link" href=@Url.Action("ListOfConnections","RailwayConnection")>Lista połączeń</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href=@Url.Action("ListOfStations","Station")>Stacje</a>
@@ -47,7 +47,7 @@
         <ul class="list-group">
             <li class="list-group-item list-group-item-action ">Zarezerwuj bilet</li>
             <li class="list-group-item list-group-item-action">Wyświetl listę wszystkich pasażerów </li>
-            <li class="list-group-item list-group-item-action">Wyświetl listę wszystkich dostępnych połączeń</li>
+            <a href=@Url.Action("ListOfConnections","RailwayConnection")><li class="list-group-item list-group-item-action">Wyświetl listę wszystkich dostępnych połączeń</li></a>
             <a href=@Url.Action("ListOfStations","Station")><li class="list-group-item list-group-item-action">Wyświetl listę stacji kolejowych </li></a>
             <a href=@Url.Action("ListOfTrains","Train")><li class="list-group-item list-group-item-action">Wyświetl wszystkie używane pociągi</li></a>
         </ul>

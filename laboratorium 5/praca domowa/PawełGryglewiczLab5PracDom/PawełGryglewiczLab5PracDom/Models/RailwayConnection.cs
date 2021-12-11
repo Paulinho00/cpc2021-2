@@ -23,11 +23,13 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [Required]
         [Column(TypeName ="smalldatetime")]
+        [Display(Name ="Odjazd")]
         public DateTime TimeOfDeparture { get; set; }
 
         /// <summary>
         /// Id stacji początkowej
         /// </summary>
+        [Display(Name ="Stacja początkowa")]
         public int PlaceOfDepartureId { get; set; }
 
         /// <summary>
@@ -35,6 +37,7 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [Required]
         [Column(TypeName = "smalldatetime")]
+        [Display(Name ="Przyjazd")]
         public  DateTime TimeOfArrival { get; set; }
 
         /// <summary>
@@ -52,19 +55,22 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// Obiekt stacji początkowej
         /// </summary>
         [ForeignKey("PlaceOfDepartureId")]
-        public Station PlaceOfDeparture { get; set; }
+        [Display(Name ="Stacja początkowa")]
+        public virtual Station PlaceOfDeparture { get; set; }
 
         /// <summary>
         /// Obiekt stacji końcowej
         /// </summary>
         [ForeignKey("DestinationId")]
-        public Station Destination { get; set; }
+        [Display(Name ="Stacja końcowa")]
+        public virtual Station Destination { get; set; }
 
         /// <summary>
         /// Obiekt pociągu
         /// </summary>
         [ForeignKey("TrainId")]
-        public Train Train { get; set; }
+        [Display(Name ="Pociąg")]
+        public virtual Train Train { get; set; }
 
         /// <summary>
         /// Pasażerowie którzy kupili bilet na dane połączenie
