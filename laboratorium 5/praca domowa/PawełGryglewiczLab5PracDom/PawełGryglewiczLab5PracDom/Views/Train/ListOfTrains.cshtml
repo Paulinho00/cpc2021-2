@@ -2,36 +2,7 @@
     ViewData["Title"] = "Pociągi";
 }
 @model IEnumerable<Train>
-    <!--Nagłówek-->
-    <header>
-        <!--Pasek nawigacyjny-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Internetowy biletomat</a>
-            <!--Kontener z elementami paska nawigacyjnego-->
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href=@Url.Action("Index","Home")>Strona główna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rezerwacja biletu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lista wszystkich pasażerów</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=@Url.Action("ListOfConnections","RailwayConnection")>Lista połączeń</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=@Url.Action("ListOfStations","Station")>Stacje</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href=@Url.Action("ListOfTrains","Train")>Pociągi</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+
 
     <!--Tabela do wyświetlenia zawartości bazy danych-->
     <table class="table">

@@ -9,10 +9,41 @@
     <link rel="stylesheet" href="~/css/mainPage.css" />
 </head>
 <body id="main-body-background" class="min-vh-100">
-    <div class="container min-vh-100" >
-            <main role="main" style="background-color: white;" class="pb-3 min-vh-100">
-                @RenderBody()
-                </main>
+    <div class="container min-vh-100">
+        <!--Nagłówek-->
+        <header>
+            <!--Pasek nawigacyjny-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Internetowy biletomat</a>
+                <!--Kontener z elementami paska nawigacyjnego-->
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("Index","Home")>Strona główna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rezerwacja biletu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lista wszystkich pasażerów</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("ListOfConnections","RailwayConnection")>Lista połączeń</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("ListOfStations","Station")>Stacje</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("ListOfTrains","Train")>Pociągi</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" style="background-color: white;" class="pb-3 min-vh-100">
+            @RenderBody()
+        </main>
 
     </div>
     <div class="background-container"></div>
