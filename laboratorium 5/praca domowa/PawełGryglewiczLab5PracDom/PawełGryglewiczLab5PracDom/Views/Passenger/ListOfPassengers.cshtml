@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Pasażerowie";
+}
+@model RailwayConnectionPassengerViewModel
+<!--Rozwijane menu wyboru filtra wyświetlania pasażerów -->
+<div>
+    <div class="btn-group float-right mt-2 mb-2 mr-4">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@ViewBag.DropdownTitle</button>
+        <!--Opcje wyboru trasy do przefiltrowania pasażerów w menu-->
+        <div class="dropdown-menu">
+            @Html.ActionLink("Wszyscy", "ListOfPassengers", "Passenger", null, new { @class = "dropdown-item" })
+
+            @foreach (var railwayConnection in Model.RailwayConnections)
+            {
+                @Html.ActionLink(@railwayConnection.PlaceOfDeparture.Town + "-" + @railwayConnection.Destination.Town, "PassengersByRailwayConnection", "Passenger", new { id = railwayConnection.Id }, new { @class = "dropdown-item" });
+            }
+        </div>
+
+    </div>
+</div>
+
+<!--Tabela do wyświetlenia zawartości bazy danych-->
+<table class="table">
+    <!--Nagłówek tabeli-->
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(m => m.Passengers[0].FirstName)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.Passengers[0].LastName)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.Passengers[0].Age)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.Passengers[0].EmailAddress)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.Passengers[0].TicketType)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.Passengers[0].RailwayConnection)</th>
+            <th scope="col">Czas odjazdu</th>
+        </tr>
+    </thead>
+
+    <!--Zawartość tabeli-->
+    <tbody>
+
+        @foreach (var passenger in Model.Passengers)
+        {
+            //Dodanie pojedynczego rekordu do tabeli
+            <tr>
+                <td>@Html.DisplayFor(modelItem => passenger.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => passenger.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => passenger.Age)</td>
+                <td>@Html.DisplayFor(modelItem => passenger.EmailAddress)</td>
+                <td>@Html.DisplayFor(modelItem => passenger.TicketType)</td>
+                <td>@Html.DisplayFor(modelItem => passenger.RailwayConnection.PlaceOfDeparture.Town)-@Html.DisplayFor(modelItem => passenger.RailwayConnection.Destination.Town)</td>
+                <td>@Html.DisplayFor(modelItem => passenger.RailwayConnection.TimeOfDeparture)</td>
+                <!--Przycisk edycji wpisu w tabeli-->
+                <td></td>
+                <!--Przycisk usuwający wpis w tabeli-->
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

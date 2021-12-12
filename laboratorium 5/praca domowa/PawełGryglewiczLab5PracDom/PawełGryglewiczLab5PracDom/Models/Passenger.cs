@@ -22,6 +22,7 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [MaxLength(50)]
         [Required]
+        [Display(Name ="Imię")]
         public string FirstName { get; set; }
 
         /// <summary>
@@ -29,12 +30,14 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [MaxLength(50)]
         [Required]
+        [Display(Name ="Nazwisko")]
         public string LastName { get; set; }
 
         /// <summary>
         /// Wiek pasażera
         /// </summary>
         [Required]
+        [Display(Name ="Wiek")]
         public int Age { get; set; }
 
         /// <summary>
@@ -42,12 +45,14 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         [DataType(DataType.EmailAddress)]
         [Required]
+        [Display(Name ="Email")]
         public string EmailAddress { get; set; }
 
         /// <summary>
         /// Typ biletu pasażera
         /// </summary>
         [Required]
+        [Display(Name ="Rodzaj biletu")]
         public string TicketType { get; set; }
 
         /// <summary>
@@ -60,6 +65,7 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// Obiekt połączenia kolejowego pasażera
         /// </summary>
         [ForeignKey("RailwayConnectionId")]
+        [Display(Name ="Trasa")]
         public RailwayConnection RailwayConnection { get; set; }
 
     }
