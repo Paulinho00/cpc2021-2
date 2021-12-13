@@ -3,7 +3,7 @@
 }
 @model RailwayConnectionPassengerViewModel;
 <!--Formularz tworzenia pasażera-->
-@using (Html.BeginForm("CreatePassengerForm", "Passenger", FormMethod.Post))
+@using (Html.BeginForm("CreatePassenger", "Passenger", FormMethod.Post))
 {
     <!--Pole z imieniem-->
     <div class="form-group">
@@ -73,8 +73,16 @@
     <!--Przycisk potwierdzający wprowadzone dane-->
     <div class="form-group">
         <div class="col-sm-10">
-            <input type="submit" value="Zarezerwuj" class="btn btn-primary" />
+            <input type="submit" value="Potwierdź" class="btn btn-primary" />
         </div>
+    </div>
+}
+
+@if (ViewBag.IsCorrect == false)
+{
+    <!--Alert o błędnych danych-->
+    <div class="alert alert-danger">
+        <strong>Błąd</strong> Błędne dane logowania
     </div>
 }
 

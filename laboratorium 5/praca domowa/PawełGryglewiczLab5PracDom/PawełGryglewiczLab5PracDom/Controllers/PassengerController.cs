@@ -79,7 +79,7 @@ namespace PawełGryglewiczLab5PracDom.Controllers
             ViewBag.ChosenRailwayConnectionId = id;
 
             RailwayConnectionPassengerViewModel railwayConnectionPassengerViewModel = new RailwayConnectionPassengerViewModel(passengers, railwayConnections);
-            return View("ListOfPassengers",railwayConnectionPassengerViewModel);
+            return View("ListOfPassengers", railwayConnectionPassengerViewModel);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace PawełGryglewiczLab5PracDom.Controllers
         {
             //Odczyt pasażera z bazy danych
             Passenger passenger = _context.Passengers
-                .SingleOrDefault(p => p.Id.Equals(passengerId));
+                .FirstOrDefault(p => p.Id.Equals(passengerId));
 
             //Usunięcie pasażera z bazy danych
             _context.Passengers.Remove(passenger);
@@ -100,7 +100,7 @@ namespace PawełGryglewiczLab5PracDom.Controllers
 
             //Zwrócenie wyglądu który był widoczny w chwili usuwania pasażera
             if (railwayConnectionId == 0)
-            return this.RedirectToAction("ListOfPassengers", "Passenger");
+                return this.RedirectToAction("ListOfPassengers", "Passenger");
             else
                 return this.RedirectToAction("PassengersByRailwayConnection", "Passenger", new { id = railwayConnectionId });
         }
@@ -118,7 +118,16 @@ namespace PawełGryglewiczLab5PracDom.Controllers
                                         .Include(railwayConnection => railwayConnection.PlaceOfDeparture)
                                         .ToList();
             RailwayConnectionPassengerViewModel railwayConnectionPassengerViewModel = new RailwayConnectionPassengerViewModel(railwayConnections);
-            return View("CreatePassengerForm",railwayConnectionPassengerViewModel);
+
+            //Sprawdzenie czy trzeba wysłać komunikat błędu
+            try
+            {
+                if ((bool)TempData["IsCorrect"] == false)
+                    ViewBag.IsCorrect = false;
+            }
+            catch (NullReferenceException e) { };
+
+            return View("CreatePassengerForm", railwayConnectionPassengerViewModel);
         }
 
         /// <summary>
@@ -126,10 +135,34 @@ namespace PawełGryglewiczLab5PracDom.Controllers
         /// </summary>
         /// <param name="railwayConnectionPassengerViewModel"></param>
         /// <returns></returns>
+        [HttpPost]
         public IActionResult CreatePassenger(RailwayConnectionPassengerViewModel railwayConnectionPassengerViewModel)
         {
-            //Zapis obiektu pasażera do bazy danych
+            //Odczyt nowego pasażera z obiektu
             Passenger createdPassenger = railwayConnectionPassengerViewModel.Passengers[0];
+
+            //Sprawdzenie czy obiekt posiada wszystkie dane
+            try
+            {
+                createdPassenger.FirstName.Equals(null);
+                createdPassenger.LastName.Equals(null);
+                createdPassenger.Age.Equals(null);
+                createdPassenger.EmailAddress.Equals(null);
+                createdPassenger.TicketType.Equals(null);
+                if (createdPassenger.RailwayConnectionId.Equals(0))
+                {
+                    TempData["IsCorrect"] = false;
+                    return RedirectToAction("CreatePassenger");
+                }
+            }
+            catch (NullReferenceException e)
+            {
+                //Wysłanie informacji do następnego żadania o błędnych danych
+                TempData["IsCorrect"] = false;
+                return RedirectToAction("CreatePassenger");
+            }
+
+            //Zapis obiektu do bazy danych
             _context.Passengers.Add(createdPassenger);
             _context.SaveChanges();
 
@@ -138,5 +171,5 @@ namespace PawełGryglewiczLab5PracDom.Controllers
         }
 
 
-    }
+    }     
 }
