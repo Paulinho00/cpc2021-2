@@ -44,8 +44,9 @@ namespace PawełGryglewiczLab5PracDom.Controllers
                                 .OrderBy(passenger => passenger.LastName)
                                 .ToList();
 
-            //Zapisanie tytułu przycisku rozwijanego menu w widoku
+            //Zapisanie tytułu przycisku rozwijanego menu i id wybranego połączenia w widoku
             ViewBag.DropdownTitle = "Wszyscy";
+            ViewBag.ChosenRailwayConnectionId = 0;
 
             RailwayConnectionPassengerViewModel railwayConnectionPassengerViewModel = new RailwayConnectionPassengerViewModel(passengers, railwayConnections);
             return View(railwayConnectionPassengerViewModel);
@@ -72,12 +73,36 @@ namespace PawełGryglewiczLab5PracDom.Controllers
                                 .OrderBy(passenger => passenger.LastName)
                                 .Where(passenger => passenger.RailwayConnectionId == id)
                                 .ToList();
-            //Zapisanie tytułu przycisku rozwijanego menu w widoku
+            //Zapisanie tytułu przycisku rozwijanego menu i id wybranego połączenia w widoku
             RailwayConnection chosenRailwayConnection = _context.RailwayConnections.SingleOrDefault(railwayConnection => railwayConnection.Id == id);
             ViewBag.DropdownTitle = chosenRailwayConnection.PlaceOfDeparture.Town + "-" + chosenRailwayConnection.Destination.Town;
+            ViewBag.ChosenRailwayConnectionId = id;
 
             RailwayConnectionPassengerViewModel railwayConnectionPassengerViewModel = new RailwayConnectionPassengerViewModel(passengers, railwayConnections);
             return View("ListOfPassengers",railwayConnectionPassengerViewModel);
+        }
+
+        /// <summary>
+        /// Endpoint żadania DELETE do wybranego pasażera
+        /// </summary>
+        /// <param name="passengerId">obiekt wybranego pasażera</param>
+        /// <param name="railwayConnectionId">id wybranego połączenia kolejowego według którego są posortowani pasażerowie</param>
+        /// <returns></returns>
+        public IActionResult DeletePassenger(int passengerId, int railwayConnectionId)
+        {
+            //Odczyt pasażera z bazy danych
+            Passenger passenger = _context.Passengers
+                .SingleOrDefault(p => p.Id.Equals(passengerId));
+
+            //Usunięcie pasażera z bazy danych
+            _context.Passengers.Remove(passenger);
+            _context.SaveChanges();
+
+            //Zwrócenie wyglądu który był widoczny w chwili usuwania pasażera
+            if (railwayConnectionId == 0)
+            return this.RedirectToAction("ListOfPassengers", "Passenger");
+            else
+                return this.RedirectToAction("PassengersByRailwayConnection", "Passenger", new { id = railwayConnectionId });
         }
     }
 }

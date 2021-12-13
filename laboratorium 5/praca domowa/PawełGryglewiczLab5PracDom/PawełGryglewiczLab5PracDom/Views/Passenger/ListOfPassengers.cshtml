@@ -51,7 +51,7 @@
                 <!--Przycisk edycji wpisu w tabeli-->
                 <td></td>
                 <!--Przycisk usuwający wpis w tabeli-->
-                <td></td>
+                <td><button type="submit" class="btn btn-danger" onclick="window.location.href='@Url.Action("DeletePassenger","Passenger",new { passengerId = passenger.Id, railwayConnectionId = ViewBag.ChosenRailwayConnectionId })'">Usuń</button></td>
             </tr>
         }
     </tbody>
