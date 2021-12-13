@@ -19,9 +19,19 @@ namespace PawełGryglewiczLab5PracDom.Models
         /// </summary>
         public List<RailwayConnection> RailwayConnections { get; set; }
 
+        public RailwayConnectionPassengerViewModel()
+        {
+
+        }
+
         public RailwayConnectionPassengerViewModel(List<Passenger> passengers, List<RailwayConnection> railwayConnections)
         {
             Passengers = passengers;
+            RailwayConnections = railwayConnections;
+        }
+
+        public RailwayConnectionPassengerViewModel(List<RailwayConnection> railwayConnections)
+        {
             RailwayConnections = railwayConnections;
         }
 

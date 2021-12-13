@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Pasażer";
+}
+@model RailwayConnectionPassengerViewModel;
+<!--Formularz tworzenia pasażera-->
+@using (Html.BeginForm("CreatePassengerForm", "Passenger", FormMethod.Post))
+{
+    <!--Pole z imieniem-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Passengers[0].FirstName, "Imię:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.Passengers[0].FirstName, new { @class = "form-control", })
+        </div>
+    </div>
+
+    <!--Pole z nazwiskiem-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Passengers[0].LastName, "Nazwisko:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.Passengers[0].LastName, new { @class = "form-control", })
+        </div>
+    </div>
+
+    <!--Pole z wiekiem-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Passengers[0].Age, "Wiek:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.Passengers[0].Age, new { @class = "form-control", @type = "number", @min = "0", @max = "99" })
+        </div>
+    </div>
+
+    <!--Pole z adresem email-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Passengers[0].EmailAddress, "Email:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.Passengers[0].EmailAddress, new { @class = "form-control", @type = "email" })
+        </div>
+    </div>
+
+    <!--Pole z wyborem typu biletu-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Passengers[0].TicketType, "Bilet:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @{
+                //Lista z możliwymi typami biletu
+                List<SelectListItem> ticketTypeList = new List<SelectListItem>
+                {
+                    new SelectListItem(){Text="Normalny", Value="Normalny" },
+                    new SelectListItem(){ Text = "Ulgowy", Value="Ulgowy" }
+                };
+            }
+            @Html.DropDownListFor(model => model.Passengers[0].TicketType, ticketTypeList, " ", new { @class = "form-control", @type = "email" })
+        </div>
+    </div>
+
+    <!--Pole z wyborem trasy-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Passengers[0].RailwayConnectionId, "Trasa:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @{
+                //Lista z możliwymi trasami
+                List<SelectListItem> railwayConnectionsList = new List<SelectListItem>();
+                @foreach (var railwayConnection in Model.RailwayConnections)
+                {
+                    railwayConnectionsList.Add(new SelectListItem() { Text = railwayConnection.PlaceOfDeparture.Town + "-" + railwayConnection.Destination.Town, Value = railwayConnection.Id.ToString() });
+                }
+
+            }
+            @Html.DropDownListFor(model => model.Passengers[0].RailwayConnectionId, railwayConnectionsList, " ", new { @class = "form-control", @type = "email" })
+        </div>
+    </div>
+
+    <!--Przycisk potwierdzający wprowadzone dane-->
+    <div class="form-group">
+        <div class="col-sm-10">
+            <input type="submit" value="Zarezerwuj" class="btn btn-primary" />
+        </div>
+    </div>
+}
+

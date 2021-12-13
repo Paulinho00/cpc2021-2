@@ -15,7 +15,7 @@
     <!--Kontener z odnośnikami-->
     <div class="mt-5">
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action ">Zarezerwuj bilet</li>
+            <a href=@Url.Action("CreatePassenger","Passenger")><li class="list-group-item list-group-item-action ">Zarezerwuj bilet</li></a>
             <a href=@Url.Action("ListOfPassengers","Passenger")><li class="list-group-item list-group-item-action">Wyświetl listę wszystkich pasażerów </li></a>
             <a href=@Url.Action("ListOfConnections","RailwayConnection")><li class="list-group-item list-group-item-action">Wyświetl listę wszystkich dostępnych połączeń</li></a>
             <a href=@Url.Action("ListOfStations","Station")><li class="list-group-item list-group-item-action">Wyświetl listę stacji kolejowych </li></a>

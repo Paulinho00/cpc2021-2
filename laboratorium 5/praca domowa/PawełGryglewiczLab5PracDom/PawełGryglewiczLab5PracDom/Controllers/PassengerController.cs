@@ -104,5 +104,39 @@ namespace PawełGryglewiczLab5PracDom.Controllers
             else
                 return this.RedirectToAction("PassengersByRailwayConnection", "Passenger", new { id = railwayConnectionId });
         }
+
+        /// <summary>
+        /// Endpoint żadania GET do widoku formularza rezerwacji biletu
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult CreatePassenger()
+        {
+            //Pobranie listy wszystkich połączeń
+            List<RailwayConnection> railwayConnections = _context.RailwayConnections
+                                        .Include(railwayConnection => railwayConnection.Destination)
+                                        .Include(railwayConnection => railwayConnection.PlaceOfDeparture)
+                                        .ToList();
+            RailwayConnectionPassengerViewModel railwayConnectionPassengerViewModel = new RailwayConnectionPassengerViewModel(railwayConnections);
+            return View("CreatePassengerForm",railwayConnectionPassengerViewModel);
+        }
+
+        /// <summary>
+        /// Endpoint żadania POST widoku formularza rezerwacji biletu
+        /// </summary>
+        /// <param name="railwayConnectionPassengerViewModel"></param>
+        /// <returns></returns>
+        public IActionResult CreatePassenger(RailwayConnectionPassengerViewModel railwayConnectionPassengerViewModel)
+        {
+            //Zapis obiektu pasażera do bazy danych
+            Passenger createdPassenger = railwayConnectionPassengerViewModel.Passengers[0];
+            _context.Passengers.Add(createdPassenger);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("ListOfPassengers");
+        }
+
+
     }
 }
