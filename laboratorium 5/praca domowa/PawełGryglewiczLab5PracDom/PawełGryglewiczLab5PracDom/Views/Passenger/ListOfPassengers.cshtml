@@ -49,7 +49,7 @@
                 <td>@Html.DisplayFor(modelItem => passenger.RailwayConnection.PlaceOfDeparture.Town)-@Html.DisplayFor(modelItem => passenger.RailwayConnection.Destination.Town)</td>
                 <td>@Html.DisplayFor(modelItem => passenger.RailwayConnection.TimeOfDeparture)</td>
                 <!--Przycisk edycji wpisu w tabeli-->
-                <td></td>
+                <td><button type="submit" class="btn btn-primary" onclick="window.location.href='@Url.Action("EditPassengerForm","Passenger",new { passengerId = passenger.Id})'">Edytuj</button></td>
                 <!--Przycisk usuwający wpis w tabeli-->
                 <td><button type="submit" class="btn btn-danger" onclick="window.location.href='@Url.Action("DeletePassenger","Passenger",new { passengerId = passenger.Id, railwayConnectionId = ViewBag.ChosenRailwayConnectionId })'">Usuń</button></td>
             </tr>

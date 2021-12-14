@@ -1,15 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Pasażer";
+    ViewData["Title"] = "Edycja danych";
 }
-@model RailwayConnectionPassengerViewModel;
-<!--Formularz tworzenia pasażera-->
-@using (Html.BeginForm("CreatePassengerForm", "Passenger", FormMethod.Post))
+@model RailwayConnectionPassengerViewModel
+<!--Formularz edycji pasażera-->
+@using (Html.BeginForm("EditPassengerForm", "Passenger", new { @passengerId = ViewBag.Id },FormMethod.Post))
 {
     <!--Pole z imieniem-->
     <div class="form-group">
         @Html.LabelFor(model => model.Passengers[0].FirstName, "Imię:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
         <div class="col-sm-10">
-            @Html.EditorFor(model => model.Passengers[0].FirstName, new { @class = "form-control", })
+            @Html.EditorFor(model => model.Passengers[0].FirstName, new { @class = "form-control" })
         </div>
     </div>
 
@@ -17,15 +17,15 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Passengers[0].LastName, "Nazwisko:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
         <div class="col-sm-10">
-            @Html.EditorFor(model => model.Passengers[0].LastName, new { @class = "form-control", })
+            @Html.EditorFor(model => model.Passengers[0].LastName, new { @class = "form-control" })
         </div>
     </div>
 
     <!--Pole z wiekiem-->
     <div class="form-group">
         @Html.LabelFor(model => model.Passengers[0].Age, "Wiek:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
-        <div class="col-sm-10">
-            @Html.EditorFor(model => model.Passengers[0].Age, new {htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @max = "99", @style = "width:23%;" } })
+        <div class="col-sm-10 w-25">
+            @Html.EditorFor(model => model.Passengers[0].Age, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @max = "99", @style = "width:23%;" } })
         </div>
     </div>
 
@@ -33,7 +33,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Passengers[0].EmailAddress, "Email:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
         <div class="col-sm-10">
-            @Html.EditorFor(model => model.Passengers[0].EmailAddress, new { @class = "form-control", @type = "email"})
+            @Html.EditorFor(model => model.Passengers[0].EmailAddress, new { @class = "form-control", @type = "email" })
         </div>
     </div>
 
@@ -85,4 +85,3 @@
         <strong>Błąd</strong> Błędne dane logowania
     </div>
 }
-
