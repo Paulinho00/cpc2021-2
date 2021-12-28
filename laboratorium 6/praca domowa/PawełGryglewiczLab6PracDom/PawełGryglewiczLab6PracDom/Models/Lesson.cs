@@ -46,8 +46,7 @@ namespace PawełGryglewiczLab6PracDom.Models
         /// <summary>
         /// Id pomieszczenia, w którym odbywają się zajęcia 
         /// </summary>
-        [Required]
-        public int RoomId { get; set; }
+        public int? RoomId { get; set; }
 
         /// <summary>
         /// Obiekt prowadzącego zajęcia
@@ -60,5 +59,10 @@ namespace PawełGryglewiczLab6PracDom.Models
         /// </summary>
         [ForeignKey("RoomId")]
         public Room Room { get; set; }
+
+        /// <summary>
+        /// Studenci zapisani na dane zajęcia
+        /// </summary>
+        public ICollection<Student> Students { get; set; }
     }
 }

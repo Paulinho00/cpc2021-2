@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -39,20 +40,26 @@ namespace PawełGryglewiczLab6PracDom.Models
         /// <summary>
         /// Wydział do którego należy budynek
         /// </summary>
-        [Required]
-        public Faculty FacultyId { get; set; }
+        public int FacultyFK { get; set; }
 
         /// <summary>
         /// Liczba pięter
         /// </summary>
         [Required]
-        [Range(1,20)]
+        [Range(1, 20)]
         public int NumberOfFloors { get; set; }
 
         /// <summary>
         /// Sale, które znajdują się w budynku
         /// </summary>
         public ICollection<Room> Rooms { get; set; }
+        
+        /// <summary>
+        /// Obiekt wydziału do którego należy budynek
+        /// </summary>
+        [ForeignKey("FacultyFK")]
+        public Faculty Faculty { get; set; }
+
 
 
     }

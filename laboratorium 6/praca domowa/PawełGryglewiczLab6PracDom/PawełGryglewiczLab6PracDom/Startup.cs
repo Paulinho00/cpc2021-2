@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PawełGryglewiczLab6PracDom.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,7 @@ namespace PawełGryglewiczLab6PracDom
         {
             services.AddControllersWithViews();
             services.AddSwaggerGen();
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UniversityLessonSystem")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
