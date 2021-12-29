@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PawełGryglewiczLab6PracDom.Models.Dtos.Profiles;
 using PawełGryglewiczLab6PracDom.Services;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,10 @@ namespace PawełGryglewiczLab6PracDom
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IFacultyService, FacultyService>();
             services.AddControllersWithViews();
             services.AddSwaggerGen();
+            services.AddAutoMapper(x => x.AddProfile<AutoMapperProfile>());
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UniversityLessonSystem")));
         }
 
