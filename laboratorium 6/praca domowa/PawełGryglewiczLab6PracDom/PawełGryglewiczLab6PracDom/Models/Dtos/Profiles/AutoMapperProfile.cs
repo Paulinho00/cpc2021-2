@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using PawełGryglewiczLab6PracDom.Models.Dtos.Building;
 using PawełGryglewiczLab6PracDom.Models.Dtos.Faculty;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
         public AutoMapperProfile()
         {
             FacultyMaps();
+            BuildingMaps();
         }
 
         private void FacultyMaps()
@@ -21,6 +23,12 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             CreateMap<FacultyDtoForPostPutResponse, Models.Faculty>();
         }
 
-        
+        private void BuildingMaps()
+        {
+            CreateMap<Models.Building, BuildingDtoForGetResponse>();
+            CreateMap<BuildingDtoForPostPutResponse, Models.Building>();
+        }
+
+
     }
 }

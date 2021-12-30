@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PawełGryglewiczLab6PracDom.Models.Dtos.Profiles;
 using PawełGryglewiczLab6PracDom.Services;
+using PawełGryglewiczLab6PracDom.Services.Interfaces;
+using PawełGryglewiczLab6PracDom.Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,7 @@ namespace PawełGryglewiczLab6PracDom
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IFacultyService, FacultyService>();
+            services.AddTransient<IBuildingService, BuildingService>();
             services.AddControllersWithViews();
             services.AddSwaggerGen();
             services.AddAutoMapper(x => x.AddProfile<AutoMapperProfile>());
