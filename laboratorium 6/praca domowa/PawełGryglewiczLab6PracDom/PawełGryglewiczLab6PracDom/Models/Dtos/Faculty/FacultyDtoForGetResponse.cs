@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PawełGryglewiczLab6PracDom.Models.Dtos.Building;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,5 +26,10 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Faculty
         /// Pełna nazwa wydziału
         /// </summary>
         public string FullName { get; set; }
+
+        /// <summary>
+        /// Lista budynków należących do wydziału
+        /// </summary>
+        public ICollection<BuildingDtoForFacultyDto> Buildings { get; set; }
     }
 }

@@ -46,7 +46,7 @@ namespace PawełGryglewiczLab6PracDom.Services
         public List<FacultyDtoForGetResponse> GetAll()
         {
             //Pobranie listy wydziałów
-            var faculties = _context.Faculties.OrderBy(f => f.Number).ToList();
+            var faculties = _context.Faculties.Include(f => f.Buildings).OrderBy(f => f.Number).ToList();
 
             //Mapowanie listy na DTO
             var facultiesDto = _mapper.Map<List<FacultyDtoForGetResponse>>(faculties);
@@ -58,7 +58,7 @@ namespace PawełGryglewiczLab6PracDom.Services
             try
             {
                 //Pobranie wydziału z bazy danych
-                Faculty faculty = _context.Faculties.Where(f => f.Id == id).Single();
+                Faculty faculty = _context.Faculties.Where(f => f.Id == id).Include(f => f.Buildings).Single();
 
                 //Mapowanie na DTO
                 var facultyDto = _mapper.Map<FacultyDtoForGetResponse>(faculty);
