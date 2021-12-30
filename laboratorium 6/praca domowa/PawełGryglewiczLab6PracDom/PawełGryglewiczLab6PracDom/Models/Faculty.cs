@@ -33,7 +33,7 @@ namespace PawełGryglewiczLab6PracDom.Models
         /// <summary>
         /// Lista budynków należących do wydziału
         /// </summary>
-        public ICollection<Building> Building { get; set; }
+        public ICollection<Building> Buildings { get; set; }
 
         /// <summary>
         /// Lista prowadzących pracujących na wydziale
@@ -43,7 +43,7 @@ namespace PawełGryglewiczLab6PracDom.Models
         /// <summary>
         /// Lista studentów na wydziale
         /// </summary>
-        public ICollection<Student> Student { get; set; }
+        public ICollection<Student> Students { get; set; }
 
     }
 }

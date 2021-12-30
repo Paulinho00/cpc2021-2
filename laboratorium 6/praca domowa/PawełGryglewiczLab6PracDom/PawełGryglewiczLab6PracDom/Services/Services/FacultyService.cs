@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PawełGryglewiczLab6PracDom.Models;
 using PawełGryglewiczLab6PracDom.Models.Dtos;
 using PawełGryglewiczLab6PracDom.Models.Dtos.Faculty;
@@ -48,8 +49,8 @@ namespace PawełGryglewiczLab6PracDom.Services
             var faculties = _context.Faculties.OrderBy(f => f.Number).ToList();
 
             //Mapowanie listy na DTO
-            var facultiesDto = new GetAllFacultiesDtoResponse { Faculties = _mapper.Map<List<FacultyDtoForGetResponse>>(faculties) };
-            return facultiesDto.Faculties;
+            var facultiesDto = _mapper.Map<List<FacultyDtoForGetResponse>>(faculties);
+            return facultiesDto;
         }
 
         public FacultyDtoForGetResponse GetById(int id)
@@ -60,7 +61,7 @@ namespace PawełGryglewiczLab6PracDom.Services
                 Faculty faculty = _context.Faculties.Where(f => f.Id == id).Single();
 
                 //Mapowanie na DTO
-                var facultyDto = (FacultyDtoForGetResponse)_mapper.Map<FacultyDtoForGetResponse>(faculty);
+                var facultyDto = _mapper.Map<FacultyDtoForGetResponse>(faculty);
                 return facultyDto;
             }
             catch(InvalidOperationException e)
@@ -69,36 +70,72 @@ namespace PawełGryglewiczLab6PracDom.Services
             }
         }
 
-        public bool Post(FacultyDtoForPostPutResponse facultyDto)
+        public int Post(FacultyDtoForPostPutResponse facultyDto)
         {
-            //Sprawdzenie czy dane nie powtarzają się
-            if (_context.Faculties.Any(f => f.Number == facultyDto.Number) || _context.Faculties.Any(f => f.FullName.Equals(facultyDto.FullName)))
+            //Sprawdzenie czy nazwa wydziału nie powtarza się
+            if(_context.Faculties.Any(f => f.FullName.Equals(facultyDto.FullName)))
             {
-                return false;
+                return -1;
             }
-            //Mapowanie na DTO
-            var faculty = (Faculty)_mapper.Map<Faculty>(facultyDto);
+
+            //Sprawdzenie czy numer wydziału nie powtarza się
+            if (_context.Faculties.Any(f => f.Number == facultyDto.Number))
+            {
+                return -2;
+            }
+
+            //Sprawdzenie czy numer wydziału mieści się w zakresie
+            if(facultyDto.Number > 20 || facultyDto.Number < 1)
+            {
+                return -3;
+            }
+
+            //Mapowanie na obiekt modelu
+            var faculty = _mapper.Map<Faculty>(facultyDto);
 
             //Zapis obiektu do bazy danych
             _context.Faculties.Add(faculty);
             _context.SaveChanges();
-            return true;
+            return 0;
         }
 
-        public bool Put(int id, FacultyDtoForPostPutResponse facultyDto)
+        public int Put(int id, FacultyDtoForPostPutResponse facultyDto)
         {
             try
             {
-                //Sprawdzenie czy dane nie powtarzają się
-                if (_context.Faculties.Any(f => f.Number == facultyDto.Number) || _context.Faculties.Any(f => f.FullName.Equals(facultyDto.FullName)))
-                {
-                    return false;
-                }
-
+                //Pobranie edytowanego wydziału z bazy danych
                 Faculty entity = _context.Faculties.Where(f => f.Id == id).Single();
 
+                //Sprawdzenie czy nazwa wydziału nie powtarza się
+                if (_context.Faculties.Any(f => f.FullName.Equals(facultyDto.FullName)))
+                {
+                    var suspectedDuplicate = _context.Faculties.Where(f => f.FullName.Equals(facultyDto.FullName)).SingleOrDefault();
+                    //Sprawdzenie czy powtarzające się dane należa do edytowanego obiektu
+                    if (suspectedDuplicate.Id != id)
+                    {
+                        return -1;
+                    }
+                }
+
+                //Sprawdzenie czy numer wydziału nie powtarza się
+                if (_context.Faculties.Any(f => f.Number == facultyDto.Number))
+                {
+                    var suspectedDuplicate = _context.Faculties.Where(f => f.Number == facultyDto.Number).SingleOrDefault();
+                    //Sprawdzenie czy powtarzające się dane należa do edytowanego obiektu
+                    if (suspectedDuplicate.Id != id)
+                    {
+                        return -2;
+                    }
+                }
+
+                //Sprawdzenie czy numer wydziału mieści się w zakresie
+                if (facultyDto.Number > 20 || facultyDto.Number < 1)
+                {
+                    return -3;
+                }
+
                 //Mapowanie odpowiedzi klienta na obiekt modelu
-                Faculty faculty = (Faculty)_mapper.Map<Faculty>(facultyDto);
+                Faculty faculty = _mapper.Map<Faculty>(facultyDto);
 
                 //Uzupełnienie zmodyfikowanego obiektu o odpowiednie ID
                 faculty.Id = entity.Id;
@@ -106,11 +143,11 @@ namespace PawełGryglewiczLab6PracDom.Services
                 //Zapis zmienionych danych do bazy
                 _context.Entry(entity).CurrentValues.SetValues(faculty);
                 _context.SaveChanges();
-                return true;
+                return 0;
             }
             catch (InvalidOperationException e)
             {
-                return false;
+                return -4;
             }
 
         }

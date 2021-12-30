@@ -27,16 +27,27 @@ namespace PawełGryglewiczLab6PracDom.Services
         /// Metoda dodaje nowy wydział i zwraca jego id
         /// </summary>
         /// <param name="faculty">Nowy wydział</param>
-        /// <returns></returns>
-        bool Post(FacultyDtoForPostPutResponse facultyDto);
+        /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
+        ///  0: operacja przebiegła pomyślnie
+        /// -1: Nazwa wydziału powtarza się
+        /// -2: Numer wydziału powtarza się
+        /// -3: Numer wydziału nie mieści się w zakresie <1;20>
+        /// </returns>
+        int Post(FacultyDtoForPostPutResponse facultyDto);
 
         /// <summary>
         /// Metoda edytuje wydział o podanym id
         /// </summary>
         /// <param name="id">Id edytowanego wydziału</param>
         /// <param name="faculty">Zmodyfikowany wydział</param>
-        /// <returns></returns>
-        bool Put(int id, FacultyDtoForPostPutResponse faculty);
+        /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
+        ///  0: operacja przebiegła pomyślnie
+        /// -1: Nazwa wydziału powtarza się
+        /// -2: Numer wydziału powtarza się
+        /// -3: Numer wydziału nie mieści się w zakresie <1;20>
+        /// -4: Nie ma wydziału o takim id
+        /// </returns>
+        int Put(int id, FacultyDtoForPostPutResponse faculty);
 
         /// <summary>
         /// Usuwa wydział o danym Id

@@ -62,39 +62,44 @@ namespace PawełGryglewiczLab6PracDom.Controllers
         /// <summary>
         /// Endpoint POST dodający nowy wydział
         /// </summary>
-        /// <param name="faculty">Nowy wydział</param>
+        /// <param name="facultyDto">Nowy wydział</param>
         /// <returns></returns>
         [HttpPost]
         public IActionResult Post([FromBody] FacultyDtoForPostPutResponse facultyDto)
         {
-            bool isDone = _facultyService.Post(facultyDto);
+            int communicate = _facultyService.Post(facultyDto);
 
-            //Sprawdzenie czy operacja powiodła się
-            if (isDone)
+            //Wysłanie odpowiedniego komunikatu
+            switch (communicate)
             {
-                return Ok();
+                case -1: return BadRequest("Nazwa wydziału powtarza się");
+                case -2: return BadRequest("Numer wydziału powtarza się");
+                case -3: return BadRequest("Numer wydziału nie mieści się w zakresie od 1 do 20");
+                default: return Ok();
             }
-            return BadRequest("Istnieje wydział z takimi danymi");
         }
 
         /// <summary>
         /// Endpoint PUT edytujący wydział o podanym id
         /// </summary>
-        /// <param name="faculty"></param>
+        /// <param name="facultyDto"></param>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
         [Route("{id}")]
         public IActionResult Put([FromBody] FacultyDtoForPostPutResponse facultyDto, [FromRoute] int id)
         {
-            bool isDone = _facultyService.Put(id, facultyDto);
+            int communicate = _facultyService.Put(id, facultyDto);
 
-            //Sprawdzenie czy operacja została wykonana
-            if (isDone)
+            //Wysłanie odpowiedniego komunikatu
+            switch (communicate)
             {
-                return Ok();
+                case -1: return BadRequest("Nazwa wydziału powtarza się");
+                case -2: return BadRequest("Numer wydziału powtarza się");
+                case -3: return BadRequest("Numer wydziału nie mieści się w zakresie od 1 do 20");
+                case -4: return NotFound("Nie ma wydziału o takim id");
+                default: return Ok();
             }
-            return BadRequest("Błędne dane lub nie ma takiego wydziału z takim id");
         }
 
         /// <summary>
