@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +15,28 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
         {
             FacultyMaps();
             BuildingMaps();
+            RoomMaps();
         }
 
         private void FacultyMaps()
         {
-            CreateMap<Models.Faculty, FacultyDtoForGetResponse>();
-            CreateMap<Models.Faculty, FacultyDtoForPostPutResponse>();
-            CreateMap<FacultyDtoForPostPutResponse, Models.Faculty>();
+            CreateMap<Faculty, FacultyDtoForGetResponse>();
+            CreateMap<Faculty, FacultyDtoForPostPutResponse>();
+            CreateMap<FacultyDtoForPostPutResponse, Faculty>();
         }
 
         private void BuildingMaps()
         {
-            CreateMap<Models.Building, BuildingDtoForGetResponse>();
-            CreateMap<BuildingDtoForPostPutResponse, Models.Building>();
-            CreateMap<Models.Building, BuildingDtoForFacultyDto>();
+            CreateMap<Building, BuildingDtoForGetResponse>();
+            CreateMap<BuildingDtoForPostPutResponse, Building>();
+            CreateMap<Building, BuildingDtoForFacultyDto>();
+            CreateMap<Building, BuildingDtoForRoomDto>();
+        }
+
+        private void RoomMaps()
+        {
+            CreateMap<Room, RoomDtoForGetResponses>();
+            CreateMap<RoomDtoForPostPutResponses, Room>();
         }
 
 

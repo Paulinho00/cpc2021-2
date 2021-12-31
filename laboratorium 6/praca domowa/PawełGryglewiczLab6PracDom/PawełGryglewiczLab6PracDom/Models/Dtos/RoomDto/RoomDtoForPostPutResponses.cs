@@ -1,5 +1,4 @@
-﻿using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,15 +6,10 @@ using System.Threading.Tasks;
 namespace PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto
 {
     /// <summary>
-    /// Klasa odpowiadająca DTO klasy Room dla zapytań Get
+    /// Klasa odpowiadająca DTO klasy Room dla zapytań Post i Put
     /// </summary>
-    public class RoomDtoForGetResponses
+    public class RoomDtoForPostPutResponses
     {
-        /// <summary>
-        /// Klucz główny
-        /// </summary>
-        public int Id { get; set; }
-
         /// <summary>
         /// Numer sali
         /// </summary>
@@ -32,8 +26,8 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto
         public int NumberOfPlaces { get; set; }
 
         /// <summary>
-        /// Obiekt budynku, w którym znajduje się sala
+        /// Id budynku, w którym znajduje się sala
         /// </summary>
-        public BuildingDtoForRoomDto BuildingDto { get; set; }
+        public int BuildingId { get; set; }
     }
 }
