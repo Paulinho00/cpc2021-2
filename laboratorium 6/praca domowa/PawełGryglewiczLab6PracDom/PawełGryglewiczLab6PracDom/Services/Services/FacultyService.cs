@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PawełGryglewiczLab6PracDom.Models;
 using PawełGryglewiczLab6PracDom.Models.Dtos;
-using PawełGryglewiczLab6PracDom.Models.Dtos.Faculty;
+using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;

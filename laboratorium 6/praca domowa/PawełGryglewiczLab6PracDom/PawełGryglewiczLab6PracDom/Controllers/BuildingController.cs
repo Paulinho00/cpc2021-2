@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PawełGryglewiczLab6PracDom.Models.Dtos.Building;
+using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
 using PawełGryglewiczLab6PracDom.Services;
 using PawełGryglewiczLab6PracDom.Services.Interfaces;
 using System;

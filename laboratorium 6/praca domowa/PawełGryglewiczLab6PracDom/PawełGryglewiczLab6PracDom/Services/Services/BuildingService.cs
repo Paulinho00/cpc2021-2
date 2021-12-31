@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using PawełGryglewiczLab6PracDom.Models;
-using PawełGryglewiczLab6PracDom.Models.Dtos.Building;
+using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
 using PawełGryglewiczLab6PracDom.Services.Interfaces;
 using System;
 using System.Collections.Generic;

@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Models\Dtos\Room\" />
   </ItemGroup>
 
 </Project>

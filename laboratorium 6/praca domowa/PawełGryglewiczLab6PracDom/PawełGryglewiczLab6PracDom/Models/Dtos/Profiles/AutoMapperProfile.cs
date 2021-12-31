@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using PawełGryglewiczLab6PracDom.Models.Dtos.Building;
-using PawełGryglewiczLab6PracDom.Models.Dtos.Faculty;
+using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
