@@ -100,11 +100,12 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
         {
             try
             {
-                //Pobranie budynku z bazy danych
-                var building = _context.Buildings.Where(b => b.Id == id).Single();
-
-                //Usunięcie z bazy danych
+                //Pobranie budynku i sal z bazy danych
+                var building = _context.Buildings.Where(b => b.Id == id).Include(b => b.Rooms).Single();
+                var rooms = building.Rooms;
+                //Usunięcie budynku i sal z bazy danych
                 _context.Remove(building);
+                _context.Remove(rooms);
                 _context.SaveChanges();
                 return true;
             }

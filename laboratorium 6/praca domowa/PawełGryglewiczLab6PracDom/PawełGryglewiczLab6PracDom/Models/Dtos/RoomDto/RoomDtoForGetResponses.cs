@@ -34,6 +34,6 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto
         /// <summary>
         /// Obiekt budynku, w którym znajduje się sala
         /// </summary>
-        public BuildingDtoForRoomDto BuildingDto { get; set; }
+        public BuildingDtoForRoomDto Building { get; set; }
     }
 }

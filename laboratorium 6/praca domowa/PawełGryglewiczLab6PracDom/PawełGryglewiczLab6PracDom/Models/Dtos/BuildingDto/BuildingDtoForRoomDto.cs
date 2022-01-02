@@ -26,9 +26,5 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto
         /// </summary>
         public int YearOfBuild { get; set; }
 
-        /// <summary>
-        /// Obiekt wydziału do którego należy budynek
-        /// </summary>
-        public FacultyDtoForGetResponse Faculty { get; set; }
     }
 }
