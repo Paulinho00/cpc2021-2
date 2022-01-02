@@ -31,11 +31,6 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto
         public int Pesel { get; set; }
 
         /// <summary>
-        /// Numer seryjny dowodu osobistego
-        /// </summary>
-        public int IdCardSerialNumber { get; set; }
-
-        /// <summary>
         /// Stopień naukowy
         /// </summary>
         public string Degree { get; set; }

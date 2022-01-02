@@ -39,12 +39,6 @@ namespace PawełGryglewiczLab6PracDom.Models
         public int Pesel { get; set; }
 
         /// <summary>
-        /// Numer seryjny dowodu osobistego
-        /// </summary>
-        [Required]
-        public int IdCardSerialNumber { get; set; }
-
-        /// <summary>
         /// Stopień naukowy
         /// </summary>
         [Required]

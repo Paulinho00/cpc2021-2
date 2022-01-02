@@ -53,7 +53,6 @@ namespace PawełGryglewiczLab6PracDom.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Pesel = table.Column<int>(type: "int", nullable: false),
-                    IdCardSerialNumber = table.Column<int>(type: "int", nullable: false),
                     Degree = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     FacultyId = table.Column<int>(type: "int", nullable: false)
                 },
