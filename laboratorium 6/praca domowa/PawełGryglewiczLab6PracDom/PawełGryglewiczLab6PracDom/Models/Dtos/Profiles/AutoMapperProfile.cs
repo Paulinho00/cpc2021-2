@@ -37,6 +37,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
         {
             CreateMap<Room, RoomDtoForGetResponses>();
             CreateMap<RoomDtoForPostPutResponses, Room>();
+            CreateMap<Room, RoomDtoForBuildingDto>();
         }
 
 

@@ -1,4 +1,5 @@
 ﻿using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,6 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto
         /// <summary>
         /// Sale, które znajdują się w budynku
         /// </summary>
-        public ICollection<Room> Rooms { get; set; }
+        public ICollection<RoomDtoForBuildingDto> Rooms { get; set; }
     }
 }

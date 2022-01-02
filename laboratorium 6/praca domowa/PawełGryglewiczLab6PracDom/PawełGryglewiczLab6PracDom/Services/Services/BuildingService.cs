@@ -31,7 +31,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
         public List<BuildingDtoForGetResponse> GetAll()
         {
             //Pobranie budynków z bazy danych
-            var buildings = _context.Buildings.Include(b => b.Faculty).OrderBy(b => b.Faculty.Number).ToList();
+            var buildings = _context.Buildings.Include(b => b.Faculty).Include(b => b.Rooms).OrderBy(b => b.Faculty.Number).ToList();
 
             //Mapowanie listy na DTO
             var buildingsDto = _mapper.Map<List<BuildingDtoForGetResponse>>(buildings);
@@ -49,7 +49,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 }
 
                 //Pobranie budynków z bazy danych
-                var buildings = _context.Buildings.Include(b => b.Faculty).Where(b => b.Faculty.Id == facultyId).ToList();
+                var buildings = _context.Buildings.Include(b => b.Faculty).Include(b => b.Rooms).Where(b => b.Faculty.Id == facultyId).ToList();
 
                 //Mapowanie listy na DTO
                 var buildingsDto = _mapper.Map<List<BuildingDtoForGetResponse>>(buildings);
@@ -66,7 +66,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie budynku z bazy danych
-                var building = _context.Buildings.Include(b => b.Faculty).Where(b => b.Category == category && b.Number == number).Single();
+                var building = _context.Buildings.Include(b => b.Faculty).Include(b => b.Rooms).Where(b => b.Category == category && b.Number == number).Single();
 
                 //Mapowanie listy na DTO
                 var buildingDto = _mapper.Map<BuildingDtoForGetResponse>(building);
@@ -83,7 +83,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie budynku z bazy danych
-                var building = _context.Buildings.Include(b => b.Faculty).Where(b => b.Id == id).Single();
+                var building = _context.Buildings.Include(b => b.Faculty).Include(b => b.Rooms).Where(b => b.Id == id).Single();
 
                 //Mapowanie listy na DTO
                 var buildingDto = _mapper.Map<BuildingDtoForGetResponse>(building);
@@ -105,7 +105,6 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 var rooms = building.Rooms;
                 //Usunięcie budynku i sal z bazy danych
                 _context.Remove(building);
-                _context.Remove(rooms);
                 _context.SaveChanges();
                 return true;
             }
@@ -120,7 +119,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie budynku z bazy danych
-                var building = _context.Buildings.Where(b => b.Category == category && b.Number == number).Single();
+                var building = _context.Buildings.Where(b => b.Category == category && b.Number == number).Include(b => b.Rooms).Single();
 
                 //Usunięcie z bazy danych
                 _context.Remove(building);
