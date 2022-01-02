@@ -44,12 +44,6 @@ namespace PawełGryglewiczLab6PracDom.Models
         public int Index { get; set; }
 
         /// <summary>
-        /// Numer seryjny dowodu osobistego
-        /// </summary>
-        [Required]
-        public int IDCardSerialNumber { get; set; }
-
-        /// <summary>
         /// Id wydziału, na którym student studiuje
         /// </summary>
         [Required]
