@@ -1,16 +1,15 @@
-﻿
-using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
+﻿using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto
+namespace PawełGryglewiczLab6PracDom.Models.Dtos.StudentDto
 {
     /// <summary>
-    /// Klasa reprezentująca Dto klasy Lecturer do poleceń GET
+    /// Klasa reprezentująca Dto klasy Student do poleceń GET
     /// </summary>
-    public class LecturerDtoForGetResponses
+    public class StudentDtoForGetResponses
     {
         /// <summary>
         /// Klucz główny
@@ -18,27 +17,32 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto
         public int Id { get; set; }
 
         /// <summary>
-        /// Imię prowadzącego
+        /// Imię studenta
         /// </summary>
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Nazwisko prowadzącego
+        /// Nazwisko studenta
         /// </summary>
         public string LastName { get; set; }
 
         /// <summary>
-        /// Numer PESEL
+        /// Numer PESEL 
         /// </summary>
         public string Pesel { get; set; }
 
         /// <summary>
-        /// Stopień naukowy
+        /// Numer indeksu
         /// </summary>
-        public string Degree { get; set; }
+        public int Index { get; set; }
 
         /// <summary>
-        /// Obiekt wydziału, na którym pracuje prowadzący
+        /// Nazwa studiowanego kierunku
+        /// </summary>
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// Obiekt wydziału, na którym studiuje student
         /// </summary>
         public FacultyDtoForLecturerStudentDtos Faculty { get; set; }
     }

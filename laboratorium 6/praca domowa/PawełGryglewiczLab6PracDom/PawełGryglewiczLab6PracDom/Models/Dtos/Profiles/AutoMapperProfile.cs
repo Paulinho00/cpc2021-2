@@ -3,6 +3,7 @@ using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.StudentDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             BuildingMaps();
             RoomMaps();
             LecturerMaps();
+            StudentMaps();
         }
 
         private void FacultyMaps()
@@ -25,7 +27,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             CreateMap<Faculty, FacultyDtoForGetResponse>();
             CreateMap<Faculty, FacultyDtoForPostPutResponse>();
             CreateMap<FacultyDtoForPostPutResponse, Faculty>();
-            CreateMap<Faculty, FacultyDtoForLecturerDto>();
+            CreateMap<Faculty, FacultyDtoForLecturerStudentDtos>();
         }
 
         private void BuildingMaps()
@@ -49,6 +51,10 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             CreateMap<LecturerDtoForPostPutResponses, Lecturer>();
         }
 
-
+        private void StudentMaps()
+        {
+            CreateMap<Student, StudentDtoForGetResponses>();
+            CreateMap<StudentDtoForGetResponses, Student>();
+        }
     }
 }
