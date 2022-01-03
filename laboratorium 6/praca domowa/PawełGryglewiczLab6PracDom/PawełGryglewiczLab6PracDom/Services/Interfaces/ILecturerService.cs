@@ -47,14 +47,23 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// </summary>
         /// <param name="id">Id prowadzącego</param>
         /// <param name="lecturerDto">Zmodyfikowany obiekt prowadzącego</param>
-        /// <returns></returns>
+        /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
+        ///  0: operacja przebiegła pomyślnie
+        /// -1: Nie zgadza się długość PESEL lub zawiera niedozwolne znaki
+        /// -2: Nie wydziału o takim id
+        /// -3: Nie ma prowadzącego z takim id
+        /// </returns>
         public int Put(int id, LecturerDtoForPostPutResponses lecturerDto);
 
         /// <summary>
         /// Metoda dodająca nowego prowadzącego do bazy danych
         /// </summary>
         /// <param name="lecturerDto">Utworzony obiekt prowadzącego</param>
-        /// <returns></returns>
+        /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
+        ///  0: operacja przebiegła pomyślnie
+        /// -1: Nie zgadza się długość PESEL lub zawiera niedozwolne znaki
+        /// -2: Nie wydziału o takim id
+        /// </returns>
         public int Post(LecturerDtoForPostPutResponses lecturerDto);
 
     }

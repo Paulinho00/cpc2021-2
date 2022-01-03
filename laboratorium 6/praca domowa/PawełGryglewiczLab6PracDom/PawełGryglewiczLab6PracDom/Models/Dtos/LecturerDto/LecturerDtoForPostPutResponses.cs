@@ -11,11 +11,6 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto
     public class LecturerDtoForPostPutResponses
     {
         /// <summary>
-        /// Klucz główny
-        /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
         /// Imię prowadzącego
         /// </summary>
         public string FirstName { get; set; }

@@ -31,6 +31,7 @@ namespace PawełGryglewiczLab6PracDom
             services.AddTransient<IFacultyService, FacultyService>();
             services.AddTransient<IBuildingService, BuildingService>();
             services.AddTransient<IRoomService, RoomService>();
+            services.AddTransient<ILecturerService, LecturerService>();
             services.AddControllersWithViews();
             services.AddSwaggerGen();
             services.AddAutoMapper(x => x.AddProfile<AutoMapperProfile>());
