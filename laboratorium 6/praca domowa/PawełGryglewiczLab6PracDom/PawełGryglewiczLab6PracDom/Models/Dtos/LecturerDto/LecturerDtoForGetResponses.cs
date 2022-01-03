@@ -30,7 +30,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto
         /// <summary>
         /// Numer PESEL
         /// </summary>
-        public int Pesel { get; set; }
+        public string Pesel { get; set; }
 
         /// <summary>
         /// Stopień naukowy

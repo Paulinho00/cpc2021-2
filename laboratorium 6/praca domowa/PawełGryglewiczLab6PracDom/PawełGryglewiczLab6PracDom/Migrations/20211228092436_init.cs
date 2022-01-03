@@ -52,7 +52,7 @@ namespace PawełGryglewiczLab6PracDom.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Pesel = table.Column<int>(type: "int", nullable: false),
+                    Pesel = table.Column<int>(type: "nvarchar(20)", nullable: false),
                     Degree = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     FacultyId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -75,7 +75,7 @@ namespace PawełGryglewiczLab6PracDom.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Pesel = table.Column<int>(type: "int", nullable: false),
+                    Pesel = table.Column<int>(type: "nvarchar(20)", nullable: false),
                     Index = table.Column<int>(type: "int", nullable: false),
                     FacultyId = table.Column<int>(type: "int", nullable: false),
                     Subject = table.Column<string>(type: "nvarchar(max)", nullable: false)

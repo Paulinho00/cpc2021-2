@@ -36,7 +36,7 @@ namespace PawełGryglewiczLab6PracDom.Models
         /// Numer PESEL
         /// </summary>
         [Required]
-        public int Pesel { get; set; }
+        public string Pesel { get; set; }
 
         /// <summary>
         /// Stopień naukowy

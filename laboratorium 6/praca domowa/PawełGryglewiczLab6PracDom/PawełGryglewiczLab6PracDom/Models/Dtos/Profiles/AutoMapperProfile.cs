@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,12 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             CreateMap<Room, RoomDtoForGetResponses>();
             CreateMap<RoomDtoForPostPutResponses, Room>();
             CreateMap<Room, RoomDtoForBuildingDto>();
+        }
+
+        private void LecturerMaps()
+        {
+            CreateMap<Lecturer, LecturerDtoForGetResponses>();
+            CreateMap<LecturerDtoForPostPutResponses, Lecturer>();
         }
 
 
