@@ -130,11 +130,33 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                     return -1;
                 }
 
+                //Sprawdzenie czy pesel nie powtarza się
+                if (_context.Lecturers.Any(l => l.Pesel.Equals(lecturerDto.Pesel)))
+                {
+                    var potentialDuplicate = _context.Lecturers.Where(l => l.Pesel.Equals(lecturerDto.Pesel)).Single();
+                    if (potentialDuplicate.Id != id)
+                    {
+                        return -4;
+                    }
+                }
+                else if (_context.Students.Any(s => s.Pesel.Equals(lecturerDto.Pesel)))
+                {
+                    var potentialDuplicate = _context.Students.Where(s => s.Pesel.Equals(lecturerDto.Pesel)).Single();
+                    if (potentialDuplicate.Id != id)
+                    {
+                        return -4;
+                    }
+                }
+
+                
+
                 //Sprawdzenie czy wydział do którego należy prowadzący istnieje
                 if (!_context.Faculties.Any(f => f.Id == lecturerDto.FacultyId))
                 {
                     return -2;
                 }
+
+                
 
                 //Mapowanie na model
                 var lecturer = _mapper.Map<Lecturer>(lecturerDto);
@@ -160,6 +182,12 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             if (lecturerDto.Pesel.Length != 11 || !lecturerDto.Pesel.All(char.IsDigit))
             {
                 return -1;
+            }
+
+            //Sprawdzenie czy pesel nie powtarza się
+            if (_context.Lecturers.Any(l => l.Pesel.Equals(lecturerDto.Pesel)) || _context.Students.Any(s => s.Pesel.Equals(lecturerDto.Pesel)))
+            {
+                return -4;
             }
 
             //Sprawdzenie czy wydział do którego należy prowadzący istniej

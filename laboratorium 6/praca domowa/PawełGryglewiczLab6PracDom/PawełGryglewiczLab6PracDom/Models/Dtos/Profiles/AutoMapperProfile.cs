@@ -17,6 +17,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             FacultyMaps();
             BuildingMaps();
             RoomMaps();
+            LecturerMaps();
         }
 
         private void FacultyMaps()
@@ -24,6 +25,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             CreateMap<Faculty, FacultyDtoForGetResponse>();
             CreateMap<Faculty, FacultyDtoForPostPutResponse>();
             CreateMap<FacultyDtoForPostPutResponse, Faculty>();
+            CreateMap<Faculty, FacultyDtoForLecturerDto>();
         }
 
         private void BuildingMaps()

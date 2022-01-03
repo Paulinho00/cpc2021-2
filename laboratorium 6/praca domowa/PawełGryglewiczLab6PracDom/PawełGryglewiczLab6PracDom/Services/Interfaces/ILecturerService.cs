@@ -52,6 +52,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// -1: Nie zgadza się długość PESEL lub zawiera niedozwolne znaki
         /// -2: Nie wydziału o takim id
         /// -3: Nie ma prowadzącego z takim id
+        /// -4: Numer PESEL powtarza się
         /// </returns>
         public int Put(int id, LecturerDtoForPostPutResponses lecturerDto);
 
@@ -63,6 +64,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         ///  0: operacja przebiegła pomyślnie
         /// -1: Nie zgadza się długość PESEL lub zawiera niedozwolne znaki
         /// -2: Nie wydziału o takim id
+        /// -4: Numer PESEL powtarza się
         /// </returns>
         public int Post(LecturerDtoForPostPutResponses lecturerDto);
 
