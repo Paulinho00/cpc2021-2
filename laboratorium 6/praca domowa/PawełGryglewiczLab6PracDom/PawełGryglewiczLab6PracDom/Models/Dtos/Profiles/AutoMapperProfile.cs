@@ -54,7 +54,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
         private void StudentMaps()
         {
             CreateMap<Student, StudentDtoForGetResponses>();
-            CreateMap<StudentDtoForGetResponses, Student>();
+            CreateMap<StudentDtoForPostPutResponses, Student>();
         }
     }
 }

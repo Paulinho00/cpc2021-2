@@ -100,7 +100,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie danych studenta
-                var student = _context.Students.Where(s => s.Index == index);
+                var student = _context.Students.Where(s => s.Index == index).Include(s => s.Faculty).Single();
 
                 //Mapowanie na dto
                 var studentDto = _mapper.Map<StudentDtoForGetResponses>(student);
