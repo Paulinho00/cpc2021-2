@@ -141,11 +141,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 }
                 else if (_context.Students.Any(s => s.Pesel.Equals(lecturerDto.Pesel)))
                 {
-                    var potentialDuplicate = _context.Students.Where(s => s.Pesel.Equals(lecturerDto.Pesel)).Single();
-                    if (potentialDuplicate.Id != id)
-                    {
-                        return -4;
-                    }
+                    return -4;
                 }
 
                 

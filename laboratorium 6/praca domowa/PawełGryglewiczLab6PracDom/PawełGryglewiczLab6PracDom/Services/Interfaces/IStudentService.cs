@@ -61,7 +61,15 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// </summary>
         /// <param name="id">Id studenta</param>
         /// <param name="studentDto">Obiekt ze zmodyfikowanymi danymi studenta </param>
-        /// <returns></returns>
+        /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
+        ///  0: operacja przebiegła pomyślnie
+        /// -1: Nie zgadza się długość PESEL lub zawiera niedozwolne znaki
+        /// -2: Numer PESEL powtarza się
+        /// -3: Indeks nie mieści się w zakresie <200001; 299999>
+        /// -4: Numer indeksu powtarza się
+        /// -5: Nie ma wydziału o takim id
+        /// -6: Nie ma studenta o takim id
+        /// </returns>
         public int PutById(int id, StudentDtoForPostPutResponses studentDto);
 
         /// <summary>
@@ -69,14 +77,29 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// </summary>
         /// <param name="index">Indeks wybranego studenta </param>
         /// <param name="studentDto">Obiekt ze zmodyfikowanymi danymi studenta</param>
-        /// <returns></returns>
+        /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
+        ///  0: operacja przebiegła pomyślnie
+        /// -1: Nie zgadza się długość PESEL lub zawiera niedozwolne znaki
+        /// -2: Numer PESEL powtarza się
+        /// -3: Indeks nie mieści się w zakresie <200001; 299999>
+        /// -4: Numer indeksu powtarza się
+        /// -5: Nie ma wydziału o takim id
+        /// -6: Nie ma studenta o takim indeksie
+        /// </returns>
         public int PutByIndex(int index, StudentDtoForPostPutResponses studentDto);
 
         /// <summary>
         /// Metoda dodająca nowego studenta do bazy danych
         /// </summary>
         /// <param name="studentDto">Obiekt z danymi nowego studenta </param>
-        /// <returns></returns>
+        /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
+        ///  0: operacja przebiegła pomyślnie
+        /// -1: Nie zgadza się długość PESEL lub zawiera niedozwolne znaki
+        /// -2: Numer PESEL powtarza się
+        /// -3: Indeks nie mieści się w zakresie <200001; 299999>
+        /// -4: Numer indeksu powtarza się
+        /// -5: Nie ma wydziału o takim id
+        /// </returns>
         public int Post(StudentDtoForPostPutResponses studentDto);
     }
 }
