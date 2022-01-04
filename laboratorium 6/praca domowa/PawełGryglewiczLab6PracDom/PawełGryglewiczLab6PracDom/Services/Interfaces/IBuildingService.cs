@@ -62,6 +62,8 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// -3: Nie ma budynku o takim numerze id
         /// -4: Rok budowy nie mieści się w przedziale <1900;2021>
         /// -5: Liczba pięter nie mieści się w przedziale <1;20>
+        /// -6: Kategoria nie jest literą
+        /// -7: Numer nie może być ujemny
         /// </returns>
         int Put(int id, BuildingDtoForPostPutResponse buildingDto);
 
@@ -74,6 +76,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// -2: Nie ma wydziału o takim numerze id
         /// -4: Rok budowy nie mieści się w przedziale <1900;2021>
         /// -5: Liczba pięter nie mieści się w przedziale <1;20>
+        /// -7: Numer nie może być ujemny
         /// </returns>
         int Post(BuildingDtoForPostPutResponse buildingDto);
     }

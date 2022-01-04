@@ -140,6 +140,18 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 //Pobranie edytowanego budynku z bazy danych
                 Building entity = _context.Buildings.Where(b => b.Id == id).Single();
 
+                //Sprawdzenie czy kategoria jest literą
+                if (!Char.IsLetter(buildingDto.Category))
+                {
+                    return -6;
+                }
+
+                //Sprawdzenie czy numer jest poprawny
+                if (buildingDto.Number < 1)
+                {
+                    return -7;
+                }
+
                 //Sprawdzenie czy numer w danej kategorii nie powtarza się
                 if (_context.Buildings.Where(b => b.Category == buildingDto.Category).Any(b => b.Number == buildingDto.Number))
                 {
@@ -189,6 +201,18 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
 
         public int Post(BuildingDtoForPostPutResponse buildingDto)
         {
+            //Sprawdzenie czy kategoria jest literą
+            if (!Char.IsLetter(buildingDto.Category))
+            {
+                return -6;
+            }
+
+            //Sprawdzenie czy numer jest poprawny
+            if(buildingDto.Number < 1)
+            {
+                return -7;
+            }
+
             //Sprawdzenie czy dane nie powtarzają się
             if (_context.Buildings.Where(b => b.Category == buildingDto.Category).Any(b => b.Number == buildingDto.Number))
             {

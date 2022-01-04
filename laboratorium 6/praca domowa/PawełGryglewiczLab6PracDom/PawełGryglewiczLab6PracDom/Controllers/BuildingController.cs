@@ -155,6 +155,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -2: return BadRequest("Wydział przypisany do danego budynku nie istnieje");
                 case -4: return BadRequest("Podany rok budowy nie mieści się w odpowiednim zakresie (od 1900 do 2021)");
                 case -5: return BadRequest("Podana liczba pięter nie mieści się w zakresie od 1 do 20");
+                case -6: return BadRequest("Kategoria nie jest literą");
+                case -7: return BadRequest("Numer musi być >0");
                 default: return Ok();
             }
 
@@ -179,6 +181,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -3: return NotFound("Nie ma budynku o takim id");
                 case -4: return BadRequest("Podany rok budowy nie mieści się w odpowiednim zakresie (od 1900 do 2021)");
                 case -5: return BadRequest("Podana liczba pięter nie mieści się w zakresie od 1 do 20");
+                case -6: return BadRequest("Kategoria nie jest literą");
+                case -7: return BadRequest("Numer musi być >0");
                 default: return Ok();
             }
         }
