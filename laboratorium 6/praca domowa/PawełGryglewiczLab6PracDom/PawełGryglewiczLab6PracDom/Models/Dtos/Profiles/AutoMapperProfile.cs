@@ -2,6 +2,7 @@
 using PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.LessonDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto;
 using PawełGryglewiczLab6PracDom.Models.Dtos.StudentDto;
 using System;
@@ -20,6 +21,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             RoomMaps();
             LecturerMaps();
             StudentMaps();
+            LessonMaps();
         }
 
         private void FacultyMaps()
@@ -57,6 +59,12 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             CreateMap<Student, StudentDtoForGetResponses>();
             CreateMap<StudentDtoForPostPutResponses, Student>();
             CreateMap<Student, StudentDtoForFacultyDto>();
+        }
+
+        private void LessonMaps()
+        {
+            CreateMap<Lesson, LessonDtoForGetResponses>();
+            CreateMap<LessonDtoForPostPutResponses, Lesson>();
         }
     }
 }
