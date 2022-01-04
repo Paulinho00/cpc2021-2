@@ -126,6 +126,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -2: return BadRequest("Wydział o takim Id nie istnieje");
                 case -3: return NotFound("Nie znaleziono prowadzącego o takim id");
                 case -4: return BadRequest("Numer PESEL nie jest unikalny");
+                case -5: return BadRequest("Nie wszystkie pola są wypełnione");
+                case -6: return BadRequest("Pola z imieniem, nazwiskiem lub stopniem zawierają niedozwolone znaki");
                 default: return Ok();
             }
         }
@@ -144,6 +146,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -1: return BadRequest("Numer PESEL ma nieodpowiednią długość lub zawiera niedozwolone znaki");
                 case -2: return BadRequest("Wydział o takim Id nie istnieje");
                 case -4: return BadRequest("Numer PESEL nie jest unikalny");
+                case -5: return BadRequest("Nie wszystkie pola są wypełnione");
+                case -6: return BadRequest("Pola z imieniem, nazwiskiem lub stopniem zawierają niedozwolone znaki");
                 default: return Ok();
             }
         }

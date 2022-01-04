@@ -124,8 +124,20 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 //Pobranie prowadzącego z bazy danych
                 var entity = _context.Lecturers.Where(l => l.Id == id).Single();
 
+                //Sprawdzenie czy pola z imieniem, nazwiskiem i stopniem nie są puste
+                if(String.IsNullOrWhiteSpace(lecturerDto.FirstName) || String.IsNullOrWhiteSpace(lecturerDto.LastName) || String.IsNullOrWhiteSpace(lecturerDto.Degree))
+                {
+                    return -5;
+                }
+
+                //Sprawdzenie czy pola z imieniem, nazwiskiem lub przedmiotem nie zawierają niedozwolone znaki
+                if (!(lecturerDto.FirstName.All(Char.IsLetter) && lecturerDto.LastName.All(Char.IsLetter) && lecturerDto.Degree.All(Char.IsLetter)))
+                {
+                    return -6;
+                }
+
                 //Sprawdzenie czy długość numeru pesel jest odpowiednia i czy zawiera tylko liczby
-                if (lecturerDto.Pesel.Length != 11 || !lecturerDto.Pesel.All(char.IsDigit))
+                if (String.IsNullOrWhiteSpace(lecturerDto.Pesel)|| lecturerDto.Pesel.Length != 11 || !lecturerDto.Pesel.All(char.IsDigit))
                 {
                     return -1;
                 }
@@ -174,8 +186,20 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
 
         public int Post(LecturerDtoForPostPutResponses lecturerDto)
         {
+            //Sprawdzenie czy pola z imieniem, nazwiskiem i stopniem nie są puste
+            if (String.IsNullOrWhiteSpace(lecturerDto.FirstName) || String.IsNullOrWhiteSpace(lecturerDto.LastName) || String.IsNullOrWhiteSpace(lecturerDto.Degree))
+                {
+                return -5;
+            }
+
+            //Sprawdzenie czy pola z imieniem, nazwiskiem lub przedmiotem nie zawierają niedozwolone znaki
+            if (!(lecturerDto.FirstName.All(Char.IsLetter) && lecturerDto.LastName.All(Char.IsLetter) && lecturerDto.Degree.All(Char.IsLetter)))
+            {
+                return -6;
+            }
+
             //Sprawdzenie czy długość numeru pesel jest odpowiednia i czy zawiera tylko liczby
-            if (lecturerDto.Pesel.Length != 11 || !lecturerDto.Pesel.All(char.IsDigit))
+            if (String.IsNullOrWhiteSpace(lecturerDto.Pesel) || lecturerDto.Pesel.Length != 11 || !lecturerDto.Pesel.All(char.IsDigit))
             {
                 return -1;
             }
