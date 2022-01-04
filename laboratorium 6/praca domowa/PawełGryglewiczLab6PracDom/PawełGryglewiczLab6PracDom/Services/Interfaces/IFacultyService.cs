@@ -26,7 +26,7 @@ namespace PawełGryglewiczLab6PracDom.Services
         /// <summary>
         /// Metoda dodaje nowy wydział i zwraca jego id
         /// </summary>
-        /// <param name="faculty">Nowy wydział</param>
+        /// <param name="facultyDto">Nowy wydział</param>
         /// <returns> Liczbę odpowiadającą odpowiedniemu komunikatowi
         ///  0: operacja przebiegła pomyślnie
         /// -1: Nazwa wydziału powtarza się
