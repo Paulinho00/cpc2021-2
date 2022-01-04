@@ -35,7 +35,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.BuildingDto
         /// <summary>
         /// Obiekt wydziału do którego należy budynek
         /// </summary>
-        public FacultyDtoForGetResponse Faculty { get; set; }
+        public FacultyDtoForLecturerStudentBuildingDtos Faculty { get; set; }
 
         /// <summary>
         /// Liczba pięter

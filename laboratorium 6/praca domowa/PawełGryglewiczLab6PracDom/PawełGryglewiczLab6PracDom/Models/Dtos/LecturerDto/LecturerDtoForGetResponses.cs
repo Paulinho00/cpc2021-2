@@ -40,6 +40,6 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto
         /// <summary>
         /// Obiekt wydziału, na którym pracuje prowadzący
         /// </summary>
-        public FacultyDtoForLecturerStudentDtos Faculty { get; set; }
+        public FacultyDtoForLecturerStudentBuildingDtos Faculty { get; set; }
     }
 }

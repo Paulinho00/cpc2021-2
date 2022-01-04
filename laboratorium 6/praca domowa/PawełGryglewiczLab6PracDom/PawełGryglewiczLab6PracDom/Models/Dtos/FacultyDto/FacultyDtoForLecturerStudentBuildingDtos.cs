@@ -8,7 +8,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto
     /// <summary>
     /// Klasa reprezentująca dto dla klasy Faculty do obiektów dto klasy Lecturer
     /// </summary>
-    public class FacultyDtoForLecturerStudentDtos
+    public class FacultyDtoForLecturerStudentBuildingDtos
     {
         /// <summary>
         /// Klucz główny

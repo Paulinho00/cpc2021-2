@@ -44,6 +44,6 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.StudentDto
         /// <summary>
         /// Obiekt wydziału, na którym studiuje student
         /// </summary>
-        public FacultyDtoForLecturerStudentDtos Faculty { get; set; }
+        public FacultyDtoForLecturerStudentBuildingDtos Faculty { get; set; }
     }
 }

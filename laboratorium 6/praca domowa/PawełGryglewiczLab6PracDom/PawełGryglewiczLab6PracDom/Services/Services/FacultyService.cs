@@ -73,7 +73,7 @@ namespace PawełGryglewiczLab6PracDom.Services
         public int Post(FacultyDtoForPostPutResponse facultyDto)
         {
             //Sprawdzenie czy pole z nazwą jest wypełnione
-            if (String.IsNullOrEmpty(facultyDto.FullName))
+            if (String.IsNullOrWhiteSpace(facultyDto.FullName))
             {
                 return -5;
             }
