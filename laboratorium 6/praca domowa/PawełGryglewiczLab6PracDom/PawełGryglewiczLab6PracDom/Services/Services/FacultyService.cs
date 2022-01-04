@@ -72,8 +72,20 @@ namespace PawełGryglewiczLab6PracDom.Services
 
         public int Post(FacultyDtoForPostPutResponse facultyDto)
         {
+            //Sprawdzenie czy pole z nazwą jest wypełnione
+            if (String.IsNullOrEmpty(facultyDto.FullName))
+            {
+                return -5;
+            }
+
+            //Sprawdzenie czy nazwa nie zawiera odpowiednich znaków
+            if (!facultyDto.FullName.All(Char.IsLetter))
+            {
+                return -6;
+            }
+
             //Sprawdzenie czy nazwa wydziału nie powtarza się
-            if(_context.Faculties.Any(f => f.FullName.Equals(facultyDto.FullName)))
+            if (_context.Faculties.Any(f => f.FullName.Equals(facultyDto.FullName)))
             {
                 return -1;
             }
@@ -105,6 +117,18 @@ namespace PawełGryglewiczLab6PracDom.Services
             {
                 //Pobranie edytowanego wydziału z bazy danych
                 Faculty entity = _context.Faculties.Where(f => f.Id == id).Single();
+
+                //Sprawdzenie czy pole z nazwą jest wypełnione
+                if (String.IsNullOrEmpty(facultyDto.FullName))
+                {
+                    return -5;
+                }
+
+                //Sprawdzenie czy nazwa nie zawiera odpowiednich znaków
+                if (!facultyDto.FullName.All(Char.IsLetter))
+                {
+                    return -6;
+                }
 
                 //Sprawdzenie czy nazwa wydziału nie powtarza się
                 if (_context.Faculties.Any(f => f.FullName.Equals(facultyDto.FullName)))

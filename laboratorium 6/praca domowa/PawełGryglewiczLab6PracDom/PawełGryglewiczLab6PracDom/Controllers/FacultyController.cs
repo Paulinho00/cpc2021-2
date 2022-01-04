@@ -75,6 +75,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -1: return BadRequest("Nazwa wydziału powtarza się");
                 case -2: return BadRequest("Numer wydziału powtarza się");
                 case -3: return BadRequest("Numer wydziału nie mieści się w zakresie od 1 do 20");
+                case -5: return BadRequest("Nie wszystkie pola są wypełnione");
+                case -6: return BadRequest("Pole z nazwą zawiera nieodpowiednie znaki");
                 default: return Ok();
             }
         }
@@ -98,6 +100,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -2: return BadRequest("Numer wydziału powtarza się");
                 case -3: return BadRequest("Numer wydziału nie mieści się w zakresie od 1 do 20");
                 case -4: return NotFound("Nie ma wydziału o takim id");
+                case -5: return BadRequest("Nie wszystkie pola są wypełnione");
+                case -6: return BadRequest("Pole z nazwą zawiera nieodpowiednie znaki");
                 default: return Ok();
             }
         }

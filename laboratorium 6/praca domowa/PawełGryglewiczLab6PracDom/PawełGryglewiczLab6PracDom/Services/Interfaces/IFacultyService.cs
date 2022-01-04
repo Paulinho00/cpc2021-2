@@ -32,6 +32,8 @@ namespace PawełGryglewiczLab6PracDom.Services
         /// -1: Nazwa wydziału powtarza się
         /// -2: Numer wydziału powtarza się
         /// -3: Numer wydziału nie mieści się w zakresie <1;20>
+        /// -5: Nie wszystkie pola są wypełnione
+        /// -6: Pole z nazwą zawiera nieodpowiednie znaki
         /// </returns>
         int Post(FacultyDtoForPostPutResponse facultyDto);
 
@@ -46,6 +48,8 @@ namespace PawełGryglewiczLab6PracDom.Services
         /// -2: Numer wydziału powtarza się
         /// -3: Numer wydziału nie mieści się w zakresie <1;20>
         /// -4: Nie ma wydziału o takim id
+        /// -5: Nie wszystkie pola są wypełnione
+        /// -6: Pole z nazwą zawiera nieodpowiednie znaki
         /// </returns>
         int Put(int id, FacultyDtoForPostPutResponse faculty);
 
