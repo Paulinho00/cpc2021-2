@@ -155,8 +155,20 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 //Pobranie danych studenta z bazy danych
                 var entity = _context.Students.Where(s => s.Id == id).Single();
 
+                //Sprawdzenie czy pola z imieniem, nazwiskiem lub przedmiotem nie jest puste
+                if (String.IsNullOrWhiteSpace(studentDto.FirstName) || String.IsNullOrWhiteSpace(studentDto.LastName) || String.IsNullOrWhiteSpace(studentDto.Subject))
+                {
+                    return -7;
+                }
+
+                //Sprawdzenie czy pola z imieniem, nazwiskiem lub przedmiotem nie zawierają niedozwolone znaki
+                if (!(studentDto.FirstName.All(Char.IsLetter) && studentDto.LastName.All(Char.IsLetter) && studentDto.Subject.All(Char.IsLetter)))
+                {
+                    return -8;
+                }
+
                 //Sprawdzenie czy długość numeru pesel jest odpowiednia i czy zawiera tylko liczby
-                if (studentDto.Pesel.Length != 11 || !studentDto.Pesel.All(char.IsDigit))
+                if (String.IsNullOrWhiteSpace(studentDto.Pesel) || studentDto.Pesel.Length != 11 || !studentDto.Pesel.All(char.IsDigit))
                 {
                     return -1;
                 }
@@ -224,8 +236,20 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 //Pobranie danych studenta z bazy danych
                 var entity = _context.Students.Where(s => s.Index == index).Single();
 
+                //Sprawdzenie czy pole z imieniem, nazwiskiem lub przedmiotem nie jest puste
+                if (String.IsNullOrWhiteSpace(studentDto.FirstName) || String.IsNullOrWhiteSpace(studentDto.LastName) || String.IsNullOrWhiteSpace(studentDto.Subject))
+                {
+                    return -7;
+                }
+
+                //Sprawdzenie czy pola z imieniem, nazwiskiem lub przedmiotem nie zawierają niedozwolone znaki
+                if (!(studentDto.FirstName.All(Char.IsLetter) && studentDto.LastName.All(Char.IsLetter) && studentDto.Subject.All(Char.IsLetter)))
+                {
+                    return -8;
+                }
+
                 //Sprawdzenie czy długość numeru pesel jest odpowiednia i czy zawiera tylko liczby
-                if (studentDto.Pesel.Length != 11 || !studentDto.Pesel.All(char.IsDigit))
+                if (String.IsNullOrWhiteSpace(studentDto.Pesel) || studentDto.Pesel.Length != 11 || !studentDto.Pesel.All(char.IsDigit))
                 {
                     return -1;
                 }
@@ -288,8 +312,20 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
 
         public int Post(StudentDtoForPostPutResponses studentDto)
         {
+            //Sprawdzenie czy pole z imieniem, nazwiskiem lub przedmiotem nie jest puste
+            if (String.IsNullOrWhiteSpace(studentDto.FirstName) || String.IsNullOrWhiteSpace(studentDto.LastName) || String.IsNullOrWhiteSpace(studentDto.Subject))
+            {
+                return -7;
+            }
+
+            //Sprawdzenie czy pola z imieniem, nazwiskiem lub przedmiotem nie zawierają niedozwolone znaki
+            if (!(studentDto.FirstName.All(Char.IsLetter) && studentDto.LastName.All(Char.IsLetter) && studentDto.Subject.All(Char.IsLetter)))
+            {
+                return -8;
+            }
+
             //Sprawdzenie czy długość numeru pesel jest odpowiednia i czy zawiera tylko liczby
-            if (studentDto.Pesel.Length != 11 || !studentDto.Pesel.All(char.IsDigit))
+            if ( String.IsNullOrWhiteSpace(studentDto.Pesel)||studentDto.Pesel.Length != 11 || !studentDto.Pesel.All(char.IsDigit))
             {
                 return -1;
             }

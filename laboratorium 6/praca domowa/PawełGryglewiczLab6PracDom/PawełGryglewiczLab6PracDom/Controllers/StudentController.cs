@@ -166,6 +166,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -4: return BadRequest("Numer indeksu nie jest unikalny");
                 case -5: return BadRequest("Nie ma wydziału o takim id");
                 case -6: return NotFound("Nie ma studenta o takim id");
+                case -7: return BadRequest("Nie wszystkie pola są wypełnione");
+                case -8: return BadRequest("Pola z nazwiskiem, imieniem lub przedmiotem zawierają niedozwolone znaki");
                 default: return Ok();
             }
         }
@@ -189,6 +191,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -4: return BadRequest("Numer indeksu nie jest unikalny");
                 case -5: return BadRequest("Nie ma wydziału o takim id");
                 case -6: return NotFound("Nie ma studenta o takim indeksie");
+                case -7: return BadRequest("Nie wszystkie pola są wypełnione");
+                case -8: return BadRequest("Pola z nazwiskiem, imieniem lub przedmiotem zawierają niedozwolone znaki");
                 default: return Ok();
             }
         }
@@ -209,6 +213,8 @@ namespace PawełGryglewiczLab6PracDom.Controllers
                 case -3: return BadRequest("Numer indeksu nie mieści się w zakresie od 200001 do 299999");
                 case -4: return BadRequest("Numer indeksu nie jest unikalny");
                 case -5: return BadRequest("Nie ma wydziału o takim id");
+                case -7: return BadRequest("Nie wszystkie pola są wypełnione");
+                case -8: return BadRequest("Pola z nazwiskiem, imieniem lub przedmiotem zawierają niedozwolone znaki");
                 default: return Ok();
             }
         }

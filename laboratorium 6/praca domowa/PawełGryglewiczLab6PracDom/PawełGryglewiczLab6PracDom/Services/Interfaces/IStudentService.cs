@@ -69,6 +69,8 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// -4: Numer indeksu powtarza się
         /// -5: Nie ma wydziału o takim id
         /// -6: Nie ma studenta o takim id
+        /// -7: Pola z imieniem, nazwiskiem lub przedmiotem jest puste
+        /// -8: Pola z imieniem, nazwiskiem lub przedmiotem zawierają niedozwolone znaki
         /// </returns>
         public int PutById(int id, StudentDtoForPostPutResponses studentDto);
 
@@ -85,6 +87,8 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// -4: Numer indeksu powtarza się
         /// -5: Nie ma wydziału o takim id
         /// -6: Nie ma studenta o takim indeksie
+        /// -7: Pole z imieniem, nazwiskiem lub przedmiotem jest puste
+        /// -8: Pola z imieniem, nazwiskiem lub przedmiotem zawierają niedozwolone znaki
         /// </returns>
         public int PutByIndex(int index, StudentDtoForPostPutResponses studentDto);
 
@@ -99,6 +103,8 @@ namespace PawełGryglewiczLab6PracDom.Services.Interfaces
         /// -3: Indeks nie mieści się w zakresie <200001; 299999>
         /// -4: Numer indeksu powtarza się
         /// -5: Nie ma wydziału o takim id
+        /// -7: Pole z imieniem, nazwiskiem lub przedmiotem jest puste
+        /// -8: Pola z imieniem, nazwiskiem lub przedmiotem zawierają niedozwolone znaki
         /// </returns>
         public int Post(StudentDtoForPostPutResponses studentDto);
     }
