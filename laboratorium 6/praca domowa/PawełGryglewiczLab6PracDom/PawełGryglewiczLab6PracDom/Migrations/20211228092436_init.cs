@@ -120,7 +120,6 @@ namespace PawełGryglewiczLab6PracDom.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "smalldatetime", nullable: false),
-                    IsOddWeek = table.Column<bool>(type: "bit", nullable: false),
                     Subject = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LecturerId = table.Column<int>(type: "int", nullable: false),
                     RoomId = table.Column<int>(type: "int", nullable: true)

@@ -26,12 +26,6 @@ namespace PawełGryglewiczLab6PracDom.Models
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Pole przechowujące informacje o parzystości tygodnia
-        /// </summary>
-        [Required]
-        public bool IsOddWeek { get; set; }
-
-        /// <summary>
         /// Przedmiot, którego dotyczą zajęcia
         /// </summary>
         [Required]
