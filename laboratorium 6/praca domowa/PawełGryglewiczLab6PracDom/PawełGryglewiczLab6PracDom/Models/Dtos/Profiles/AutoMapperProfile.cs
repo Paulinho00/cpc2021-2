@@ -52,13 +52,14 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
             CreateMap<Lecturer, LecturerDtoForGetResponses>();
             CreateMap<LecturerDtoForPostPutResponses, Lecturer>();
             CreateMap<Lecturer, LecturerDtoForFacultyDto>();
+            CreateMap<Lecturer, LecturerDtoForLessonDto>();
         }
 
         private void StudentMaps()
         {
             CreateMap<Student, StudentDtoForGetResponses>();
             CreateMap<StudentDtoForPostPutResponses, Student>();
-            CreateMap<Student, StudentDtoForFacultyDto>();
+            CreateMap<Student, StudentDtoForFacultyLessonDtos>();
         }
 
         private void LessonMaps()

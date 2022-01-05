@@ -37,7 +37,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto
         /// <summary>
         /// Lista studentów na wydziale
         /// </summary>
-        public ICollection<StudentDtoForFacultyDto> Students { get; set; }
+        public ICollection<StudentDtoForFacultyLessonDtos> Students { get; set; }
 
         /// <summary>
         /// Lista prowadzących pracujących na wydziale

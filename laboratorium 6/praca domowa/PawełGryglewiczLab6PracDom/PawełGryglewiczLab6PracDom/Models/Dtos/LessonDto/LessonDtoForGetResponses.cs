@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PawełGryglewiczLab6PracDom.Models.Dtos.LecturerDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.RoomDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.StudentDto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,16 +31,16 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.LessonDto
         /// <summary>
         /// Obiekt prowadzącego zajęcia
         /// </summary>
-        public Lecturer Lecturer { get; set; }
+        public LecturerDtoForLessonDto Lecturer { get; set; }
 
         /// <summary>
         /// Obiekt pomieszczenia, w którym odbywają się zajęcia
         /// </summary>
-        public Room Room { get; set; }
+        public RoomDtoForGetResponses Room { get; set; }
 
         /// <summary>
         /// Studenci zapisani na dane zajęcia
         /// </summary>
-        public ICollection<Student> Students { get; set; }
+        public ICollection<StudentDtoForFacultyLessonDtos> Students { get; set; }
     }
 }
