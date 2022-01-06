@@ -87,7 +87,7 @@ namespace PawełGryglewiczLab6PracDom.Controllers
             var rooms = _roomService.GetByBuilding(category, buildingNumber);
             if (rooms == null)
             {
-                return NotFound("Nie ma takiego wydziału");
+                return NotFound("Nie ma takiego budynku");
             }
             return Ok(rooms);
         }

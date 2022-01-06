@@ -66,6 +66,7 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.Profiles
         {
             CreateMap<Lesson, LessonDtoForGetResponses>();
             CreateMap<LessonDtoForPostPutResponses, Lesson>();
+            CreateMap<Lesson, LessonDtoForRoomStudentDtos>();
         }
     }
 }

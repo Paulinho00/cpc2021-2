@@ -31,7 +31,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
         public List<RoomDtoForGetResponses> GetAll()
         {
             //Pobranie sal z bazy danych
-            var rooms = _context.Rooms.Include(r => r.Building).ToList();
+            var rooms = _context.Rooms.Include(r => r.Building).Include(r => r.Lessons).ToList();
 
             //Mapowanie na dto
             var roomsDto = _mapper.Map<List<RoomDtoForGetResponses>>(rooms);
@@ -43,7 +43,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Odczyt pokoju z bazy danych
-                var room = _context.Rooms.Where(r => r.Id == id).Include(r => r.Building).Single();
+                var room = _context.Rooms.Where(r => r.Id == id).Include(r => r.Building).Include(r => r.Lessons).Single();
 
                 //Mapowanie na dto
                 var roomDto = _mapper.Map<RoomDtoForGetResponses>(room);
@@ -73,7 +73,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             }
 
             //Odczyt sali z bazy danych
-            var room = _context.Rooms.Where(r => r.BuildingId == buildingId && r.Number == roomNumber).Include(r => r.Building).Single();
+            var room = _context.Rooms.Where(r => r.BuildingId == buildingId && r.Number == roomNumber).Include(r => r.Building).Include(r => r.Lessons).Single();
 
             //Mapowanie na dto
             var roomDto = _mapper.Map<RoomDtoForGetResponses>(room);
@@ -89,7 +89,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             }
 
             //Odczyt wybranego budynku z bazy danych
-            var building = _context.Buildings.Where(b => b.Category == category && b.Number == buildingNumber).Include(b => b.Rooms).Single();
+            var building = _context.Buildings.Where(b => b.Category == category && b.Number == buildingNumber).Include(b => b.Rooms).ThenInclude(r => r.Lessons).Single();
 
             //Odczyt sal w danym budynku
             var rooms = building.Rooms;
