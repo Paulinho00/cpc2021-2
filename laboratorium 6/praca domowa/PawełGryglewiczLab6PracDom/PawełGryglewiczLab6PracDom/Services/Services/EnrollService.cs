@@ -47,24 +47,27 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie studenta z bazy danych
-                var student = _context.Students.Where(s => s.Id == studentId).Single();
+                var student = _context.Students.Where(s => s.Id == studentId).Include(s => s.Lessons).Single();
 
                 //Pobranie zajęć z bazy danych
-                var lesson = _context.Lessons.Where(l => l.Id == lessonId).Include(r => r.Room).Single();
+                var lesson = _context.Lessons.Where(l => l.Id == lessonId).Include(r => r.Room).Include(l => l.Students).Single();
 
                 //Sprawdzenie czy student nie jest już zapisany na zajęcia w tym samym czasie
-                if (student.Lessons.Any(l => l.Date == lesson.Date))
+                if (student.Lessons != null && student.Lessons.Any(l => l.Date == lesson.Date))
                 {
                     return -1;
                 }
 
-                //Pobranie liczby studentów zapisanych na zajęcia
-                int numberOfStudents = lesson.Students.Count();
-
-                //Sprawdzenie czy jest wystarczająca liczba miejsc
-                if(numberOfStudents+1 > lesson.Room.NumberOfPlaces)
+                if (lesson.Students != null)
                 {
-                    return -2;
+                    //Pobranie liczby studentów zapisanych na zajęcia
+                    int numberOfStudents = lesson.Students.Count();
+
+                    //Sprawdzenie czy jest wystarczająca liczba miejsc
+                    if (numberOfStudents + 1 > lesson.Room.NumberOfPlaces)
+                    {
+                        return -2;
+                    }
                 }
                 
                 //Zapis do bazy danych
