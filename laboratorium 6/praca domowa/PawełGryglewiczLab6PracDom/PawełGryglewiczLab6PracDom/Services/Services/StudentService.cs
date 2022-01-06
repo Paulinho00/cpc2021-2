@@ -32,7 +32,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
         public List<StudentDtoForGetResponses> GetAll()
         {
             //Pobranie studentów z bazy danych
-            var students = _context.Students.Include(s => s.Faculty).ToList();
+            var students = _context.Students.Include(s => s.Faculty).Include(s => s.Lessons).ToList();
 
             //Mapowanie na dto
             var studentsDto = _mapper.Map<List<StudentDtoForGetResponses>>(students);
@@ -44,7 +44,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie studenta z bazy danych
-                var student = _context.Students.Where(s => s.Id == id).Include(s => s.Faculty).Single();
+                var student = _context.Students.Where(s => s.Id == id).Include(s => s.Faculty).Include(s => s.Lessons).Single();
 
                 //Mapowanie na dto
                 var studentDto = _mapper.Map<StudentDtoForGetResponses>(student);
@@ -62,7 +62,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             if (_context.Faculties.Any(f => f.Id == facultyId))
             {
                 //Pobranie studentów z bazy danych
-                var students = _context.Students.Where(s => s.FacultyId == facultyId).Include(s => s.Faculty).ToList();
+                var students = _context.Students.Where(s => s.FacultyId == facultyId).Include(s => s.Faculty).Include(s => s.Lessons).ToList();
 
                 //Mapowanie na dto
                 var studentsDto = _mapper.Map<List<StudentDtoForGetResponses>>(students);
@@ -83,7 +83,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 int facultyId = _context.Faculties.Where(f => f.Number == facultyNumber).Single().Id;
 
                 //Pobranie studentów z bazy danych
-                var students = _context.Students.Where(s => s.FacultyId == facultyId).Include(s => s.Faculty).ToList();
+                var students = _context.Students.Where(s => s.FacultyId == facultyId).Include(s => s.Faculty).Include(s => s.Lessons).ToList();
 
                 //Mapowanie na dto
                 var studentsDto = _mapper.Map<List<StudentDtoForGetResponses>>(students);
@@ -100,7 +100,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie danych studenta
-                var student = _context.Students.Where(s => s.Index == index).Include(s => s.Faculty).Single();
+                var student = _context.Students.Where(s => s.Index == index).Include(s => s.Faculty).Include(s => s.Lessons).Single();
 
                 //Mapowanie na dto
                 var studentDto = _mapper.Map<StudentDtoForGetResponses>(student);
