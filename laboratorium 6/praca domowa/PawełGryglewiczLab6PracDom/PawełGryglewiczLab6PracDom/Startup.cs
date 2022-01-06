@@ -34,6 +34,7 @@ namespace PawełGryglewiczLab6PracDom
             services.AddTransient<ILecturerService, LecturerService>();
             services.AddTransient<IStudentService, StudentService>();
             services.AddTransient<ILessonService, LessonService>();
+            services.AddTransient<IEnrollService, EnrollService>();
             services.AddControllersWithViews();
             services.AddSwaggerGen();
             services.AddAutoMapper(x => x.AddProfile<AutoMapperProfile>());
