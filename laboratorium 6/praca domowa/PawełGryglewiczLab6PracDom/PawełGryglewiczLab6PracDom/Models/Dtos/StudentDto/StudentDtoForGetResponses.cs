@@ -1,4 +1,5 @@
 ﻿using PawełGryglewiczLab6PracDom.Models.Dtos.FacultyDto;
+using PawełGryglewiczLab6PracDom.Models.Dtos.LessonDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,5 +46,10 @@ namespace PawełGryglewiczLab6PracDom.Models.Dtos.StudentDto
         /// Obiekt wydziału, na którym studiuje student
         /// </summary>
         public FacultyDtoForLecturerStudentBuildingDtos Faculty { get; set; }
+
+        /// <summary>
+        /// Zajęcia na które jest zapisany student
+        /// </summary>
+        public ICollection<LessonDtoForRoomStudentDtos> Lessons { get; set; }
     }
 }
