@@ -31,7 +31,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
         public List<LessonDtoForGetResponses> GetAll()
         {
             //Pobranie wszystkich zajęć z bazy danych
-            var lessons = _context.Lessons.Include(l => l.Room).Include(l => l.Lecturer).Include(l => l.Students).ToList();
+            var lessons = _context.Lessons.Include(l => l.Room).ThenInclude(r => r.Building).Include(l => l.Lecturer).ThenInclude(l => l.Faculty).Include(l => l.Students).ToList();
 
             //Mapowanie na dto
             var lessonsDto = _mapper.Map<List<LessonDtoForGetResponses>>(lessons);
@@ -43,7 +43,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             try
             {
                 //Pobranie zajęć z bazy danych
-                var lesson = _context.Lessons.Where(l => l.Id == id).Include(l => l.Room).Include(l => l.Lecturer).Include(l => l.Students).Single();
+                var lesson = _context.Lessons.Where(l => l.Id == id).Include(l => l.Room).ThenInclude(r => r.Building).Include(l => l.Lecturer).ThenInclude(l => l.Faculty).Include(l => l.Students).Single();
 
                 //Mapowanie na dto
                 var lessonDto = _mapper.Map<LessonDtoForGetResponses>(lesson);
@@ -64,7 +64,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             }
 
             //Pobranie zajęć z bazy danych
-            var lessons = _context.Lessons.Where(l => l.LecturerId == lecturerId).Include(l => l.Room).Include(l => l.Lecturer).Include(l => l.Students).ToList();
+            var lessons = _context.Lessons.Where(l => l.LecturerId == lecturerId).Include(l => l.Room).ThenInclude(r => r.Building).Include(l => l.Lecturer).ThenInclude(l => l.Faculty).Include(l => l.Students).ToList();
 
             //Mapowanie na dto
             var lessonsDto = _mapper.Map<List<LessonDtoForGetResponses>>(lessons);
@@ -80,7 +80,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             }
 
             //Pobranie zajęć z bazy danych
-            var lessons = _context.Lessons.Where(l => l.RoomId == roomId).Include(l => l.Room).Include(l => l.Lecturer).Include(l => l.Students).ToList();
+            var lessons = _context.Lessons.Where(l => l.RoomId == roomId).Include(l => l.Room).ThenInclude(r => r.Building).Include(l => l.Lecturer).ThenInclude(l => l.Faculty).Include(l => l.Students).ToList();
 
             //Mapowanie na dto
             var lessonsDto = _mapper.Map<List<LessonDtoForGetResponses>>(lessons);
@@ -148,11 +148,11 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
                 }
 
                 //Sprawdzenie czy w sali nie ma już zajęć w tym czasie
-                if (!_context.Lessons.Where(l => l.RoomId == lessonDto.RoomId).Any(l => l.Date == lessonDto.Date))
+                if (_context.Lessons.Where(l => l.RoomId == lessonDto.RoomId).Any(l => l.Date == lessonDto.Date))
                 {
                     var potentialConflictingLesson = _context.Lessons.Where(l => l.RoomId == lessonDto.RoomId && l.Date == lessonDto.Date).Single();
                     //Sprawdzenie czy konfliktujące zajęcia nie są edytowanymi zajęciami
-                    if(potentialConflictingLesson.Id != id)
+                    if (potentialConflictingLesson.Id != id)
                     {
                         return -6;
                     }
@@ -207,7 +207,7 @@ namespace PawełGryglewiczLab6PracDom.Services.Services
             }
 
             //Sprawdzenie czy w sali nie ma już zajęć w tym czasie
-            if (!_context.Lessons.Where(l => l.RoomId == lessonDto.RoomId).Any(l => l.Date == lessonDto.Date))
+            if (_context.Lessons.Where(l => l.RoomId == lessonDto.RoomId).Any(l => l.Date == lessonDto.Date))
             {
                 return -6;
             }
