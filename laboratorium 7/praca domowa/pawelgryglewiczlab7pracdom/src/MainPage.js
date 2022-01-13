@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-//Funkcja renderująca stronę główną/powitalną
+//Komponent z widokiem strony głównej/powitalnej
 function MainPage(){
     return(
         <>

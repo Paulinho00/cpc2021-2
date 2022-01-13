@@ -13,6 +13,11 @@ function App() {
   //Stan przechowujący informację którą stronę wygenerować
   const [page, setPage] = useState(0);
 
+  //Zmienna przechowująca wszystkich studentów
+  const [students, setStudents] = useState([]);
+
+  //Zmienna przechowująca wszystkich nauczycieli akademickich
+  const [teachers, setTeachers] = useState([]);
 
   //Funkcja zmieniają wyświetlanie zakładki
   const changePage = function(page){
@@ -37,7 +42,7 @@ function App() {
        <MainPage/>
         }
         {page == 1 &&
-        <ChooseForm/>
+        <ChooseForm students={students} setStudents={setStudents} teachers={teachers} setTeachers={setTeachers}/>
         }
 
       </div>
