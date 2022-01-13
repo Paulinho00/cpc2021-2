@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, NavLink, NavItem } from 'reactstrap';
 import { useState } from 'react';
+import MainPage from './MainPage';
 
 
 
@@ -30,7 +31,13 @@ function App() {
           <NavLink style={{color: 'white'}} onClick={() =>changePage(2)}>Lista osób</NavLink>
         </NavItem>
       </Nav>
+      <div>
+        {page == 0 &&
+       <MainPage/>
+        }
+      </div>
     </div>
+    
   );
 }
 
