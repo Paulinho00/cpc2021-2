@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, NavLink, NavItem } from 'reactstrap';
 import { useState } from 'react';
 import MainPage from './MainPage';
+import ChooseForm from './ChooseForm';
 
 
 
@@ -35,6 +36,10 @@ function App() {
         {page == 0 &&
        <MainPage/>
         }
+        {page == 1 &&
+        <ChooseForm/>
+        }
+
       </div>
     </div>
     
