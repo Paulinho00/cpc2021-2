@@ -9,6 +9,21 @@ function ListOfPersons(props){
     //Stan przechowujący, które osoby są teraz wyświetlane w tabeli
     const [showStudent, setShowStudent] = useState(false);
 
+    const deleteStudent = function(index){
+        const newStudents = props.students.filter((element, i, arr) => {
+            return i != index;
+        });
+        props.setStudents(newStudents);
+    }
+
+    const deleteTeacher = function(index){
+        const newTeachers = props.teachers.filter((element, i, arr) => {
+            return i != index;
+        });
+        props.setTeachers(newTeachers);
+    }
+
+
     return (
         <>
         <Table dark>
@@ -40,7 +55,7 @@ function ListOfPersons(props){
                         <th scope='row'>{index+1}</th>
                         <td>{elementFromTable.name}</td>
                         <td>{elementFromTable.surname}</td>
-                        <td><Button style={{backgroundColor:'#111e60'}}>Usuń</Button></td>
+                        <td><Button style={{backgroundColor:'#111e60'}} onClick={() => deleteStudent(index)}>Usuń</Button></td>
                         <td><Button style={{backgroundColor:'#111e60'}}>Szczegóły</Button></td>
                         </tr>
                         )
@@ -51,7 +66,7 @@ function ListOfPersons(props){
                     <th scope='row'>{index+1}</th>
                     <td>{elementFromTable.name}</td>
                     <td>{elementFromTable.surname}</td>
-                    <td><Button style={{backgroundColor:'#111e60'}}>Usuń</Button></td>
+                    <td><Button style={{backgroundColor:'#111e60'}} onClick={() => deleteTeacher(index)}>Usuń</Button></td>
                     <td><Button style={{backgroundColor:'#111e60'}}>Szczegóły</Button></td>
                     </tr>
                     )
