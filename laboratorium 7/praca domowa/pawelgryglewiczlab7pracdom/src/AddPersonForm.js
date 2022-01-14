@@ -165,11 +165,11 @@ function AddPersonForm(props) {
                                 id='degree'
                                 type='select'
                                 onInput={handleInputDegree}
-                            > 
-                                <option>Magister</option>
-                                <option>Doktor</option>
-                                <option>Doktor habilotowany</option>
-                                <option>Profesor</option>
+                            >   <option value=''></option>
+                                <option value='Magister'>Magister</option>
+                                <option value='Doktor'>Doktor</option>
+                                <option value='Doktor habilitowany'>Doktor habilitowany</option>
+                                <option value='Profesor'>Profesor</option>
                             </Input>
                             </Col>
 
