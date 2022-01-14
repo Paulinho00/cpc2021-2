@@ -2,7 +2,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, NavLink, NavItem } from 'reactstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MainPage from './MainPage';
 import ChooseForm from './ChooseForm';
 import ListOfPersons from './ListOfPersons';
@@ -24,6 +24,13 @@ function App() {
   const changePage = function(page){
     setPage(page);
   }
+
+  //Hook zmieniający tytuł strony
+  useEffect(() => {
+    if(page==0) document.title="Główna strona"
+    else if(page == 1) document.title="Dodawanie osoby"
+    else document.title="Lista osób";
+  }, [page])
 
   return (
     <div className='App'>
