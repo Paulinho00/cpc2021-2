@@ -49,6 +49,7 @@ function AddPersonForm(props) {
     useEffect(() => {
         return () => {
             alert("Wychodzisz z okna formularzu")
+            console.log(props.teachers);
         }
     }, []);
 

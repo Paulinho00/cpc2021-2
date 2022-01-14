@@ -5,6 +5,7 @@ import { Nav, NavLink, NavItem } from 'reactstrap';
 import { useState } from 'react';
 import MainPage from './MainPage';
 import ChooseForm from './ChooseForm';
+import ListOfPersons from './ListOfPersons';
 
 
 
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Nav style={{backgroundColor: '#494949'}} tabs>
+      <Nav style={{backgroundColor: '#4d4e4d'}} tabs>
         <NavItem>
           <NavLink style={{color: 'white'}} onClick={() =>changePage(0)}>Strona główna</NavLink>
         </NavItem>
@@ -43,6 +44,9 @@ function App() {
         }
         {page == 1 &&
         <ChooseForm students={students} setStudents={setStudents} teachers={teachers} setTeachers={setTeachers}/>
+        }
+        { page == 2 &&
+          <ListOfPersons students={students} setStudents={setStudents} teachers={teachers} setTeachers={setTeachers} />
         }
 
       </div>
