@@ -50,22 +50,34 @@ function AddPersonForm(props) {
         return () => {
             alert("Wychodzisz z okna formularzu")
             console.log(props.teachers);
+            console.log(props.students);
         }
     }, []);
 
     //Funkcja dodająca studenta do tablicy z wszystkimi studentami studentów
     const addStudent = function () {
-        //Sprawdzenie czy pola są wypełnione
+        //Sprawdzenie czy pola są wypełnione i poprawne
         if (name == '' || surname == '' || subject == '' || faculty == '' || email == '') {
             alert("Nie wszyskie pola są wypełnione");
             props.returnToChoosePage(0);
         }
-        else {
+        else if(!emailVerify(email)){
+            alert("Nie poprawny email")
+            props.returnToChoosePage(0);
+        } else {
             let student = { name: name, surname: surname, subject: subject, faculty: faculty, email: email };
             let students = props.students;
             props.setStudents([...students, student]);
             props.returnToChoosePage(0);
         }
+    }
+
+    //Funcja weryfikująca poprawność emaila
+    const emailVerify = function(email){
+        //Regex poprawnego emaila
+        let pattern = /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i;;
+
+        return pattern.test(email);
     }
 
     //Funkcja dodająca nauczyciela akademickiego do tablicy z wszystkimi nauczycielami
