@@ -29,6 +29,7 @@ namespace Pawe³GryglewiczLab6
             services.AddSingleton<IPizzaService, PizzaService>();
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +50,9 @@ namespace Pawe³GryglewiczLab6
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(
+                options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader()
+            );
             app.UseHttpsRedirection();
 
             app.UseRouting();
