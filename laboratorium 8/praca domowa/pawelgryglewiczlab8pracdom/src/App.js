@@ -7,6 +7,8 @@ import SubMenu from 'antd/lib/menu/SubMenu';
 import MainPage from './MainPage';
 import AllPostsView from './AllPostsView'
 import PostDetailsView from './PostDetailsView';
+import CreatePost from './CreatePost';
+import EditPost from './EditPost';
 
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
   const [view, setView] = useState(0);
 
   //State przechowujący id aktualnie wybranego postu
-  const[selectedPostId, setSelectedPostId] = useState();
+  const[selectedPost, setSelectedPost] = useState([]);
 
   //State zmieniający widoczność modala
   const[isSearchModalVisible, setIsSearchModalVisible] = useState(false);
@@ -29,7 +31,7 @@ function App() {
   }
 
   const handleOkClickInModal = function(){
-    setSelectedPostId(inputNumberValue);
+    setSelectedPost({id:inputNumberValue});
     setView(2);
     setIsSearchModalVisible(false);
   }
@@ -43,7 +45,7 @@ function App() {
           </Menu.Item>
           <Menu.Item key="SubMenu-Item">
             <SubMenu key="SubMenu" icon={<CaretDownOutlined />} title="Opcje">
-              <Menu.Item key="addPost">Dodaj post</Menu.Item>
+              <Menu.Item key="addPost" onClick={() => setView(3)}>Dodaj post</Menu.Item>
               <Menu.Item key="findPostById" onClick={() => setIsSearchModalVisible(true)}>Szukaj</Menu.Item>
               <Menu.Item key="allPosts" onClick={() =>setView(1)} >Wyświetl posty</Menu.Item>
             </SubMenu>
@@ -61,8 +63,10 @@ function App() {
       {
         {
           0: <MainPage/>,
-          1: <AllPostsView setView={setView} setSelectedPost={setSelectedPostId}/>,
-          2: <PostDetailsView id ={selectedPostId}/>,
+          1: <AllPostsView setView={setView} setSelectedPost={setSelectedPost}/>,
+          2: <PostDetailsView id ={selectedPost.id}/>,
+          3: <CreatePost/>,
+          4: <EditPost initialValues={selectedPost}/>,
         }[view]
       }
 

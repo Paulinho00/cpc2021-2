@@ -3,7 +3,7 @@ import {Button, Table} from 'antd'
 import { fetchAllPosts } from './api';
 import { useState } from 'react/cjs/react.development';
 
-const columns = (openDetailedView) => [
+const columns = (openDetailedView, openEditForm) => [
     {
         title:"Id postu",
         dataIndex:"id",
@@ -22,20 +22,26 @@ const columns = (openDetailedView) => [
         title:"Akcje",
         render: (record) =>
         <>
-         <Button size="small" type="link" onClick={() => openDetailedView(record.id)}>Szczegóły</Button>
+         <Button size="small" type="link" onClick={() => openDetailedView(record)}>Szczegóły</Button>
+         <Button size="small" type="link" onClick={() => openEditForm(record)}>Edytuj</Button>
         </>    
         
     }
 ]
 
 //Widok wyświetlający wszystkie posty
-function AllPostsView({setView, setSelectedPost: setSelectedPostId}){
+function AllPostsView({setView, setSelectedPost}){
 
     const [posts, setPosts] = useState([]);
 
-    const openDetailedView = function(id){
-        setSelectedPostId(id);
+    const openDetailedView = function(post){
+        setSelectedPost(post);
         setView(2);
+    };
+
+    const openEditForm = function(post){
+        setSelectedPost(post);
+        setView(4);
     }
 
     useEffect(() =>{
@@ -46,7 +52,7 @@ function AllPostsView({setView, setSelectedPost: setSelectedPostId}){
 
 
     return(
-        <Table rowKey="id" dataSource={posts} columns={columns(openDetailedView)}/>
+        <Table rowKey="id" dataSource={posts} columns={columns(openDetailedView, openEditForm)}/>
     )
 }
 
