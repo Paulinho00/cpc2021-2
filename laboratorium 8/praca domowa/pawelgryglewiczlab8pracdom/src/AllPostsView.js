@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import {Table} from 'antd'
+import {Button, Table} from 'antd'
 import { fetchAllPosts } from './api';
 import { useState } from 'react/cjs/react.development';
 
-const columns = [
+const columns = (openDetailedView) => [
     {
         title:"Id postu",
         dataIndex:"id",
@@ -20,23 +20,33 @@ const columns = [
         sorter: (a,b) =>  a.title.localeCompare(b.title),
     },{
         title:"Akcje",
+        render: (record) =>
+        <>
+         <Button size="small" type="link" onClick={() => openDetailedView(record.id)}>Szczegóły</Button>
+        </>    
+        
     }
 ]
 
-//Wyświetlenie wszystkich postów
-function AllPostsView(){
+//Widok wyświetlający wszystkie posty
+function AllPostsView({setView, setSelectedPost: setSelectedPostId}){
 
     const [posts, setPosts] = useState([]);
+
+    const openDetailedView = function(id){
+        setSelectedPostId(id);
+        setView(2);
+    }
 
     useEffect(() =>{
         fetchAllPosts()
         .then((res) => res.json())
         .then((data) => setPosts(data));
-    });
+    }, []);
 
 
     return(
-        <Table rowKey="id" dataSource={posts} columns={columns}/>
+        <Table rowKey="id" dataSource={posts} columns={columns(openDetailedView)}/>
     )
 }
 

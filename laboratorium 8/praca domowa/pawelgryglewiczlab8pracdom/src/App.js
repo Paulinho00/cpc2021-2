@@ -6,12 +6,16 @@ import {CaretDownOutlined} from "@ant-design/icons"
 import SubMenu from 'antd/lib/menu/SubMenu';
 import MainPage from './MainPage';
 import AllPostsView from './AllPostsView'
+import PostDetailsView from './PostDetailsView';
 
 
 function App() {
 
   //State przechowujący, który widok jest wyświetlany
   const [view, setView] = useState(0);
+
+  //State przechowujący id aktualnie wybranego postu
+  const[selectedPostId, setSelectedPostId] = useState();
 
   return (
     <div className="App">
@@ -32,7 +36,8 @@ function App() {
       {
         {
           0: <MainPage/>,
-          1: <AllPostsView/>
+          1: <AllPostsView setView={setView} setSelectedPost={setSelectedPostId}/>,
+          2: <PostDetailsView id ={selectedPostId}/>,
         }[view]
       }
 
