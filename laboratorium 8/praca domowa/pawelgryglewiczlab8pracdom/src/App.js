@@ -1,7 +1,7 @@
 
 import './App.css';
 import React, { useState } from 'react';
-import {Menu} from 'antd';
+import {Menu, Modal, Form, InputNumber} from 'antd';
 import {CaretDownOutlined} from "@ant-design/icons"
 import SubMenu from 'antd/lib/menu/SubMenu';
 import MainPage from './MainPage';
@@ -17,6 +17,23 @@ function App() {
   //State przechowujący id aktualnie wybranego postu
   const[selectedPostId, setSelectedPostId] = useState();
 
+  //State zmieniający widoczność modala
+  const[isSearchModalVisible, setIsSearchModalVisible] = useState(false);
+
+  //State przechowujący aktualną wartość z InputNumber w Modalu
+  const[inputNumberValue, setInputNumberValue] = useState(1);
+
+
+  const handleInputNumber = function(value){
+    setInputNumberValue(value);
+  }
+
+  const handleOkClickInModal = function(){
+    setSelectedPostId(inputNumberValue);
+    setView(2);
+    setIsSearchModalVisible(false);
+  }
+
   return (
     <div className="App">
       <div>
@@ -27,12 +44,20 @@ function App() {
           <Menu.Item key="SubMenu-Item">
             <SubMenu key="SubMenu" icon={<CaretDownOutlined />} title="Opcje">
               <Menu.Item key="addPost">Dodaj post</Menu.Item>
-              <Menu.Item key="findPostById">Szukaj</Menu.Item>
+              <Menu.Item key="findPostById" onClick={() => setIsSearchModalVisible(true)}>Szukaj</Menu.Item>
               <Menu.Item key="allPosts" onClick={() =>setView(1)} >Wyświetl posty</Menu.Item>
             </SubMenu>
           </Menu.Item>
         </Menu>
       </div>
+      <Modal visible={isSearchModalVisible} onCancel={() =>setIsSearchModalVisible(false)} onOk={handleOkClickInModal}>
+        Wybierz id postu, który chcesz wyświetlić
+        <Form>
+          <Form.Item>
+            <InputNumber max={100} min={1} defaultValue={1} onChange={handleInputNumber}/>
+          </Form.Item>
+        </Form>
+      </Modal>
       {
         {
           0: <MainPage/>,

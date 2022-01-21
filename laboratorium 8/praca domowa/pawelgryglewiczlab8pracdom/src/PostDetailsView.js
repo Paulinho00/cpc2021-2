@@ -20,7 +20,7 @@ function PostDetailsView({id}){
         fetchPostComments(id)
         .then((res) => res.json())
         .then((data) => setComments(data));
-    }, []);
+    }, [id]);
 
     const {Text, Paragraph} = Typography;
 
