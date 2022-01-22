@@ -17,3 +17,10 @@ export function fetchPost(id){
 export function fetchPostComments(id){
     return fetch(BASE_URL+"/posts/"+id+"/comments", {method:'get'})
 }
+
+//Dodanie nowego postu
+export function addPost(post){
+    return fetch(BASE_URL+"/posts", {method:"post", body:JSON.stringify(post), headers:{
+        "Content-type": "application/json"
+    }});
+}
