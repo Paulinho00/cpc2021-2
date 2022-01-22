@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import {Button, Table} from 'antd'
-import { fetchAllPosts } from './api';
+import {Button, Table, Modal, message} from 'antd'
+import { deletePost, fetchAllPosts } from './api';
 import { useState } from 'react/cjs/react.development';
 
-const columns = (openDetailedView, openEditForm) => [
+const columns = (openDetailedView, openEditForm, deletePost) => [
     {
         title:"Id postu",
         dataIndex:"id",
@@ -24,6 +24,7 @@ const columns = (openDetailedView, openEditForm) => [
         <>
          <Button size="small" type="link" onClick={() => openDetailedView(record)}>Szczegóły</Button>
          <Button size="small" type="link" onClick={() => openEditForm(record)}>Edytuj</Button>
+         <Button size="small" type="link" danger onClick={() => deletePost(record)}>Usuń</Button>
         </>    
         
     }
@@ -44,6 +45,19 @@ function AllPostsView({setView, setSelectedPost}){
         setView(4);
     }
 
+    const handleDeletePost = function(post){
+        Modal.confirm({
+            title:"Czy chcesz usunąć post nr " +post.id +"?",
+            onOk: () => {deletePost(post.id).then(() =>{
+                    fetchAllPosts()
+                    .then((res) => res.json())
+                    .then((data) => setPosts(data));
+                    message.success("Usunięto post");
+                    })}
+
+        })
+    }
+
     useEffect(() =>{
         fetchAllPosts()
         .then((res) => res.json())
@@ -52,7 +66,7 @@ function AllPostsView({setView, setSelectedPost}){
 
 
     return(
-        <Table rowKey="id" dataSource={posts} columns={columns(openDetailedView, openEditForm)}/>
+        <Table rowKey="id" dataSource={posts} columns={columns(openDetailedView, openEditForm, handleDeletePost)}/>
     )
 }
 

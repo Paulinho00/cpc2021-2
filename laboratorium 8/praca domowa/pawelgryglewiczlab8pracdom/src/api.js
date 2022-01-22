@@ -30,5 +30,9 @@ export function updatePost(id, post){
     return fetch(BASE_URL+"/posts/"+id, {method:"put", body:JSON.stringify(post), headers:{
         "Content-type": "application/json"
     }});
+}
 
+//Usuwanie posta
+export function deletePost(id){
+    return fetch(BASE_URL+"/posts/"+id, {method:"delete"});
 }

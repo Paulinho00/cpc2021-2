@@ -6,7 +6,7 @@ function CreateEditPostForm({initialValues, form}){
 
     return(
         <Form form={form} layout='horizontal' initialValues={initialValues}>
-            <Form.Item name='id' hidden>
+            <Form.Item name='id' hidden >
                 <Input/>
             </Form.Item>
             <Form.Item label="Id autora postu: " name="userId">
