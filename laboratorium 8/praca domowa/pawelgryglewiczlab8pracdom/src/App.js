@@ -64,7 +64,7 @@ function App() {
         {
           0: <MainPage/>,
           1: <AllPostsView setView={setView} setSelectedPost={setSelectedPost}/>,
-          2: <PostDetailsView id ={selectedPost.id}/>,
+          2: <PostDetailsView id ={selectedPost.id} setView={setView}/>,
           3: <CreatePost setView={setView}/>,
           4: <EditPost initialValues={selectedPost} setView={setView}/>,
         }[view]

@@ -1,10 +1,10 @@
-import { Card, Typography, Comment, Space, List } from 'antd';
+import { Card, Typography, Comment, Space, List, Button } from 'antd';
 import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import {fetchPost, fetchPostComments } from './api';
 
 //Widok wyświetlący szczegóły postu z danym id
-function PostDetailsView({id}){
+function PostDetailsView({id, setView}){
 
     //State z pobranym postem
     const [post, setPost] =useState([]);
@@ -49,6 +49,7 @@ function PostDetailsView({id}){
                 )}
                 />
             </Space>
+            <Button size="large" type="primary" onClick={() => setView(1)}>Cofnij</Button>
         </Card>
         </Space>);
 }
