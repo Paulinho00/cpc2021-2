@@ -15,7 +15,6 @@ function PostDetailsView({id}){
         fetchPost(id)
         .then((res) => res.json())
         .then((data) => setPost(data));
-        console.log("jestem tu");
 
         fetchPostComments(id)
         .then((res) => res.json())

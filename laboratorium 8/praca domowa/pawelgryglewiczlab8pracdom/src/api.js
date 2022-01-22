@@ -24,3 +24,11 @@ export function addPost(post){
         "Content-type": "application/json"
     }});
 }
+
+//Zaktualizowanie danych istniejącego posta
+export function updatePost(id, post){
+    return fetch(BASE_URL+"/posts/"+id, {method:"put", body:JSON.stringify(post), headers:{
+        "Content-type": "application/json"
+    }});
+
+}

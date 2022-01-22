@@ -3,6 +3,7 @@ import {Form, Typography, Button, Space, message} from 'antd';
 import CreateEditPostForm from './CreateEditPostForm';
 import { addPost } from './api';
 
+//Widok tworzenia nowego posta
 function CreatePost({setView}){
 
     const [form] = Form.useForm();
