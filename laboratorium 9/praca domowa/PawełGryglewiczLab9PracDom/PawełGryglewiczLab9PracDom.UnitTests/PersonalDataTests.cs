@@ -19,7 +19,30 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
 
         }
 
+        [Theory]
+        [MemberData(nameof(PersonalDataTestsGenerator.GetPersonalDataForTestOfChecking6FirstDigitsCorectness), MemberType = typeof(PersonalDataTestsGenerator))]
+        public void Check6FirstDigitsShouldReturnFalse(PersonalData personalData)
+        {
 
+            //Act
+            bool result = personalData.IdNumberValidate();
+
+            //Assert
+            Assert.False(result);
+
+        }
+
+        [Theory]
+        [MemberData(nameof(PersonalDataTestsGenerator.GetCorrectPersonalData), MemberType = typeof(PersonalDataTestsGenerator))]
+        public void CheckCorrectPersonalDataShouldReturnTrue(PersonalData personalData)
+        {
+
+            //Act
+            bool result = personalData.IdNumberValidate();
+
+            //Assert
+            Assert.True(result);
+        }
 
     }
 }
