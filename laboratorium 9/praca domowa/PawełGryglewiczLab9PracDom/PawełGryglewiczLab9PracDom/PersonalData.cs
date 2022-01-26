@@ -41,6 +41,9 @@ namespace PawełGryglewiczLab9PracDom
         /// <returns>wartość true jeśli numer PESEL jest poprawny</returns>
         public bool IdNumberValidate()
         {
+            //Sprawdzenie czy długość PESEL jest poprawna
+            if (IdNumber.Length != 11) return false;
+
             return true;
         }
     }
