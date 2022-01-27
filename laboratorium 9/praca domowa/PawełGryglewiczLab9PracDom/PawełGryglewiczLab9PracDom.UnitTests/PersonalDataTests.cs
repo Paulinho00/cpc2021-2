@@ -33,6 +33,17 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
         }
 
         [Theory]
+        [MemberData(nameof(PersonalDataTestsGenerator.GetPersonalDataForTestOfCheckingSexOfPersonCorrectness), MemberType =typeof(PersonalDataTestsGenerator))]
+        public void CheckSexOfPersonShouldReturnFalse(PersonalData personalData)
+        {
+            //Act
+            bool result = personalData.IdNumberValidate();
+
+            //Assert
+            Assert.False(result);
+        }
+
+        [Theory]
         [MemberData(nameof(PersonalDataTestsGenerator.GetCorrectPersonalData), MemberType = typeof(PersonalDataTestsGenerator))]
         public void CheckCorrectPersonalDataShouldReturnTrue(PersonalData personalData)
         {

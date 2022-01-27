@@ -63,6 +63,12 @@ namespace PawełGryglewiczLab9PracDom
             //Sprawdzenie zgodności roku urodzenia z numerem PESEL
             if (Int32.Parse(IdNumber.Substring(4, 2)) != yearOfBirth % 100) return false;
 
+
+            //Sprawdzenie zgodności płci z numerem PESEL
+            int individualNumber = Int32.Parse(IdNumber.Substring(6, 3));
+            if (isPersonMale && individualNumber % 2 == 0) return false;
+            if (!isPersonMale && individualNumber % 2 != 0) return false;
+
             return true;
         }
     }

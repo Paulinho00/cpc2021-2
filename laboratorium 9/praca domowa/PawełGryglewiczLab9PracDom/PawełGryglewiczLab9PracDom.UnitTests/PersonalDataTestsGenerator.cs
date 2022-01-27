@@ -44,6 +44,17 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
             };
         }
 
+        public static IEnumerable<object[]> GetPersonalDataForTestOfCheckingSexOfPersonCorrectness()
+        {
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),true,true,"11077941012"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1892,4,24),false,true,"24049264980"),
+            };
+        }
 
         public static IEnumerable<object[]> GetCorrectPersonalData()
         {
@@ -61,7 +72,7 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
             };
             yield return new object[]
             {
-                new PersonalData(new DateTime(1922,8,28),false,false,"68082226607"),
+                new PersonalData(new DateTime(1922,8,27),false,false,"67082226696"),
             };
         }
     }
