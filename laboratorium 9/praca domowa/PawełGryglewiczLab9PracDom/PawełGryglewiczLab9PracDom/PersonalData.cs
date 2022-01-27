@@ -69,6 +69,13 @@ namespace PawełGryglewiczLab9PracDom
             if (isPersonMale && individualNumber % 2 == 0) return false;
             if (!isPersonMale && individualNumber % 2 != 0) return false;
 
+            //Sprawdzenie zgodności roku urodzenia z indywidualnym numerem
+            int birthYear = BirthDate.Year;
+            if ((birthYear >= 1854 && birthYear <= 1899) && (individualNumber < 500 || individualNumber > 749)) return false;
+            if (birthYear >= 1900 && birthYear <= 1999 && individualNumber > 499) return false;
+            if (birthYear >= 2000 && birthYear <= 2039 && individualNumber < 500) return false;
+
+
             return true;
         }
     }

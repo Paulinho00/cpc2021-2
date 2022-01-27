@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PawełGryglewiczLab9PracDom.UnitTests
 {
@@ -56,6 +53,59 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
             };
         }
 
+        public static IEnumerable<object[]> GetPersonalDataForTestOfCheckingIndividualNumberCorrectness()
+        {
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077951085"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1892,4,23),true,true,"23049249721"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(2009,1,25),false,true,"25010938875"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077981073"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1892,4,24),true,true,"24049286755"),
+            };
+
+        }
+
+        public static IEnumerable<object[]> GetPersonalDataForTestOfControlSumCheck()
+        {
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077941023"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077941009"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077941011"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077941013"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077941022"),
+            };
+            yield return new object[]
+            {
+                new PersonalData(new DateTime(1979,7,11),false,true,"11077941002"),
+            };
+        }
+
         public static IEnumerable<object[]> GetCorrectPersonalData()
         {
             yield return new object[]
@@ -64,7 +114,7 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
             };
             yield return new object[]
             {
-                new PersonalData(new DateTime(1892,4,24),true,true,"24049264980"),
+                new PersonalData(new DateTime(1892,4,23),true,true,"23049264941"),
             };
             yield return new object[]
             {
@@ -72,7 +122,7 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
             };
             yield return new object[]
             {
-                new PersonalData(new DateTime(1922,8,27),false,false,"67082226696"),
+                new PersonalData(new DateTime(1922,8,27),false,false,"67082226661"),
             };
         }
     }
