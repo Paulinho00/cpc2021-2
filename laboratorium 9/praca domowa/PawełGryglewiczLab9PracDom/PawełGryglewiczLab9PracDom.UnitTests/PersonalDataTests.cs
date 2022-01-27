@@ -55,6 +55,17 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
         }
 
         [Theory]
+        [MemberData(nameof(PersonalDataTestsGenerator.GetPersonalDataForTestOfControlSumCheck), MemberType = typeof(PersonalDataTestsGenerator))]
+        public void CheckControlSumShouldReturnFalse(PersonalData personalData)
+        {
+            //Act
+            bool result = personalData.IdNumberValidate();
+
+            //Assert
+            Assert.False(result);
+        }
+
+        [Theory]
         [MemberData(nameof(PersonalDataTestsGenerator.GetCorrectPersonalData), MemberType = typeof(PersonalDataTestsGenerator))]
         public void CheckCorrectPersonalDataShouldReturnTrue(PersonalData personalData)
         {
@@ -65,6 +76,5 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
             //Assert
             Assert.True(result);
         }
-
     }
 }

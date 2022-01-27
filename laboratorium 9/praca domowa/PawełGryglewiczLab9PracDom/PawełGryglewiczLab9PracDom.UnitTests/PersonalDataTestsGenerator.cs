@@ -77,7 +77,6 @@ namespace PawełGryglewiczLab9PracDom.UnitTests
             };
 
         }
-
         public static IEnumerable<object[]> GetPersonalDataForTestOfControlSumCheck()
         {
             yield return new object[]

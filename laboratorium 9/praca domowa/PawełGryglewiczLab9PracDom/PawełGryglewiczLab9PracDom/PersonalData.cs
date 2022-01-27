@@ -75,6 +75,36 @@ namespace PawełGryglewiczLab9PracDom
             if (birthYear >= 1900 && birthYear <= 1999 && individualNumber > 499) return false;
             if (birthYear >= 2000 && birthYear <= 2039 && individualNumber < 500) return false;
 
+            //Pobranie dwóch ostatnich cyfr PESEL
+            int firstControlDigit = Int32.Parse(IdNumber.Substring(9,1));
+            int secondControlDigit = Int32.Parse(IdNumber.Substring(10, 1));
+
+            //Mnożniki do obliczania dwóch ostatnich cyfr
+            int[] multipliersForFirstControlDigit = { 3, 7, 6, 1, 8, 9, 4, 5, 2 };
+            int[] multipliersForSecondControlDigit = { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
+
+
+            //Obliczanie pierwszej cyfry kontrolnej
+            int sum = 0;
+            for(int i = 0; i < 9; i++)
+            {
+                sum += Int32.Parse(IdNumber.Substring(i, 1)) * multipliersForFirstControlDigit[i]; 
+            }
+            int calculatedFirstControlDigit = 11 - (sum % 11);
+
+            //Sprawdzenie czy obliczona cyfra jest zgodna z cyfrą w PESEL
+            if (calculatedFirstControlDigit != firstControlDigit) return false;
+
+            //Obliczanie drugie cyfry kontrolnej
+            sum = 0;
+            for(int i = 0; i < 10; i++)
+            {
+                sum += Int32.Parse(IdNumber.Substring(i, 1)) * multipliersForSecondControlDigit[i];
+            }
+            int calculatedSecondControlDigit = 11 - (sum % 11);
+
+            //Sprawdzenie czy obliczona cyfra jest zgodna z cyfrą w PESEL
+            if (calculatedSecondControlDigit != secondControlDigit) return false;
 
             return true;
         }
